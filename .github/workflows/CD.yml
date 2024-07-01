@@ -26,7 +26,7 @@ jobs:
       uses: oven-sh/setup-bun@v2
     - name: Get the version
       run: |
-        export version=$(bun run release:version)
+        export version=$(release-it --release-version)
         echo "version=${version}" >> $GITHUB_ENV
     - name: Docker Login
       uses: docker/login-action@v3.2.0
@@ -40,7 +40,7 @@ jobs:
         context: .
         push: true
         #sbom: # optional
-        tags: minikraken/private:minikraken-$version
+        tags: minikraken/private:minikraken-${{version}}
     #- name: release-it Action
     #  uses: JoshuaKGoldberg/release-it-action@v0.2.3
     #  with:
