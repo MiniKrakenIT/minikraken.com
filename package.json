@@ -83,15 +83,12 @@
   ],
   "release-it": {
     "git": {
-      "commitMessage": "Chore: Creating release ${version}",
+      "commitMessage": "Chore: Creating release v${version}",
       "tagAnnotation": "v${version}",
       "tagName": "v${version}"
     },
     "npm": {
       "publish": false
-    },
-    "hooks": {
-      "after:bump": "export VERSION=${version}"
     },
     "github": {
       "release": true,
