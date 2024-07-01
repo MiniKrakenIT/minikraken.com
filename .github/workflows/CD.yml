@@ -41,6 +41,8 @@ jobs:
         push: true
         #sbom: # optional
         tags: minikraken/private:minikraken-${{ env.VERSION }}
+        cache-from: type=registry,ref=minikraken/private:buildcache-minikraken
+        cache-to: type=registry,ref=minikraken/private:buildcache-minikraken,mode=max
     #- name: release-it Action
     #  uses: JoshuaKGoldberg/release-it-action@v0.2.3
     #  with:
