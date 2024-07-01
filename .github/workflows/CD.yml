@@ -3,6 +3,7 @@ name: Build Application
 on:
   pull_request:
     branches: [ "main" ]
+  workflow_dispatch:
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
