@@ -34,7 +34,7 @@ jobs:
       uses: actions/checkout@v4.1.7
       with:
         # Repository name with owner. For example, actions/checkout
-        repository: https://github.com/MiniKrakenIT/minikraken.com/
+        #repository: https://github.com/MiniKrakenIT/minikraken.com/
         #token: # optional, default is ${{ github.token }}
         fetch-depth: 0 # optional, default is 1
     - name: Setup Bun
@@ -46,7 +46,7 @@ jobs:
     - name: Docker Login
       uses: docker/login-action@v3.2.0
       with:
-        username: ${{ secrets.DOCKER_USERNAME }}
+        username: ${{ variables.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_ACCESS_TOKEN }}  
     - name: Build docker image
       uses: docker/build-push-action@v6.2.0
