@@ -41,8 +41,8 @@ jobs:
         push: true
         #sbom: # optional
         tags: minikraken/private:minikraken-${{ env.VERSION }}
-        cache-from: type=local,src=/tmp/.buildx-cache
-        cache-to: type=local,dest=/tmp/.buildx-cache
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
     #- name: release-it Action
     #  uses: JoshuaKGoldberg/release-it-action@v0.2.3
     #  with:
