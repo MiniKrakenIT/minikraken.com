@@ -1,0 +1,38 @@
+.navbar {
+  @apply bg-transparent;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: var(--navbar-padding, 0.5rem);
+  min-height: 4.25rem;
+  width: 100%;
+}
+
+.navbar::before {
+  content: '';
+  @apply bg-base-100/80 rounded-2xl;
+  position: absolute;
+  z-index: -1;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+:where(.navbar > *:not(script, style)) {
+  display: inline-flex;
+  align-items: center;
+}
+.navbar-start {
+  width: 50%;
+  justify-content: flex-start;
+}
+.navbar-center {
+  flex-shrink: 0;
+}
+.navbar-end {
+  width: 50%;
+  justify-content: flex-end;
+}

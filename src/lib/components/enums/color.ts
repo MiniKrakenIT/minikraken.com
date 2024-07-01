@@ -1,0 +1,11 @@
+export enum Color {
+	DEFAULT,
+	PRIMARY,
+	SECONDARY,
+	ACCENT,
+	INFO,
+	SUCCESS,
+	WARNING,
+	ERROR,
+	NEUTRAL
+}

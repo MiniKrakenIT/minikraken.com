@@ -1,0 +1,659 @@
+.btn:active:hover,
+.btn:active:focus {
+    animation: button-pop 0s ease-out;
+    transform: scale(var(--btn-focus-scale, 0.97));
+}
+/* default btn */
+.btn {
+    display: inline-flex;
+    height: 3rem;
+    min-height: 3rem;
+    flex-shrink: 0;
+    cursor: pointer;
+    user-select: none;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--rounded-btn, 0.5rem);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+    line-height: 1em;
+    gap: 0.5rem;
+    font-weight: 600;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    border-width: var(--border-btn, 1px);
+    animation: button-pop var(--animation-btn, 0.25s) ease-out;
+    transition-property: color, background-color, border-color, opacity, box-shadow, transform;
+    --tw-text-opacity: 1;
+    color: var(--fallback-bc,oklch(var(--bc)/var(--tw-text-opacity)));
+    text-decoration-line: none;
+    --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    outline-color: var(--fallback-bc,oklch(var(--bc)/1));
+    background-color: oklch(var(--btn-color, var(--b2)) / var(--tw-bg-opacity));
+    --tw-bg-opacity: 1;
+    border-color: oklch(var(--btn-color, var(--b2)) / var(--tw-border-opacity));
+    --tw-border-opacity: 1;
+}
+@supports not (color: oklch(0 0 0)) {
+    .btn {
+        background-color: var(--btn-color, var(--fallback-b2));
+        border-color: var(--btn-color, var(--fallback-b2))
+    }
+}
+@media (hover: hover) {
+    .btn:hover {
+        --tw-border-opacity: 1;
+        border-color: var(--fallback-b3,oklch(var(--b3)/var(--tw-border-opacity)));
+        --tw-bg-opacity: 1;
+        background-color: var(--fallback-b3,oklch(var(--b3)/var(--tw-bg-opacity)));
+    }
+    @supports (color: color-mix(in oklab, black, black)) {
+        .btn:hover {
+            background-color: color-mix(
+                    in oklab,
+                    oklch(var(--btn-color, var(--b2)) / var(--tw-bg-opacity, 1)) 90%,
+                    black
+            );
+            border-color: color-mix(
+                    in oklab,
+                    oklch(var(--btn-color, var(--b2)) / var(--tw-border-opacity, 1)) 90%,
+                    black
+            )
+        }
+    }
+    @supports not (color: oklch(0 0 0)) {
+        .btn:hover {
+            background-color: var(--btn-color, var(--fallback-b2));
+            border-color: var(--btn-color, var(--fallback-b2))
+        }
+    }
+}
+@supports (color: color-mix(in oklab, black, black)) {
+    .btn-active {
+        background-color: color-mix(
+                in oklab,
+                oklch(var(--btn-color, var(--b3)) / var(--tw-bg-opacity, 1)) 90%,
+                black
+        );
+        border-color: color-mix(
+                in oklab,
+                oklch(var(--btn-color, var(--b3)) / var(--tw-border-opacity, 1)) 90%,
+                black
+        )
+    }
+}
+.btn:focus-visible {
+    outline-style: solid;
+    outline-width: 2px;
+    outline-offset: 2px;
+}
+/* brand colors */
+.btn-primary {
+    --tw-text-opacity: 1;
+    color: var(--fallback-pc,oklch(var(--pc)/var(--tw-text-opacity)));
+    outline-color: var(--fallback-p,oklch(var(--p)/1));
+}
+@supports (color: oklch(0 0 0)) {
+    .btn-primary {
+        --btn-color: var(--p)
+    }
+}
+@supports not (color: oklch(0 0 0)) {
+    .btn-primary {
+        --btn-color: var(--fallback-p)
+    }
+}
+.btn-secondary {
+    --tw-text-opacity: 1;
+    color: var(--fallback-sc,oklch(var(--sc)/var(--tw-text-opacity)));
+    outline-color: var(--fallback-s,oklch(var(--s)/1));
+}
+@supports (color: oklch(0 0 0)) {
+    .btn-secondary {
+        --btn-color: var(--s)
+    }
+}
+@supports not (color: oklch(0 0 0)) {
+    .btn-secondary {
+        --btn-color: var(--fallback-s)
+    }
+}
+.btn-accent {
+    --tw-text-opacity: 1;
+    color: var(--fallback-ac,oklch(var(--ac)/var(--tw-text-opacity)));
+    outline-color: var(--fallback-a,oklch(var(--a)/1));
+}
+@supports (color: oklch(0 0 0)) {
+    .btn-accent {
+        --btn-color: var(--a)
+    }
+}
+@supports not (color: oklch(0 0 0)) {
+    .btn-accent {
+        --btn-color: var(--fallback-a)
+    }
+}
+.btn-neutral {
+    --tw-text-opacity: 1;
+    color: var(--fallback-nc,oklch(var(--nc)/var(--tw-text-opacity)));
+    outline-color: var(--fallback-n,oklch(var(--n)/1));
+}
+@supports (color: oklch(0 0 0)) {
+    .btn-neutral {
+        --btn-color: var(--n)
+    }
+}
+@supports not (color: oklch(0 0 0)) {
+    .btn-neutral {
+        --btn-color: var(--fallback-n)
+    }
+}
+/* btn with state colors */
+.btn-info {
+    --tw-text-opacity: 1;
+    color: var(--fallback-inc,oklch(var(--inc)/var(--tw-text-opacity)));
+    outline-color: var(--fallback-in,oklch(var(--in)/1));
+}
+@supports (color: oklch(0 0 0)) {
+    .btn-info {
+        --btn-color: var(--in)
+    }
+}
+@supports not (color: oklch(0 0 0)) {
+    .btn-info {
+        --btn-color: var(--fallback-in)
+    }
+}
+.btn-success {
+    --tw-text-opacity: 1;
+    color: var(--fallback-suc,oklch(var(--suc)/var(--tw-text-opacity)));
+    outline-color: var(--fallback-su,oklch(var(--su)/1));
+}
+@supports (color: oklch(0 0 0)) {
+    .btn-success {
+        --btn-color: var(--su)
+    }
+}
+@supports not (color: oklch(0 0 0)) {
+    .btn-success {
+        --btn-color: var(--fallback-su)
+    }
+}
+.btn-warning {
+    --tw-text-opacity: 1;
+    color: var(--fallback-wac,oklch(var(--wac)/var(--tw-text-opacity)));
+    outline-color: var(--fallback-wa,oklch(var(--wa)/1));
+}
+@supports (color: oklch(0 0 0)) {
+    .btn-warning {
+        --btn-color: var(--wa)
+    }
+}
+@supports not (color: oklch(0 0 0)) {
+    .btn-warning {
+        --btn-color: var(--fallback-wa)
+    }
+}
+.btn-error {
+    --tw-text-opacity: 1;
+    color: var(--fallback-erc,oklch(var(--erc)/var(--tw-text-opacity)));
+    outline-color: var(--fallback-er,oklch(var(--er)/1));
+}
+@supports (color: oklch(0 0 0)) {
+    .btn-error {
+        --btn-color: var(--er)
+    }
+}
+@supports not (color: oklch(0 0 0)) {
+    .btn-error {
+        --btn-color: var(--fallback-er)
+    }
+}
+/* glass */
+.btn.glass {
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    outline-color: currentColor;
+}
+@media (hover: hover) {
+    .btn.glass:hover {
+        --glass-opacity: 25%;
+        --glass-border-opacity: 15%;
+    }
+}
+.btn.glass.btn-active {
+    --glass-opacity: 25%;
+    --glass-border-opacity: 15%;
+}
+/* btn variants */
+.btn-ghost {
+    border-width: 1px;
+    border-color: transparent;
+    background-color: transparent;
+    color: currentColor;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    outline-color: currentColor;
+}
+@media (hover: hover) {
+    .btn-ghost:hover {
+        border-color: transparent;
+    }
+    @supports (color: oklch(0 0 0)) {
+        .btn-ghost:hover {
+            background-color: var(--fallback-bc,oklch(var(--bc)/0.2));
+        }
+    }
+}
+.btn-ghost.btn-active {
+    border-color: transparent;
+    background-color: var(--fallback-bc,oklch(var(--bc)/0.2));
+}
+.btn-link {
+    border-color: transparent;
+    background-color: transparent;
+    --tw-text-opacity: 1;
+    color: var(--fallback-p,oklch(var(--p)/var(--tw-text-opacity)));
+    text-decoration-line: underline;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    outline-color: currentColor;
+}
+@media (hover: hover) {
+    .btn-link:hover {
+        border-color: transparent;
+        background-color: transparent;
+        text-decoration-line: underline;
+    }
+}
+.btn-link.btn-active {
+    border-color: transparent;
+    background-color: transparent;
+    text-decoration-line: underline;
+}
+/* outline */
+.btn-outline {
+    border-color: currentColor;
+    background-color: transparent;
+    --tw-text-opacity: 1;
+    color: var(--fallback-bc,oklch(var(--bc)/var(--tw-text-opacity)));
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+@media (hover: hover) {
+    .btn-outline:hover {
+        --tw-border-opacity: 1;
+        border-color: var(--fallback-bc,oklch(var(--bc)/var(--tw-border-opacity)));
+        --tw-bg-opacity: 1;
+        background-color: var(--fallback-bc,oklch(var(--bc)/var(--tw-bg-opacity)));
+        --tw-text-opacity: 1;
+        color: var(--fallback-b1,oklch(var(--b1)/var(--tw-text-opacity)));
+    }
+}
+.btn-outline.btn-active {
+    --tw-border-opacity: 1;
+    border-color: var(--fallback-bc,oklch(var(--bc)/var(--tw-border-opacity)));
+    --tw-bg-opacity: 1;
+    background-color: var(--fallback-bc,oklch(var(--bc)/var(--tw-bg-opacity)));
+    --tw-text-opacity: 1;
+    color: var(--fallback-b1,oklch(var(--b1)/var(--tw-text-opacity)));
+}
+.btn-outline.btn-primary {
+    --tw-text-opacity: 1;
+    color: var(--fallback-p,oklch(var(--p)/var(--tw-text-opacity)));
+}
+@media (hover: hover) {
+    .btn-outline.btn-primary:hover {
+        --tw-text-opacity: 1;
+        color: var(--fallback-pc,oklch(var(--pc)/var(--tw-text-opacity)));
+    }
+    @supports (color: color-mix(in oklab, black, black)) {
+        .btn-outline.btn-primary:hover {
+            background-color: color-mix(in oklab, var(--fallback-p,oklch(var(--p)/1)) 90%, black);
+            border-color: color-mix(in oklab, var(--fallback-p,oklch(var(--p)/1)) 90%, black)
+        }
+    }
+}
+.btn-outline.btn-primary.btn-active {
+    --tw-text-opacity: 1;
+    color: var(--fallback-pc,oklch(var(--pc)/var(--tw-text-opacity)));
+}
+@supports (color: color-mix(in oklab, black, black)) {
+    .btn-outline.btn-primary.btn-active {
+        background-color: color-mix(in oklab, var(--fallback-p,oklch(var(--p)/1)) 90%, black);
+        border-color: color-mix(in oklab, var(--fallback-p,oklch(var(--p)/1)) 90%, black)
+    }
+}
+.btn-outline.btn-secondary {
+    --tw-text-opacity: 1;
+    color: var(--fallback-s,oklch(var(--s)/var(--tw-text-opacity)));
+}
+@media (hover: hover) {
+    .btn-outline.btn-secondary:hover {
+        --tw-text-opacity: 1;
+        color: var(--fallback-sc,oklch(var(--sc)/var(--tw-text-opacity)));
+    }
+    @supports (color: color-mix(in oklab, black, black)) {
+        .btn-outline.btn-secondary:hover {
+            background-color: color-mix(in oklab, var(--fallback-s,oklch(var(--s)/1)) 90%, black);
+            border-color: color-mix(in oklab, var(--fallback-s,oklch(var(--s)/1)) 90%, black)
+        }
+    }
+}
+.btn-outline.btn-secondary.btn-active {
+    --tw-text-opacity: 1;
+    color: var(--fallback-sc,oklch(var(--sc)/var(--tw-text-opacity)));
+}
+@supports (color: color-mix(in oklab, black, black)) {
+    .btn-outline.btn-secondary.btn-active {
+        background-color: color-mix(in oklab, var(--fallback-s,oklch(var(--s)/1)) 90%, black);
+        border-color: color-mix(in oklab, var(--fallback-s,oklch(var(--s)/1)) 90%, black)
+    }
+}
+.btn-outline.btn-accent {
+    --tw-text-opacity: 1;
+    color: var(--fallback-a,oklch(var(--a)/var(--tw-text-opacity)));
+}
+@media (hover: hover) {
+    .btn-outline.btn-accent:hover {
+        --tw-text-opacity: 1;
+        color: var(--fallback-ac,oklch(var(--ac)/var(--tw-text-opacity)));
+    }
+    @supports (color: color-mix(in oklab, black, black)) {
+        .btn-outline.btn-accent:hover {
+            background-color: color-mix(in oklab, var(--fallback-a,oklch(var(--a)/1)) 90%, black);
+            border-color: color-mix(in oklab, var(--fallback-a,oklch(var(--a)/1)) 90%, black)
+        }
+    }
+}
+.btn-outline.btn-accent.btn-active {
+    --tw-text-opacity: 1;
+    color: var(--fallback-ac,oklch(var(--ac)/var(--tw-text-opacity)));
+}
+@supports (color: color-mix(in oklab, black, black)) {
+    .btn-outline.btn-accent.btn-active {
+        background-color: color-mix(in oklab, var(--fallback-a,oklch(var(--a)/1)) 90%, black);
+        border-color: color-mix(in oklab, var(--fallback-a,oklch(var(--a)/1)) 90%, black)
+    }
+}
+.btn-outline.btn-success {
+    --tw-text-opacity: 1;
+    color: var(--fallback-su,oklch(var(--su)/var(--tw-text-opacity)));
+}
+@media (hover: hover) {
+    .btn-outline.btn-success:hover {
+        --tw-text-opacity: 1;
+        color: var(--fallback-suc,oklch(var(--suc)/var(--tw-text-opacity)));
+    }
+    @supports (color: color-mix(in oklab, black, black)) {
+        .btn-outline.btn-success:hover {
+            background-color: color-mix(in oklab, var(--fallback-su,oklch(var(--su)/1)) 90%, black);
+            border-color: color-mix(in oklab, var(--fallback-su,oklch(var(--su)/1)) 90%, black)
+        }
+    }
+}
+.btn-outline.btn-success.btn-active {
+    --tw-text-opacity: 1;
+    color: var(--fallback-suc,oklch(var(--suc)/var(--tw-text-opacity)));
+}
+@supports (color: color-mix(in oklab, black, black)) {
+    .btn-outline.btn-success.btn-active {
+        background-color: color-mix(in oklab, var(--fallback-su,oklch(var(--su)/1)) 90%, black);
+        border-color: color-mix(in oklab, var(--fallback-su,oklch(var(--su)/1)) 90%, black)
+    }
+}
+.btn-outline.btn-info {
+    --tw-text-opacity: 1;
+    color: var(--fallback-in,oklch(var(--in)/var(--tw-text-opacity)));
+}
+@media (hover: hover) {
+    .btn-outline.btn-info:hover {
+        --tw-text-opacity: 1;
+        color: var(--fallback-inc,oklch(var(--inc)/var(--tw-text-opacity)));
+    }
+    @supports (color: color-mix(in oklab, black, black)) {
+        .btn-outline.btn-info:hover {
+            background-color: color-mix(in oklab, var(--fallback-in,oklch(var(--in)/1)) 90%, black);
+            border-color: color-mix(in oklab, var(--fallback-in,oklch(var(--in)/1)) 90%, black)
+        }
+    }
+}
+.btn-outline.btn-info.btn-active {
+    --tw-text-opacity: 1;
+    color: var(--fallback-inc,oklch(var(--inc)/var(--tw-text-opacity)));
+}
+@supports (color: color-mix(in oklab, black, black)) {
+    .btn-outline.btn-info.btn-active {
+        background-color: color-mix(in oklab, var(--fallback-in,oklch(var(--in)/1)) 90%, black);
+        border-color: color-mix(in oklab, var(--fallback-in,oklch(var(--in)/1)) 90%, black)
+    }
+}
+.btn-outline.btn-warning {
+    --tw-text-opacity: 1;
+    color: var(--fallback-wa,oklch(var(--wa)/var(--tw-text-opacity)));
+}
+@media (hover: hover) {
+    .btn-outline.btn-warning:hover {
+        --tw-text-opacity: 1;
+        color: var(--fallback-wac,oklch(var(--wac)/var(--tw-text-opacity)));
+    }
+    @supports (color: color-mix(in oklab, black, black)) {
+        .btn-outline.btn-warning:hover {
+            background-color: color-mix(in oklab, var(--fallback-wa,oklch(var(--wa)/1)) 90%, black);
+            border-color: color-mix(in oklab, var(--fallback-wa,oklch(var(--wa)/1)) 90%, black)
+        }
+    }
+}
+.btn-outline.btn-warning.btn-active {
+    --tw-text-opacity: 1;
+    color: var(--fallback-wac,oklch(var(--wac)/var(--tw-text-opacity)));
+}
+@supports (color: color-mix(in oklab, black, black)) {
+    .btn-outline.btn-warning.btn-active {
+        background-color: color-mix(in oklab, var(--fallback-wa,oklch(var(--wa)/1)) 90%, black);
+        border-color: color-mix(in oklab, var(--fallback-wa,oklch(var(--wa)/1)) 90%, black)
+    }
+}
+.btn-outline.btn-error {
+    --tw-text-opacity: 1;
+    color: var(--fallback-er,oklch(var(--er)/var(--tw-text-opacity)));
+}
+@media (hover: hover) {
+    .btn-outline.btn-error:hover {
+        --tw-text-opacity: 1;
+        color: var(--fallback-erc,oklch(var(--erc)/var(--tw-text-opacity)));
+    }
+    @supports (color: color-mix(in oklab, black, black)) {
+        .btn-outline.btn-error:hover {
+            background-color: color-mix(in oklab, var(--fallback-er,oklch(var(--er)/1)) 90%, black);
+            border-color: color-mix(in oklab, var(--fallback-er,oklch(var(--er)/1)) 90%, black)
+        }
+    }
+}
+.btn-outline.btn-error.btn-active {
+    --tw-text-opacity: 1;
+    color: var(--fallback-erc,oklch(var(--erc)/var(--tw-text-opacity)));
+}
+@supports (color: color-mix(in oklab, black, black)) {
+    .btn-outline.btn-error.btn-active {
+        background-color: color-mix(in oklab, var(--fallback-er,oklch(var(--er)/1)) 90%, black);
+        border-color: color-mix(in oklab, var(--fallback-er,oklch(var(--er)/1)) 90%, black)
+    }
+}
+/* disabled */
+.btn.btn-disabled,
+.btn[disabled],
+.btn:disabled {
+    --tw-border-opacity: 0;
+    background-color: var(--fallback-n,oklch(var(--n)/var(--tw-bg-opacity)));
+    --tw-bg-opacity: 0.2;
+    color: var(--fallback-bc,oklch(var(--bc)/var(--tw-text-opacity)));
+    --tw-text-opacity: 0.2;
+}
+@media (hover: hover) {
+    .btn-disabled:hover,
+    .btn[disabled]:hover,
+    .btn:disabled:hover {
+        --tw-border-opacity: 0;
+        background-color: var(--fallback-n,oklch(var(--n)/var(--tw-bg-opacity)));
+        --tw-bg-opacity: 0.2;
+        color: var(--fallback-bc,oklch(var(--bc)/var(--tw-text-opacity)));
+        --tw-text-opacity: 0.2;
+    }
+}
+
+/* radio input and checkbox as button */
+
+.btn:is(input[type="checkbox"]:checked),
+.btn:is(input[type="radio"]:checked) {
+    --tw-border-opacity: 1;
+    border-color: var(--fallback-p,oklch(var(--p)/var(--tw-border-opacity)));
+    --tw-bg-opacity: 1;
+    background-color: var(--fallback-p,oklch(var(--p)/var(--tw-bg-opacity)));
+    --tw-text-opacity: 1;
+    color: var(--fallback-pc,oklch(var(--pc)/var(--tw-text-opacity)));
+}
+
+@media (hover: hover) {
+    @supports (color: color-mix(in oklab, black, black)) {
+        .btn:is(input[type="checkbox"]:checked):hover, .btn:is(input[type="radio"]:checked):hover {
+            background-color: color-mix(in oklab, var(--fallback-p,oklch(var(--p)/1)) 90%, black);
+            border-color: color-mix(in oklab, var(--fallback-p,oklch(var(--p)/1)) 90%, black)
+        }
+    }
+}
+
+.btn:is(input[type="checkbox"]:checked):focus-visible, .btn:is(input[type="radio"]:checked):focus-visible {
+    outline-color: var(--fallback-p,oklch(var(--p)/1));
+}
+
+@keyframes button-pop {
+    0% {
+        transform: scale(var(--btn-focus-scale, 0.98));
+    }
+    40% {
+        transform: scale(1.02);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+/* disabled */
+.btn-disabled,
+.btn[disabled],
+.btn:disabled {
+    pointer-events: none
+}
+/* shapes */
+.btn-square {
+    height: 3rem;
+    width: 3rem;
+    padding: 0px
+}
+.btn-circle {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 9999px;
+    padding: 0px
+}
+
+/* radio input and checkbox as button */
+
+:where(.btn:is(input[type="checkbox"])),
+:where(.btn:is(input[type="radio"])) {
+    width: auto;
+    appearance: none
+}
+
+.btn:is(input[type="checkbox"]):after,
+.btn:is(input[type="radio"]):after {
+    --tw-content: attr(aria-label);
+    content: var(--tw-content)
+}
+.btn-xs {
+    height: 1.5rem;
+    min-height: 1.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    font-size: 0.75rem
+}
+.btn-sm {
+    height: 2rem;
+    min-height: 2rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    font-size: 0.875rem
+}
+.btn-md {
+    height: 3rem;
+    min-height: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 0.875rem
+}
+.btn-lg {
+    height: 4rem;
+    min-height: 4rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    font-size: 1.125rem
+}
+.btn-wide {
+    width: 16rem
+}
+.btn-block {
+    width: 100%
+}
+.btn-square:where(.btn-xs) {
+    height: 1.5rem;
+    width: 1.5rem;
+    padding: 0px
+}
+.btn-square:where(.btn-sm) {
+    height: 2rem;
+    width: 2rem;
+    padding: 0px
+}
+.btn-square:where(.btn-md) {
+    height: 3rem;
+    width: 3rem;
+    padding: 0px
+}
+.btn-square:where(.btn-lg) {
+    height: 4rem;
+    width: 4rem;
+    padding: 0px
+}
+.btn-circle:where(.btn-xs) {
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 9999px;
+    padding: 0px
+}
+.btn-circle:where(.btn-sm) {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 9999px;
+    padding: 0px
+}
+.btn-circle:where(.btn-md) {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 9999px;
+    padding: 0px
+}
+.btn-circle:where(.btn-lg) {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 9999px;
+    padding: 0px
+}

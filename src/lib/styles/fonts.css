@@ -1,0 +1,239 @@
+@font-face {
+	font-family:'Axiforma';
+	src: local('axiformablackitalic'), local(Axiforma Black Italic),
+	url('/fonts/axiformablackitalic.woff2') format('woff2'),
+	url('/fonts/axiformablackitalic.woff') format('woff');
+	font-weight: 900;
+	font-style: italic;
+	font-stretch: normal;
+	font-display: swap;
+	unicode-range: U+0020-00FE;
+}
+
+@font-face {
+	font-family:'Axiforma';
+	src: local('axiformablack'), local(Axiforma Black),
+	url('/fonts/axiformablack.woff2') format('woff2'),
+	url('/fonts/axiformablack.woff') format('woff');
+	font-weight: 900;
+	font-style: normal;
+	font-stretch: normal;
+	font-display: swap;
+	unicode-range: U+0020-00FE;
+}
+
+@font-face {
+	font-family:'Axiforma';
+	src: local('axiformabolditalic'), local(Axiforma Bold Italic),
+	url('/fonts/axiformabolditalic.woff2') format('woff2'),
+	url('/fonts/axiformabolditalic.woff') format('woff');
+	font-weight: 700;
+	font-style: italic;
+	font-stretch: normal;
+	font-display: swap;
+	unicode-range: U+0020-00FE;
+}
+
+@font-face {
+	font-family:'Axiforma';
+	src: local('axiformabold'), local(Axiforma Bold),
+	url('/fonts/axiformabold.woff2') format('woff2'),
+	url('/fonts/axiformabold.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+	font-stretch: normal;
+	font-display: swap;
+	unicode-range: U+0020-00FE;
+}
+
+@font-face {
+	font-family:'Axiforma';
+	src: local('axiformabookitalic'), local(Axiforma Book Italic),
+	url('/fonts/axiformabookitalic.woff2') format('woff2'),
+	url('/fonts/axiformabookitalic.woff') format('woff');
+	font-weight: 300;
+	font-style: italic;
+	font-stretch: normal;
+	font-display: swap;
+	unicode-range: U+0020-00FE;
+}
+
+@font-face {
+	font-family:'Axiforma';
+	src: local('axiformabook'), local(Axiforma Book),
+	url('/fonts/axiformabook.woff2') format('woff2'),
+	url('/fonts/axiformabook.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+	font-stretch: normal;
+	font-display: swap;
+	unicode-range: U+0020-00FE;
+}
+
+@font-face {
+	font-family:'Axiforma';
+	src: local('axiformaExtrabolditalic'), local(Axiforma ExtraBold Italic),
+	url('/fonts/axiformaExtrabolditalic.woff2') format('woff2'),
+	url('/fonts/axiformaExtrabolditalic.woff') format('woff');
+	font-weight: 800;
+	font-style: italic;
+	font-stretch: normal;
+	font-display: swap;
+	unicode-range: U+0020-00FE;
+}
+
+@font-face {
+	font-family:'Axiforma';
+	src: local('axiformaextrabold'), local(Axiforma ExtraBold),
+	url('/fonts/axiformaextrabold.woff2') format('woff2'),
+	url('/fonts/axiformaextrabold.woff') format('woff');
+	font-weight: 800;
+	font-style: normal;
+	font-stretch: normal;
+	font-display: swap;
+	unicode-range: U+0020-00FE;
+}
+
+@font-face {
+	font-family:'Axiforma';
+	src: local('axiformaheavyitalic'), local(Axiforma Heavy Italic),
+	url('/fonts/axiformaheavyitalic.woff2') format('woff2'),
+	url('/fonts/axiformaheavyitalic.woff') format('woff');
+	font-weight: 950;
+	font-style: italic;
+	font-stretch: normal;
+	font-display: swap;
+	unicode-range: U+0020-00FE;
+}
+
+@font-face {
+	font-family:'Axiforma';
+	src: local('axiformaheavy'), local(Axiforma Heavy),
+	url('/fonts/axiformaheavy.woff2') format('woff2'),
+	url('/fonts/axiformaheavy.woff') format('woff');
+	font-weight: 950;
+	font-style: normal;
+	font-stretch: normal;
+	font-display: swap;
+	unicode-range: U+0020-00FE;
+}
+
+@font-face {
+	font-family:'Axiforma';
+	src: local('axiformaitalic'), local(Axiforma Italic),
+	url('/fonts/axiformaitalic.woff2') format('woff2'),
+	url('/fonts/axiformaitalic.woff') format('woff');
+	font-weight: 400;
+	font-style: italic;
+	font-stretch: normal;
+	font-display: swap;
+	unicode-range: U+0020-00FE;
+}
+
+@font-face {
+	font-family:'Axiforma';
+	src: local('axiformalightitalic'), local(Axiforma Light Italic),
+	url('/fonts/axiformalightitalic.woff2') format('woff2'),
+	url('/fonts/axiformalightitalic.woff') format('woff');
+	font-weight: 300;
+	font-style: italic;
+	font-stretch: normal;
+	font-display: swap;
+	unicode-range: U+0020-00FE;
+}
+
+@font-face {
+	font-family:'Axiforma';
+	src: local('axiformalight'), local(Axiforma Light),
+	url('/fonts/axiformalight.woff2') format('woff2'),
+	url('/fonts/axiformalight.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+	font-stretch: normal;
+	font-display: swap;
+	unicode-range: U+0020-00FE;
+}
+
+@font-face {
+	font-family:'Axiforma';
+	src: local('axiformamediumitalic'), local(Axiforma Medium Italic),
+	url('/fonts/axiformamediumitalic.woff2') format('woff2'),
+	url('/fonts/axiformamediumitalic.woff') format('woff');
+	font-weight: 500;
+	font-style: italic;
+	font-stretch: normal;
+	font-display: swap;
+	unicode-range: U+0020-00FE;
+}
+
+@font-face {
+	font-family:'Axiforma';
+	src: local('axiformamedium'), local(Axiforma Medium),
+	url('/fonts/axiformamedium.woff2') format('woff2'),
+	url('/fonts/axiformamedium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+	font-stretch: normal;
+	font-display: swap;
+	unicode-range: U+0020-00FE;
+}
+
+@font-face {
+	font-family:'Axiforma';
+	src: local('axiformaregular'), local(Axiforma Regular),
+	url('/fonts/axiformaregular.woff2') format('woff2'),
+	url('/fonts/axiformaregular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+	font-display: swap;
+	unicode-range: U+0020-00FE;
+}
+
+@font-face {
+	font-family:'Axiforma';
+	src: local('axiformasemibolditalic'), local(Axiforma SemiBold Italic),
+	url('/fonts/axiformasemibolditalic.woff2') format('woff2'),
+	url('/fonts/axiformasemibolditalic.woff') format('woff');
+	font-weight: 600;
+	font-style: italic;
+	font-stretch: normal;
+	font-display: swap;
+	unicode-range: U+0020-00FE;
+}
+
+@font-face {
+	font-family:'Axiforma';
+	src: local('axiformasemibold'), local(Axiforma SemiBold),
+	url('/fonts/axiformasemibold.woff2') format('woff2'),
+	url('/fonts/axiformasemibold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+	font-stretch: normal;
+	font-display: swap;
+	unicode-range: U+0020-00FE;
+}
+
+@font-face {
+	font-family:'Axiforma';
+	src: local('axiformathinitalic'), local(Axiforma Thin Italic),
+	url('/fonts/axiformathinitalic.woff2') format('woff2'),
+	url('/fonts/axiformathinitalic.woff') format('woff');
+	font-weight: 250;
+	font-style: italic;
+	font-stretch: normal;
+	font-display: swap;
+	unicode-range: U+0020-00FE;
+}
+
+@font-face {
+	font-family:'Axiforma';
+	src: local('axiformathin'), local(Axiforma Thin),
+	url('/fonts/axiformathin.woff2') format('woff2'),
+	url('/fonts/axiformathin.woff') format('woff');
+	font-weight: 250;
+	font-style: normal;
+	font-stretch: normal;
+	font-display: swap;
+	unicode-range: U+0020-00FE;
+}
