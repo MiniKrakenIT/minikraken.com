@@ -34,7 +34,7 @@ jobs:
       uses: actions/checkout@v4.1.7
       with:
         # Repository name with owner. For example, actions/checkout
-        #repository: # optional, default is ${{ github.repository }}
+        repository: https://github.com/MiniKrakenIT/minikraken.com/
         #token: # optional, default is ${{ github.token }}
         fetch-depth: 0 # optional, default is 1
     - name: Setup Bun
