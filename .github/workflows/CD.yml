@@ -53,10 +53,10 @@ jobs:
         push: true
         #sbom: # optional
         tags: minikraken/private:minikraken-$version
-    - name: release-it Action
-      uses: JoshuaKGoldberg/release-it-action@v0.2.3
-      with:
-        git-user-email: ${{GITHUB_ACTOR}}@users.noreply.github.com
-        git-user-name: ${{GITHUB_ACTOR}}
-        github-token: ${{GITHUB_TOKEN}}
+    #- name: release-it Action
+    #  uses: JoshuaKGoldberg/release-it-action@v0.2.3
+    #  with:
+    #    git-user-email: ${{GITHUB_ACTOR}}@users.noreply.github.com
+    #    git-user-name: ${{GITHUB_ACTOR}}
+    #    github-token: ${{GITHUB_TOKEN}}
 
