@@ -11,21 +11,6 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      actions: none
-      attestations: none
-      checks: none
-      #contents:
-      deployments: none
-      discussions: none
-      id-token:	none
-      issues: none
-      packages:	none
-      pages: none
-      #pull-requests:
-      repository-projects: none
-      security-events: none
-      statuses: none
     steps:
     - uses: actions/checkout@v4
       with:
