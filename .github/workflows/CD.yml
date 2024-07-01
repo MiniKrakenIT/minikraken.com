@@ -1,23 +1,53 @@
-name: Build Image
+name: Build Application
 
 on:
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "rc-*", "feat-*"]
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      actions: none
+      attestations: none
+      checks: none
+      #contents:
+      deployments: none
+      discussions: none
+      id-token:	none
+      issues: none
+      packages:	none
+      pages: none
+      #pull-requests:
+      repository-projects: none
+      security-events: none
+      statuses: none
     steps:
     - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - name: git config
+      run: |
+        git config user.name "${GITHUB_ACTOR}"
+        git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+    - name: Get the version
+      uses: oven/bun@v2
+      run: |
+        export version=$(bun run release:version)
+        echo "version=${version}" >> $GITHUB_ENV
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag minikraken/private:minikraken-$(version)
-    - name: docker-slim GitHub Action
+      run: docker build . --file Dockerfile --tag minikraken/private:minikraken-$version
+
+    #- name: docker-slim GitHub Action
       # You may pin to the exact commit or the version.
       # uses: kitabisa/docker-slim-action@e641d62304259303c8557c27e10965f7348c7eb4
-      uses: kitabisa/docker-slim-action@v1.1.1
-      with:
+    #  uses: kitabisa/docker-slim-action@v1.1.1
+    #  with:
         # Target container image (name or ID)
-        target: minikraken/private:minikraken-$(version)
+    #    target: minikraken/private:minikraken-$version
         # Overwrite target container image with slimmed version (only if target is not ID)
-        overwrite: true
-          
+    #    overwrite: true
+
