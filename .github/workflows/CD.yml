@@ -2,7 +2,7 @@ name: Build Application
 
 on:
   pull_request:
-    branches: [ "main", "rc-*", "feat-*"]
+    branches: [ "main" ]
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
