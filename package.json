@@ -14,7 +14,8 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "test:integration": "playwright test",
-    "test:unit": "vitest"
+    "test:unit": "vitest",
+    "release": "release-it"
   },
   "devDependencies": {
     "@eslint/js": "^9.5.0",
@@ -45,6 +46,7 @@
     "pino-pretty": "^11.2.1",
     "prettier": "^3.3.2",
     "prettier-plugin-svelte": "^3.2.5",
+    "release-it": "^17.4.1",
     "sass": "^1.77.6",
     "svelte": "^5.0.0-next.166",
     "svelte-adapter-bun": "^0.5.2",
@@ -67,10 +69,18 @@
     "devalue": "^5.0.0",
     "pino": "^9.2.0",
     "set-cookie-parser": "^2.6.0",
+    "sharp": "^0.33.4",
     "web-vitals": "^3.5.2",
     "web-vitals-reporter": "^1.0.0"
   },
   "browserslist": [
     "defaults and fully supports es6-module"
+  ],
+  "trustedDependencies": [
+    "@sveltejs/kit",
+    "esbuild",
+    "lefthook",
+    "sharp",
+    "svelte-preprocess"
   ]
 }
