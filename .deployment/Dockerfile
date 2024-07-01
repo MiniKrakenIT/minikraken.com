@@ -1,21 +1,20 @@
 ARG BUN_VERSION=1.1.17
-ARG NODE_VERSION=22.3.0
 ARG VERBOSE=true
 
-# copy node_modules from temp directory
-# then copy all (non-ignored) project files into the image
-FROM node:${NODE_VERSION}-alpine AS build
+FROM oven/bun:${BUN_VERSION} AS base
+
+
+FROM base AS build
 WORKDIR /usr/src/app
 
 COPY . .
-RUN npm install -g pnpm
-RUN pnpm install
+RUN bun install --frozen-lockfile
 
 # [optional] tests & build
 ENV NODE_ENV=production
-RUN npm run build
+RUN bun run build
 
-FROM oven/bun:${BUN_VERSION}-alpine AS dependencies
+FROM base AS dependencies
 WORKDIR /app
 
 COPY package.json bun.lockb ./
