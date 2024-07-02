@@ -12,27 +12,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
     - name: Checkout
       uses: actions/checkout@v4.1.7
       with:
-        # Repository name with owner. For example, actions/checkout
-        #repository: https://github.com/MiniKrakenIT/minikraken.com/
-        #token: # optional, default is ${{ github.token }}
-        fetch-depth: 0 # optional, default is 1
+        fetch-depth: 0
+      #todo add back git config for release-it
     - name: Setup Bun
       uses: oven-sh/setup-bun@v2
     - name: Get the version
       run: |
-        export version=$(release-it --release-version)
+        export version=$(bunx release-it --release-version)
         echo "VERSION=${version}" >> $GITHUB_ENV
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3.3.0
     - name: Docker Login
       uses: docker/login-action@v3.2.0
       with:
         username: ${{ vars.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_ACCESS_TOKEN }}  
+        password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
     - name: Build docker image
       uses: docker/build-push-action@v6.2.0
       with:
@@ -41,12 +38,5 @@ jobs:
         push: true
         #sbom: # optional
         tags: minikraken/private:minikraken-${{ env.VERSION }}
-        cache-from: type=gha
-        cache-to: type=gha,mode=max
-    #- name: release-it Action
-    #  uses: JoshuaKGoldberg/release-it-action@v0.2.3
-    #  with:
-    #    git-user-email: ${{GITHUB_ACTOR}}@users.noreply.github.com
-    #    git-user-name: ${{GITHUB_ACTOR}}
-    #    github-token: ${{GITHUB_TOKEN}}
-
+        cache-from: type=repository,ref=minikraken/private:minikraken-cache-${{ env.VERSION }}
+        cache-to: type=repository,ref=minikraken/private:minikraken-cache-${{ env.VERSION }},mode=max,compression=zstd
