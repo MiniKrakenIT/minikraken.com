@@ -17,12 +17,29 @@ jobs:
       with:
         fetch-depth: 0
       #todo add back git config for release-it
+    - name: Set bun cache dir
+      run: echo "[install.cache]\ndir = \".bun/install/cache\"" > bunfig.toml
+    - name: Restore bun cache
+      id: restore-bun-cache
+      uses: actions/cache/restore@v4
+      with:
+        path: |
+          ./.bun/install/cache
+        key: bun-cache
     - name: Setup Bun
       uses: oven-sh/setup-bun@v2
     - name: Get the version
       run: |
-        export version=$(bunx release-it --release-version)
-        echo "VERSION=${version}" >> $GITHUB_ENV
+        bun install --frozen-lockfile
+        export VERSION=$(bunx release-it --release-version)
+        echo "VERSION=${VERSION}" >> $GITHUB_ENV
+    - name: Save Bun cache
+      id: bun-cache-save
+      uses: actions/cache/save@v4
+      with:
+        path: |
+          ./.bun/install/cache
+        key: ${{ steps.restore-bun-cache.outputs.cache-primary-key }}
     - name: check if version variable works
       run: echo $VERSION
     - name: Set up Docker Buildx
@@ -39,6 +56,6 @@ jobs:
         context: .
         push: true
         #sbom: # optional
-        tags: minikraken/private:minikraken-$VERSION
-        cache-from: type=registry,ref=minikraken/private:minikraken-cache-$VERSION
-        cache-to: type=registry,ref=minikraken/private:minikraken-cache-$VERSION,mode=max,compression=zstd
+        tags: minikraken/private:minikraken-${{ env.VERSION }}
+        cache-from: type=registry,ref=minikraken/private:minikraken-cache-${{ env.VERSION }}
+        cache-to: type=registry,ref=minikraken/private:minikraken-cache-${{ env.VERSION }},mode=max,compression=zstd
