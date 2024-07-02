@@ -15,8 +15,6 @@
     "format": "prettier --write .",
     "test:integration": "playwright test",
     "test:unit": "vitest",
-    "release": "release-it --ci",
-    "release:version": "release-it --release-version",
     "release:dry": "release-it --ci --dry-run"
   },
   "devDependencies": {

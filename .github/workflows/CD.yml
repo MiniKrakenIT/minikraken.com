@@ -16,7 +16,10 @@ jobs:
       uses: actions/checkout@v4.1.7
       with:
         fetch-depth: 0
-      #todo add back git config for release-it
+    - name: git config
+      run: |
+        git config user.name "${GITHUB_ACTOR}"
+        git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
     - name: Restore bun cache
       id: restore-bun-cache
       uses: actions/cache/restore@v4
@@ -57,3 +60,5 @@ jobs:
         tags: minikraken/private:minikraken-${{ env.VERSION }}
         cache-from: type=registry,ref=minikraken/private:minikraken-cache
         cache-to: type=registry,ref=minikraken/private:minikraken-cache,mode=max,compression=zstd
+    - name: Release new version
+      run: bunx release-it --ci
