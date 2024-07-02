@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "PROD=false DEV=true bun --bun  vite dev --host",
-    "build": "vite build -d",
+    "dev": "PROD=false DEV=true bun --bun vite dev --host",
+    "build": "vite build",
     "postbuild": "node ./src/tooling/build/post-build.js",
     "preview": "ADDRESS_HEADER= ORIGIN=http://localhost bun run -bun ./build/index.js",
     "test": "bun run test:integration && bun run test:unit",
