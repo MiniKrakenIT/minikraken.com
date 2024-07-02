@@ -38,5 +38,5 @@ jobs:
         push: true
         #sbom: # optional
         tags: minikraken/private:minikraken-${{ env.VERSION }}
-        cache-from: type=repository,ref=minikraken/private:minikraken-cache-${{ env.VERSION }}
-        cache-to: type=repository,ref=minikraken/private:minikraken-cache-${{ env.VERSION }},mode=max,compression=zstd
+        cache-from: type=registry,ref=minikraken/private:minikraken-cache-${{ env.VERSION }}
+        cache-to: type=registry,ref=minikraken/private:minikraken-cache-${{ env.VERSION }},mode=max,compression=zstd
