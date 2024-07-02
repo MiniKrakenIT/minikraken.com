@@ -17,14 +17,12 @@ jobs:
       with:
         fetch-depth: 0
       #todo add back git config for release-it
-    - name: Set bun cache dir
-      run: echo -e "[install.cache]\ndir = \".bun/install/cache\"" > bunfig.toml
     - name: Restore bun cache
       id: restore-bun-cache
       uses: actions/cache/restore@v4
       with:
         path: |
-          ./.bun/install/cache
+          ./node_modules
         key: bun-cache
     - name: Setup Bun
       uses: oven-sh/setup-bun@v2
@@ -38,7 +36,7 @@ jobs:
       uses: actions/cache/save@v4
       with:
         path: |
-          ./.bun/install/cache
+          ./node_modules
         key: ${{ steps.restore-bun-cache.outputs.cache-primary-key }}
     - name: check if version variable works
       run: echo $VERSION
