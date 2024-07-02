@@ -20,13 +20,6 @@ jobs:
       run: |
         git config user.name "${GITHUB_ACTOR}"
         git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-    - name: Restore bun cache
-      id: restore-bun-cache
-      uses: actions/cache/restore@v4
-      with:
-        path: |
-          ./node_modules
-        key: bun-cache
     - name: Setup Bun
       uses: oven-sh/setup-bun@v2
     - name: Get the version
@@ -34,13 +27,6 @@ jobs:
         bun install --frozen-lockfile
         export VERSION=$(bunx release-it --release-version)
         echo "VERSION=${VERSION}" >> $GITHUB_ENV
-    - name: Save Bun cache
-      id: bun-cache-save
-      uses: actions/cache/save@v4
-      with:
-        path: |
-          ./node_modules
-        key: ${{ steps.restore-bun-cache.outputs.cache-primary-key }}
     - name: check if version variable works
       run: echo $VERSION
     - name: Set up Docker Buildx
