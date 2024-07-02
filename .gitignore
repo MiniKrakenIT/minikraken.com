@@ -13,3 +13,5 @@ vite.config.ts.timestamp-*
 
 # Sentry Config File
 .sentryclirc
+# to ignore the bunfig we make in CICD
+bunfig.toml
