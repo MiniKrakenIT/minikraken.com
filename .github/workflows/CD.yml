@@ -18,7 +18,7 @@ jobs:
         fetch-depth: 0
       #todo add back git config for release-it
     - name: Set bun cache dir
-      run: echo "[install.cache]\ndir = \".bun/install/cache\"" > bunfig.toml
+      run: echo -e "[install.cache]\ndir = \".bun/install/cache\"" > bunfig.toml
     - name: Restore bun cache
       id: restore-bun-cache
       uses: actions/cache/restore@v4
