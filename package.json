@@ -90,9 +90,7 @@
       "publish": false
     },
     "github": {
-      "release": true,
-      "releaseName": "v${version}",
-      "web": true
+      "release": true
     },
     "plugins": {
       "@release-it/conventional-changelog": {
