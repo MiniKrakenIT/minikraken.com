@@ -1,5 +1,12 @@
 
 
+## [1.0.6](https://github.com/MiniKrakenIT/minikraken.com/compare/v1.0.5...v1.0.6) (2024-07-03)
+
+
+### Fix
+
+* Dockerfile ([436a3e9](https://github.com/MiniKrakenIT/minikraken.com/commit/436a3e9c9a83b5f435f140ce7ba04ac5277c312f))
+
 ## [1.0.5](https://github.com/MiniKrakenIT/minikraken.com/compare/v1.0.4...v1.0.5) (2024-07-03)
 
 ## [1.0.4](https://github.com/MiniKrakenIT/minikraken.com/compare/v1.0.3...v1.0.4) (2024-07-03)
