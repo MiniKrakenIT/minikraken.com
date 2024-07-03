@@ -23,7 +23,7 @@ RUN bun install --frozen-lockfile --production
 FROM oven/bun:${BUN_VERSION}-distroless AS release
 WORKDIR /app
 
-COPY --from=build /app/build ./
+COPY --from=build /app/build .
 COPY --from=dependencies /app/node_modules ./node_modules
 
 ENV PORT=3000
@@ -33,4 +33,4 @@ ENV ORIGIN=https://minikraken.com
 # run the app
 USER nobody
 EXPOSE 3000/tcp
-ENTRYPOINT [ "bun", "/app/index.js" ]
+ENTRYPOINT [ "bun", "index.js" ]
