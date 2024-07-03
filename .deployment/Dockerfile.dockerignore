@@ -10,7 +10,7 @@ CHANGELOG.md
 CONTRIBUTING.md
 TODO.md
 README.md
-.dockerignore
+Dockerfile.dockerignore
 .gitignore
 LICENSE
 .env
