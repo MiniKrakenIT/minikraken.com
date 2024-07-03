@@ -20,7 +20,7 @@ COPY package.json bun.lockb ./
 RUN bun install --frozen-lockfile --production
 
 # copy production dependencies and source code into final image
-FROM oven/bun:${BUN_VERSION}-distroless AS release
+FROM oven/bun:${BUN_VERSION} AS release
 WORKDIR /app
 
 COPY --from=build /app/build .
@@ -33,4 +33,4 @@ ENV ORIGIN=https://minikraken.com
 # run the app
 USER nobody
 EXPOSE 3000/tcp
-ENTRYPOINT [ "bun", "index.js" ]
+ENTRYPOINT [ "pwd" ]
