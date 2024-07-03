@@ -1,5 +1,12 @@
 
 
+## [1.0.3](https://github.com/MiniKrakenIT/minikraken.com/compare/v1.0.2...v1.0.3) (2024-07-03)
+
+
+### Chore
+
+* fixing docker ignore not doing anything ([bb05966](https://github.com/MiniKrakenIT/minikraken.com/commit/bb0596695549df3981b723d74392277c16dea97c))
+
 ## [1.0.2](https://github.com/MiniKrakenIT/minikraken.com/compare/v1.0.1...v1.0.2) (2024-07-03)
 
 
