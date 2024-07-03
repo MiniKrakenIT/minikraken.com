@@ -1,5 +1,13 @@
 
 
+## [1.0.2](https://github.com/MiniKrakenIT/minikraken.com/compare/v1.0.1...v1.0.2) (2024-07-03)
+
+
+### Chore
+
+* fixing docker ignore + adding license ([518d699](https://github.com/MiniKrakenIT/minikraken.com/commit/518d6999a5183e6bafb5c3048139365d5f44672a))
+* fixing docker ignore + adding license ([4ce6ebf](https://github.com/MiniKrakenIT/minikraken.com/commit/4ce6ebf001edb5c6c52af1b878acb110b7f194e5))
+
 ## [1.0.1](https://github.com/MiniKrakenIT/minikraken.com/compare/v1.0.0...v1.0.1) (2024-07-03)
 
 
