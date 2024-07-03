@@ -1,5 +1,12 @@
 
 
+## [1.0.4](https://github.com/MiniKrakenIT/minikraken.com/compare/v1.0.3...v1.0.4) (2024-07-03)
+
+
+### Chore
+
+* add update trigger for infrastructure ([7f9cb15](https://github.com/MiniKrakenIT/minikraken.com/commit/7f9cb15d836804925ff302e7d49ee6dc6c1df851))
+
 ## [1.0.3](https://github.com/MiniKrakenIT/minikraken.com/compare/v1.0.2...v1.0.3) (2024-07-03)
 
 
