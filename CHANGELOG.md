@@ -1,5 +1,16 @@
 
 
+## [1.0.1](https://github.com/MiniKrakenIT/minikraken.com/compare/v1.0.0...v1.0.1) (2024-07-03)
+
+
+### Build
+
+* removing bun cache, it's faster without ([f1bf54b](https://github.com/MiniKrakenIT/minikraken.com/commit/f1bf54b0ab9f6be270b4bbf5baa6183b8e05502e))
+
+### Chore
+
+* fixing docker ignore + adding license ([e00b192](https://github.com/MiniKrakenIT/minikraken.com/commit/e00b1920274ce61983434f69458c00da4a124042))
+
 # 1.0.0 (2024-07-02)
 
 
