@@ -57,6 +57,5 @@ export const options = {
 //
 
 export default function () {
-	http.get('http://localhost:5173/contact')
-	sleep(0.5)
+	http.get('https://nginx.minikraken.com')
 }

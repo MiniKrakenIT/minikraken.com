@@ -3,9 +3,8 @@ ARG VERBOSE=true
 
 FROM oven/bun:${BUN_VERSION} AS base
 
-
 FROM base AS build
-WORKDIR /usr/src/app
+WORKDIR /app
 
 COPY . .
 RUN bun install --frozen-lockfile
@@ -24,7 +23,7 @@ RUN bun install --frozen-lockfile --production
 FROM oven/bun:${BUN_VERSION}-distroless AS release
 WORKDIR /app
 
-COPY --from=build /usr/src/app/build .
+COPY --from=build /app/build ./
 COPY --from=dependencies /app/node_modules ./node_modules
 
 ENV PORT=3000
@@ -34,4 +33,4 @@ ENV ORIGIN=https://minikraken.com
 # run the app
 USER nobody
 EXPOSE 3000/tcp
-ENTRYPOINT [ "bun", "./index.js" ]
+ENTRYPOINT [ "bun", "/app/index.js" ]
