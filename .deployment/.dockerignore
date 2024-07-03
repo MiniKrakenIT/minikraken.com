@@ -2,6 +2,7 @@ node_modules/
 build/
 .deployment/
 .github/
+.git/
 .ssl/
 .idea/
 .svelte-kit/
