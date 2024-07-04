@@ -1,5 +1,4 @@
 import type { Handle, HandleFetch, HandleServerError } from '@sveltejs/kit'
-import { setSecurityHeaders } from '$lib/server/setSecurityHeaders'
 import { logger } from '$lib/server/logger'
 
 export const handleError: HandleServerError = ({ event, status, message, error }) => {
@@ -106,8 +105,6 @@ export const handle: Handle = async ({ event, resolve }) => {
 	}
 
 	const response = await resolve(event)
-
-	setSecurityHeaders(response)
 
 	if (response.status < 400 || (response.status > 599 && ip !== 'kubernetes')) {
 		logger.info({

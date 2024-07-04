@@ -1,5 +1,4 @@
-ARG BUN_VERSION=1.1.17
-ARG VERBOSE=true
+ARG BUN_VERSION=1.1.18
 
 FROM oven/bun:${BUN_VERSION} AS base
 
@@ -16,11 +15,11 @@ RUN bun run build
 FROM base AS dependencies
 WORKDIR /app
 
-COPY package.json bun.lockb ./
-RUN bun install --frozen-lockfile --production
+COPY --from=build /app/build/package.json .
+RUN bun install --production
 
 # copy production dependencies and source code into final image
-FROM oven/bun:${BUN_VERSION} AS release
+FROM oven/bun:${BUN_VERSION}-distroless AS release
 WORKDIR /app
 
 COPY --from=build /app/build .
@@ -33,4 +32,4 @@ ENV ORIGIN=https://minikraken.com
 # run the app
 USER nobody
 EXPOSE 3000/tcp
-ENTRYPOINT [ "pwd" ]
+ENTRYPOINT [ "bun", "run", "start" ]
