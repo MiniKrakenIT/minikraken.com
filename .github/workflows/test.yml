@@ -42,5 +42,6 @@ jobs:
       uses: benc-uk/workflow-dispatch@v1.2.3
       with:
         workflow: Update-Version.yml
+        token: ${{ secrets.WORKFLOW_TOKEN }}
         repo: MiniKrakenIT/infrastructure
         inputs: '{"application": "Minikraken", "environment": "development", "version": "${{ env.VERSION }}"}'
