@@ -40,9 +40,8 @@ jobs:
     - name: Build application
       run: bun run build
     - name: Deploy new version
-      uses: peter-evans/repository-dispatch@v3.0.0
+      uses: benc-uk/workflow-dispatch@v1.2.3
       with:
-        repository: MiniKrakenIT/infrastructure
-        event-type: deploy-version
-        client-payload: '{"application": "Minikraken", "environment": "development", "version": "${{ env.VERSION }}"}'
-    
+        workflow: Update-Version.yml
+        repo: MiniKrakenIT/infrastructure
+        inputs: '{"application": "Minikraken", "environment": "development", "version": "${{ env.VERSION }}"}'
