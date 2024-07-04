@@ -1,5 +1,13 @@
 
 
+## [1.0.10](https://github.com/MiniKrakenIT/minikraken.com/compare/v1.0.9...v1.0.10) (2024-07-04)
+
+
+### Chore
+
+* change CD flow ([75e7d94](https://github.com/MiniKrakenIT/minikraken.com/commit/75e7d94e5ad61e3ff252fb8d8f90b218dafe495e))
+* change CD flow ([23e8c86](https://github.com/MiniKrakenIT/minikraken.com/commit/23e8c860f510b74f263a85874b1df838ffb6681b))
+
 ## [1.0.9](https://github.com/MiniKrakenIT/minikraken.com/compare/v1.0.8...v1.0.9) (2024-07-04)
 
 
