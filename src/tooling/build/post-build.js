@@ -1,18 +1,19 @@
 import fs from 'node:fs'
 
-const serverFilePath = './build/index.js'
+const serverFilePath = './build/handler.js'
 
 const addCacheControl =
-	"pathname.startsWith(`/${manifest.appDir}/immutable/`) || pathname.slice(-6) === '.woff2' || pathname.slice(-5) === '.woff' || pathname.slice(-4) === '.svg'"
+	"pathname.startsWith(`/${manifest.appDir}/immutable/`) || pathname.slice(-6) === '.woff2'"
 
 const replaceCacheControl = async () => {
 	try {
-		const content = fs.readFileSync(serverFilePath, 'utf-8')
+		const file = Bun.file(serverFilePath)
+		const content = await file.text()
 		const transformed = content.replace(
 			'pathname.startsWith(`/${manifest.appDir}/immutable/`)',
 			addCacheControl
 		)
-		fs.writeFileSync(serverFilePath, transformed)
+		await Bun.write(serverFilePath, transformed)
 	} catch (error) {
 		console.error(error)
 	}
