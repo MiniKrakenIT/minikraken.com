@@ -1,5 +1,12 @@
 
 
+## [1.0.13](https://github.com/MiniKrakenIT/minikraken.com/compare/v1.0.12...v1.0.13) (2024-07-05)
+
+
+### Fix
+
+* fix CSP ([ee806d7](https://github.com/MiniKrakenIT/minikraken.com/commit/ee806d74ec1f861504209dd0488514fdc3ac5e8c))
+
 ## [1.0.12](https://github.com/MiniKrakenIT/minikraken.com/compare/v1.0.11...v1.0.12) (2024-07-05)
 
 
