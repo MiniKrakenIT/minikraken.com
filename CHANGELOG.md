@@ -1,5 +1,18 @@
 
 
+## [1.0.12](https://github.com/MiniKrakenIT/minikraken.com/compare/v1.0.11...v1.0.12) (2024-07-05)
+
+
+### Chore
+
+* change CD flow ([8ee6d30](https://github.com/MiniKrakenIT/minikraken.com/commit/8ee6d30630ea36857d8f2d7cd21287ee6de251d9))
+* change CD flow ([1690e25](https://github.com/MiniKrakenIT/minikraken.com/commit/1690e259d2c9a7e6e2021a803d04868e865a08d7))
+
+### Fix
+
+* fix CI/CD ([03e3c8c](https://github.com/MiniKrakenIT/minikraken.com/commit/03e3c8c2448cee244e42eaabd7a896a968e8ad32))
+* fixing cache control for fonts ([41f2fc9](https://github.com/MiniKrakenIT/minikraken.com/commit/41f2fc95001848d9ad87297fefac7ce581fcfc0c))
+
 ## [1.0.11](https://github.com/MiniKrakenIT/minikraken.com/compare/v1.0.10...v1.0.11) (2024-07-04)
 
 
