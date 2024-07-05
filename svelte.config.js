@@ -42,7 +42,8 @@ export default {
 			$static: './static'
 		},
 		csp: {
-			reportOnly: {
+			mode: 'auto',
+			/*reportOnly: {
 				'report-to': ['csp-endpoint'],
 				'default-src': ['self'],
 				'base-uri': ['self'],
@@ -51,19 +52,18 @@ export default {
 				'frame-ancestors': ['self'],
 				'img-src': ['self', 'data:'],
 				'object-src': ['none'],
-				'script-src': ['self', 'strict-dynamic', 'https://challenges.cloudflare.com/'],
+				'script-src': ['self', 'strict-dynamic'],
 				'script-src-attr': ['none'],
 				'style-src': ['self', 'https:', 'unsafe-inline'],
 				'connect-src': ['self'],
-				'frame-src': ['self', 'https://challenges.cloudflare.com/'],
+				'frame-src': ['self'],
 				'upgrade-insecure-requests': true,
 				'block-all-mixed-content': true,
 				'manifest-src': ['self'],
 				'worker-src': ['self'],
 				'media-src': ['self']
-			},
-			mode: 'auto'
-			/*directives: {
+			},*/
+			directives: {
 				'default-src': ["'self'"],
 				'base-uri': ["'self'"],
 				'font-src': ["'self'", 'https:', 'data:'],
@@ -74,18 +74,17 @@ export default {
 				'script-src': [
 					"'self'",
 					"'strict-dynamic'",
-					'https://challenges.cloudflare.com/',
 				],
 				'script-src-attr': ["'none'"],
 				'style-src': ["'self'", 'https:', 'unsafe-inline'],
 				'connect-src': ["'self'"],
-				'frame-src': ["'self'", 'https://challenges.cloudflare.com/'],
+				'frame-src': ["'self'"],
 				'upgrade-insecure-requests': true,
 				'block-all-mixed-content': true,
 				'manifest-src': ["'self'"],
 				'worker-src': ["'self'"],
 				'media-src': ["'self'"]
-			}*/
+			}
 		}
 	}
 }
