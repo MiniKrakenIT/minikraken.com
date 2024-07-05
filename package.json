@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "bun --bun vite dev --host",
     "build": "bun --bun vite build --debug",
-    "postbuild": "bun ./src/tooling/build/post-build.js",
     "preview": "ADDRESS_HEADER= ORIGIN=http://localhost bun run -bun ./build/index.js",
     "test": "bun run test:integration && bun run test:unit",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
