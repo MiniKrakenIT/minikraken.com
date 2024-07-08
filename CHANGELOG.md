@@ -1,5 +1,13 @@
 
 
+## [1.0.14](https://github.com/MiniKrakenIT/minikraken.com/compare/v1.0.13...v1.0.14) (2024-07-08)
+
+
+### Fix
+
+* blur backdrops and gradients ([79c8359](https://github.com/MiniKrakenIT/minikraken.com/commit/79c835969f182b6a0e23177fe7ce1b092db8b868))
+* blur backdrops and gradients ([2fbd6e6](https://github.com/MiniKrakenIT/minikraken.com/commit/2fbd6e6fc53db7b7e25a302512965d7690f3f731))
+
 ## [1.0.13](https://github.com/MiniKrakenIT/minikraken.com/compare/v1.0.12...v1.0.13) (2024-07-05)
 
 
