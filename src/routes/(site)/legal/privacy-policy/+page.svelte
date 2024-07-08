@@ -76,9 +76,9 @@
 			’s.
 		</p>
 		<p>
-			Tevens monitoren we waar bezoekers de website voor het eerst bezoeken en vanaf welke pagina
-			class="site-link" ze vertrekken. Deze informatie houden we anoniem bij en is niet gekoppeld
-			aan andere persoonlijke informatie.
+			Tevens monitoren we waar bezoekers de website voor het eerst bezoeken en vanaf welke pagina ze
+			vertrekken. Deze informatie houden we anoniem bij en is niet gekoppeld aan andere persoonlijke
+			informatie.
 		</p>
 	</section>
 

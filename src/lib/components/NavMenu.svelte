@@ -2,7 +2,6 @@
 	import type { MenuItems } from '$lib/components/types/MenuItems'
 	import { onDestroy, onMount } from 'svelte'
 	import { browser } from '$app/environment'
-	import { slide } from 'svelte/transition'
 
 	let { menuItems = [], class: classList } = $props() as { menuItems: MenuItems; class: string }
 
@@ -27,7 +26,7 @@
 	})
 </script>
 
-<ul transition:slide={{ duration: 75 }} class="menu navmenu {classList ?? ''}" aria-label="menu">
+<ul class="menu navmenu {classList ?? ''}" aria-label="menu">
 	{#each menuItems as item}
 		{#if item.subItems}
 			<li class="min-w-full lg:min-w-auto">

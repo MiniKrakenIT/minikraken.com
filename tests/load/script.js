@@ -57,5 +57,5 @@ export const options = {
 //
 
 export default function () {
-	http.get('https://nginx.minikraken.com')
+	http.get('https://dev.minikraken.com')
 }
