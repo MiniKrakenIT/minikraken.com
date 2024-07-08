@@ -1,5 +1,7 @@
 
 
+## [1.0.15](https://github.com/MiniKrakenIT/minikraken.com/compare/v1.0.14...v1.0.15) (2024-07-08)
+
 ## [1.0.14](https://github.com/MiniKrakenIT/minikraken.com/compare/v1.0.13...v1.0.14) (2024-07-08)
 
 
