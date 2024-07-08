@@ -3,13 +3,16 @@
 	import Button from '$components/form/Button.svelte'
 	import Link from '$components/form/Link.svelte'
 	import { Style } from '$components/enums/style'
-	import { slide } from 'svelte/transition'
 
 	let show = $state<boolean>(false)
+	let closeAnimation = $state<boolean>(false)
 
 	const accept = () => {
 		localStorage.setItem('cookie-accepted', 'true')
-		show = false
+		closeAnimation = true
+		setTimeout(() => {
+			show = false
+		}, 500)
 	}
 
 	onMount(() => {
@@ -18,7 +21,7 @@
 </script>
 
 {#if show}
-	<div transition:slide class="cookie-banner">
+	<div class="cookie-banner {closeAnimation ? 'close' : ''}">
 		<div>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -61,11 +64,32 @@
 
 <style lang="sass">
 	.cookie-banner
-		@apply fixed flex flex-col sm:flex-row gap-5 justify-center items-center p-5 sm:m-5 bottom-0 bg-base-100/80 rounded-2xl shadow-lg z-12 border-base-300 border-1
-		backdrop-filter: blur(6px)
-		-webkit-backdrop-filter: blur(6px)
+		@apply fixed flex flex-col sm:flex-row gap-5 justify-center items-center p-5 sm:m-5 bottom-0 bg-base-100 bg-op-80 rounded-2xl shadow-lg z-12 border-base-300 border-op-70 border-1
+		animation: slide-up 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+
+		&.close
+			animation: slide-down 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+
+		&::before
+			@apply absolute top-0 left-0 w-full h-full -z-1 rounded-inherit
+			content: ''
+			-webkit-backdrop-filter: blur(4px)
+			backdrop-filter: blur(4px)
+
 		& > div
 			@apply flex gap-5 justify-between items-center
 			& > svg
 				@apply w-10 h-10 hover:text-primary transition-colors duration-500 flex-shrink-0
+
+	@keyframes slide-up
+		from
+			transform: translateY(100%)
+		to
+			transform: translateY(0)
+
+	@keyframes slide-down
+		from
+			transform: translateY(0)
+		to
+			transform: translateY(100%)
 </style>

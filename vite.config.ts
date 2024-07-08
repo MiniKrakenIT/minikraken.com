@@ -11,12 +11,6 @@ export default defineConfig({
 		}),
 		sveltekit()
 	],
-	ssr: {
-		noExternal: ['web-vitals', 'web-vitals-reporter'] //'pino', '@axiomhq/pino',
-	},
-	optimizeDeps: {
-		include: ['web-vitals', 'web-vitals-reporter']
-	},
 	css: {
 		lightningcss: {
 			targets: browserslistToTargets(browserslist('>= 0.5%')),
