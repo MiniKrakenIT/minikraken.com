@@ -1,22 +1,24 @@
-import { sveltekit } from '@sveltejs/kit/vite'
-import { defineConfig } from 'vitest/config'
 import { enhancedImages } from '@sveltejs/enhanced-img'
-import browserslist from 'browserslist'
-import { browserslistToTargets } from 'lightningcss'
+import { sveltekit } from '@sveltejs/kit/vite'
+import tailwindcss from '@tailwindcss/vite'
+import { defineConfig } from 'vite'
+import devtoolsJson from 'vite-plugin-devtools-json'
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
 
 export default defineConfig({
-	plugins: [
-		enhancedImages({
-
-		}),
-		sveltekit()
-	],
-	css: {
-		lightningcss: {
-			targets: browserslistToTargets(browserslist('>= 0.5%')),
-		}
+	ssr: {
+		noExternal: [
+			'devalue',
+			'cookie',
+			'set-cookie-parser',
+			'clsx',
+			'nanoid',
+			'posthog-js',
+			'resend',
+			'motion',
+			'valibot'
+		]
 	},
-	test: {
-		include: ['tests/**/*.{test,spec}.{js,ts}']
-	}
+	optimizeDeps: { include: ['@exodus/schemasafe'] },
+	plugins: [tailwindcss(), ViteImageOptimizer(), enhancedImages(), sveltekit(), devtoolsJson()]
 })

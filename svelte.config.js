@@ -1,90 +1,54 @@
+import devAdapter from '@sveltejs/adapter-node'
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
-import adapter from 'svelte-adapter-bun'
-import UnoCSS from './src/tooling/svelte-scoped/preprocess.js'
+import { mdsvex } from 'mdsvex'
 
 /** @type {import('@sveltejs/kit').Config} */
-export default {
-	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
-	// for more information about preprocessors
-	preprocess: [vitePreprocess(), UnoCSS()],
+const config = {
+	preprocess: [
+		vitePreprocess({ script: true }),
+		mdsvex({
+			extensions: ['.svx']
+		})
+	],
 	compilerOptions: {
-		runes: true,
-		modernAst: true,
+		warningFilter: (warning) => {
+			return warning.code !== 'css_unused_selector'
+		}
 	},
 	kit: {
-		// adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.
-		// If your environment is not supported or you settled on a specific environment, switch out the adapter.
-		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
-		adapter: adapter({
-			precompress: {
-				brotli: true,
-				gzip: true,
-				files: [
-					'html',
-					'js',
-					'json',
-					'css',
-					'svg',
-					'xml',
-					'wasm',
-					'ico',
-					'txt',
-					'ttf',
-					'webmanifest'
-				]
-			},
-			dynamic_origin: true,
-			out: 'build'
-		}),
-		alias: {
-			$components: './src/lib/components',
-			$lib: './src/lib',
-			$static: './static'
+		experimental: {
+			remoteFunctions: true
 		},
 		csp: {
-			mode: 'auto',
-			/*reportOnly: {
-				'report-to': ['csp-endpoint'],
-				'default-src': ['self'],
-				'base-uri': ['self'],
-				'font-src': ['self', 'https:', 'data:'],
-				'form-action': ['self'],
-				'frame-ancestors': ['self'],
-				'img-src': ['self', 'data:'],
-				'object-src': ['none'],
-				'script-src': ['self', 'strict-dynamic'],
-				'script-src-attr': ['none'],
-				'style-src': ['self', 'https:', 'unsafe-inline'],
-				'connect-src': ['self'],
-				'frame-src': ['self'],
-				'upgrade-insecure-requests': true,
-				'block-all-mixed-content': true,
-				'manifest-src': ['self'],
-				'worker-src': ['self'],
-				'media-src': ['self']
-			},*/
-			directives: {
-				'default-src': ["'self'"],
-				'base-uri': ["'self'"],
-				'font-src': ["'self'", 'https:', 'data:'],
-				'form-action': ["'self'"],
-				'frame-ancestors': ["'self'"],
-				'img-src': ["'self'", 'data:'],
-				'object-src': ["'none'"],
-				'script-src': [
-					"'self'",
-					"'strict-dynamic'",
-				],
-				'script-src-attr': ["'none'"],
-				'style-src': ["'self'", 'https:', 'unsafe-inline'],
-				'connect-src': ["'self'"],
-				'frame-src': ["'self'"],
-				'upgrade-insecure-requests': true,
-				'block-all-mixed-content': true,
-				'manifest-src': ["'self'"],
-				'worker-src': ["'self'"],
-				'media-src': ["'self'"]
-			}
-		}
-	}
+			mode: 'auto'
+		},
+		alias: {
+			$lib: './src/lib',
+			$components: './src/lib/components',
+			$stores: './src/lib/data/stores',
+			$styles: './src/lib/styles',
+			$assets: './src/lib/assets',
+			$data: './src/lib/data'
+		},
+		adapter:
+			import.meta.env?.NODE_ENV === 'production'
+				? (await import('@jonasbuerger/svelte-adapter-bun')).default({
+						precompress: {
+							brotli: true,
+							gzip: true
+						}
+						/*tls: { //todo: make that kubernetes injects it into a certain folder so we can use native http2
+							key: "server.key",
+							cert: "server.crt",
+						},*/
+						//protocol_header: 'X-Forwarded-Proto', //PROTOCOL_HEADER
+						//host_header: "X-Forwarded-Host", //HOST_HEADER
+						//address_header: 'X-Forwarded-For', //ADDRESS_HEADER
+						//xff_depth: 2
+					})
+				: devAdapter()
+	},
+	extensions: ['.svelte', '.svx']
 }
+
+export default config

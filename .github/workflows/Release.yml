@@ -1,0 +1,51 @@
+name: Build Image and Release it
+
+on:
+  workflow_dispatch:
+env:
+  REGISTRY: ams.vultrcr.com/minikraken
+  IMAGE_NAME: ${{ github.repository }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  BUN_VERSION: 1.2.8
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2.0.1
+        with:
+          bun-version: ${{ env.BUN_VERSION }}
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: '25'
+      - name: Set Git user
+        run: |
+          git config --global user.email "releaseit@minikraken.com"
+          git config --global user.name "Release It"
+      - name: install dependencies
+        run: bun install --frozen-lockfile
+      - name: set next version
+        run: echo "NEXT_VERSION=$(bun run release --release-version)" >> $GITHUB_ENV
+      - name: Log in to the Container registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+      #- name: Extract metadata (tags, labels) for Docker
+      #  id: meta
+      #  uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
+      #  with:
+      #    images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+      - name: Build and push Docker image
+        id: push
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          tags: ${{ env.REGISTRY }}/minikraken-dot-com:v${{ env.NEXT_VERSION }} #${{ steps.meta.outputs.tags }}
+          #labels: ${{ steps.meta.outputs.labels }}
+      - name: Release new version
+        run: bun run release:ci
