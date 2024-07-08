@@ -1,5 +1,12 @@
 
 
+## [1.0.16](https://github.com/MiniKrakenIT/minikraken.com/compare/v1.0.15...v1.0.16) (2024-07-08)
+
+
+### Fix
+
+* manifest update ([d721a15](https://github.com/MiniKrakenIT/minikraken.com/commit/d721a15ca5e35e064527d59a0d8e03de30dcd80d))
+
 ## [1.0.15](https://github.com/MiniKrakenIT/minikraken.com/compare/v1.0.14...v1.0.15) (2024-07-08)
 
 ## [1.0.14](https://github.com/MiniKrakenIT/minikraken.com/compare/v1.0.13...v1.0.14) (2024-07-08)
