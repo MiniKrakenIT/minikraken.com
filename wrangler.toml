@@ -1,0 +1,10 @@
+name = "minikraken-dot-com"
+account_id = "a171abc905580955205e101493788a4d"
+
+main = "./.cloudflare/worker.js"
+site.bucket = "./.cloudflare/public"
+
+build.command = "bun build"
+
+compatibility_date = "2024-11-11"
+workers_dev = true
