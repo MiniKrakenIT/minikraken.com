@@ -1,9 +1,5 @@
 <script lang="ts">
-import '$lib/styles/app.css'
-
-import { page } from '$app/stores'
-import { Color } from '$components/enums/color'
-import Button from '$components/form/Button.svelte'
+import { page } from '$app/state'
 
 export const prerender = true
 </script>
@@ -17,7 +13,7 @@ export const prerender = true
 		</div>
 		<h1 class="text-6xl text-center">Er is iets fout gelopen</h1>
 		<div class="flex items-center mt-12">
-			<Button href="/" color={Color.PRIMARY} class="mx-auto self-center">Breng me terug</Button>
+			<button href="/">Breng me terug</button>
 		</div>
 	</div>
 </div>

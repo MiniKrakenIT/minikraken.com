@@ -1,5 +1,6 @@
 <script lang="ts">
-export const prerender = true
+let { children } = $props()
 </script>
 
-Hello world
+
+{@render children()}

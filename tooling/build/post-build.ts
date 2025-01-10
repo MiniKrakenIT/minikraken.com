@@ -1,4 +1,4 @@
-import fs from 'node:fs'
+/*import fs from 'node:fs'
 
 const serverFilePath = './build/handler.js'
 
@@ -20,4 +20,4 @@ const replaceCacheControl = async () => {
 	console.log('Cache control added')
 }
 
-export default replaceCacheControl()
+export default replaceCacheControl()*/
