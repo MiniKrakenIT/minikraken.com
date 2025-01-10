@@ -1,9 +1,11 @@
 <script lang="ts">
-	import '$lib/styles/app.css'
+import '$lib/styles/app.css'
 
-	import { page } from '$app/stores'
-	import Button from '$components/form/Button.svelte'
-	import { Color } from '$components/enums/color'
+import { page } from '$app/stores'
+import { Color } from '$components/enums/color'
+import Button from '$components/form/Button.svelte'
+
+export const prerender = true
 </script>
 
 <div class="h-dvh flex items-center justify-center">
