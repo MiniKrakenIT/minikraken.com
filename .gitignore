@@ -1,18 +1,30 @@
-.DS_Store
-node_modules
-/build
+# Output
+.output
+.vercel
+.netlify
+.wrangler
 /.svelte-kit
-/.ssl
-/package
-/.vite-inspect
+/build
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
 .env
 .env.*
 !.env.example
+!.env.test
+
+# Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# bun
+bunfig.toml
+
+# idea
 .idea
 
-# Sentry Config File
-.sentryclirc
-# to ignore the bunfig we make in CICD
-bunfig.toml
+# node
+node_modules
