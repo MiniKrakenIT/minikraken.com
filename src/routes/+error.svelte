@@ -6,19 +6,21 @@ export const prerender = true
 
 <div class="h-dvh flex items-center justify-center">
 	<div class="relative container block">
-		<div class="md:absolute -z-10 top-0 md:-mt-40 w-full select-none text-center overflow-hidden">
-			<div data-text={$page.status} class="glitch text-primary/30 text-40 md:text-80 font-bold">
-				<span>{$page.status}</span>
+		<div class="md:absolute -z-10 top-0 md:-mt-[10rem] w-full select-none text-center overflow-hidden">
+			<div data-text={page.status} class="glitch text-primary/30 text-[10rem] md:text-[20rem] font-bold">
+				<span>{page.status}</span>
 			</div>
 		</div>
 		<h1 class="text-6xl text-center">Er is iets fout gelopen</h1>
 		<div class="flex items-center mt-12">
-			<button href="/">Breng me terug</button>
+			<button>Breng me terug</button>
 		</div>
 	</div>
 </div>
 
 <style>
+	@import "$styles/base.css";
+
 	.glitch {
 		@apply relative;
 	}
@@ -33,7 +35,7 @@ export const prerender = true
 			opacity 5s step-end infinite,
 			font 8s step-end infinite,
 			movement 10s step-end infinite;
-		@apply top-2 left-3 text-pink-7;
+		@apply top-2 left-3 text-pink-700;
 	}
 
 	.glitch::after {
@@ -42,7 +44,7 @@ export const prerender = true
 			opacity 5s step-end infinite,
 			font 7s step-end infinite,
 			movement 8s step-end infinite;
-		@apply top-1 -left-2 text-cyan-7;
+		@apply top-1 -left-2 text-cyan-700;
 	}
 
 	.glitch::before,

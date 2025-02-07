@@ -1,0 +1,15 @@
+@import "themes.css";
+@import "daisyui/base/properties.css";
+@import "daisyui/base/reset.css";
+@import "daisyui/base/rootscrollgutter.css";
+@import "daisyui/base/rootcolor.css";
+@import "daisyui/base/scrollbar.css";
+@import "daisyui/base/rootscrolllock.css";
+@import "daisyui/utilities/typography.css";
+@import "daisyui/utilities/radius.css";
+@import "daisyui/utilities/join.css";
+@import "daisyui/utilities/glass.css";
+@import "daisyui/colors/properties.css";
+@import "daisyui/colors/states.css";
+@import "daisyui/colors/responsive.css";
+@import "fonts.css";
