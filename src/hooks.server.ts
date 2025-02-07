@@ -1,7 +1,9 @@
-export async function handle({ event, resolve }) {
-	const response = await resolve(event, {
+export const handle = async ({ event, resolve }) => {
+	return await resolve(event, {
 		transformPageChunk: ({ html }) =>
-			html.replace('%unocss-svelte-scoped.global%', 'unocss_svelte_scoped_global_styles')
+			html.replace(
+				'%unocss-svelte-scoped.global%',
+				'unocss_svelte_scoped_global_styles'
+			),
 	})
-	return response
 }
