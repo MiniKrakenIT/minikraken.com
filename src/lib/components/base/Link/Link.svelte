@@ -1,18 +1,10 @@
 <script lang="ts">
-import { Color, type Style } from '$components/Link/Link'
-import type { Snippet } from 'svelte'
-import type { HTMLAnchorAttributes } from 'svelte/elements'
+import type { Props } from '$components/base/Link'
+import { tpm } from '$components/utils/transformPseudoModifiers'
 
-type Props = {
-	color?: Color
-	style?: Style
-	href: string
-	children: Snippet
-} & HTMLAnchorAttributes
+let { href, color, behavior, children, class: classValue, ...rest }: Props = $props()
 
-let { href, color, style, children, class: classValue, ...rest }: Props = $props()
-
-const classes = $derived(['link', color && `link-${color}`, style && `link-${style}`, classValue])
+const classes = $derived(['link', tpm('link', color), tpm('link', behavior), classValue])
 </script>
 
 <a {href} class={classes} {...rest}>
