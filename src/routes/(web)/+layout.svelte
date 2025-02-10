@@ -1,10 +1,8 @@
 <script lang="ts">
-import MenuIcon from '$assets/icons/MenuIcon.svelte'
+import '$styles/themes.css'
 import Navigation from '$lib/sections/home/Navigation.svelte'
 
 let { children } = $props()
-
-let open = $state(false)
 </script>
 
 <svelte:head>
@@ -18,8 +16,7 @@ let open = $state(false)
 </svelte:head>
 
 <div class="contents">
-	<Navigation/>
-	<MenuIcon onClick={() => open = !open} open={open}/>
+	<Navigation />
 	{@render children()}
 </div>
 

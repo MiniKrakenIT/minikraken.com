@@ -35,11 +35,7 @@ export default defineConfig({
 	},
 	presets: [
 		presetUno({
-			variablePrefix: 'tw-',
-			dark: {
-				light: '[data-theme="light"], @media (prefers-color-scheme: light)',
-				dark: '[data-theme="dark"], @media (prefers-color-scheme: dark)'
-			}
+			variablePrefix: 'tw-'
 		}),
 		presetTypography()
 	],

@@ -1,4 +1,5 @@
 <script lang="ts">
+import '$styles/themes.css'
 import { page } from '$app/state'
 
 export const prerender = true
@@ -21,36 +22,42 @@ export const prerender = true
 <style>
 	@import "$styles/base.css";
 
-	.glitch {
-		@apply relative;
-	}
+    .glitch {
+        position: relative;
+    }
 
 	.glitch span {
 		animation: paths 5s step-end infinite;
 	}
 
-	.glitch::before {
-		animation:
-			paths 5s step-end infinite,
-			opacity 5s step-end infinite,
-			font 8s step-end infinite,
-			movement 10s step-end infinite;
-		@apply top-2 left-3 text-pink-700;
-	}
+    .glitch::before {
+        animation:
+            paths 5s step-end infinite,
+            opacity 5s step-end infinite,
+            font 8s step-end infinite,
+            movement 10s step-end infinite;
+        top: 0.5rem;
+        left: 0.75rem;
+        color: rgb(219 39 119); /* Tailwind's pink-700 */
+    }
 
-	.glitch::after {
-		animation:
-			paths 5s step-end infinite,
-			opacity 5s step-end infinite,
-			font 7s step-end infinite,
-			movement 8s step-end infinite;
-		@apply top-1 -left-2 text-cyan-700;
-	}
+    .glitch::after {
+        animation:
+            paths 5s step-end infinite,
+            opacity 5s step-end infinite,
+            font 7s step-end infinite,
+            movement 8s step-end infinite;
+        top: 0.25rem;
+        left: -0.5rem;
+        color: rgb(8 145 178); /* Tailwind's cyan-700 */
+    }
 
 	.glitch::before,
 	.glitch::after {
 		content: attr(data-text);
-		@apply absolute w-11/10 -z-1;
+		position: absolute;
+		width: 110%;
+		z-index: -1;
 	}
 
 	@keyframes paths {
@@ -304,49 +311,54 @@ export const prerender = true
 
 	@keyframes movement {
 		0% {
-			@apply top-0 -left-5;
+			top: 0;
+			left: -1.25rem; /* Tailwind value for -left-5 */
 		}
 
 		15% {
-			@apply top-2 left-2;
+			top: 0.5rem; /* Tailwind value for top-2 */
+			left: 0.5rem; /* Tailwind value for left-2 */
 		}
 
 		60% {
-			@apply top-1 -left-2;
+			top: 0.25rem; /* Tailwind value for top-1 */
+			left: -0.5rem; /* Tailwind value for -left-2 */
 		}
 
 		75% {
-			@apply -top-1 left-5;
+			top: -0.25rem; /* Tailwind value for -top-1 */
+			left: 1.25rem; /* Tailwind value for left-5 */
 		}
 
 		100% {
-			@apply top-2 left-1;
+			top: 0.5rem; /* Tailwind value for top-2 */
+			left: 0.25rem; /* Tailwind value for left-1 */
 		}
 	}
 
 	@keyframes opacity {
 		0% {
-			@apply opacity-10;
+			opacity: 0.1; /* Tailwind value for opacity-10 */
 		}
 
 		5% {
-			@apply opacity-70;
+			opacity: 0.7; /* Tailwind value for opacity-70 */
 		}
 
 		30% {
-			@apply opacity-40;
+			opacity: 0.4; /* Tailwind value for opacity-40 */
 		}
 
 		45% {
-			@apply opacity-60;
+			opacity: 0.6; /* Tailwind value for opacity-60 */
 		}
 
 		76% {
-			@apply opacity-40;
+			opacity: 0.4; /* Tailwind value for opacity-40 */
 		}
 
 		90% {
-			@apply opacity-80;
+			opacity: 0.8; /* Tailwind value for opacity-80 */
 		}
 
 		1%,
@@ -355,29 +367,39 @@ export const prerender = true
 		47%,
 		78%,
 		93% {
-			@apply opacity-0;
+			opacity: 0; /* Tailwind value for opacity-0 */
 		}
 	}
 
 	@keyframes font {
 		0% {
-			@apply font-100 text-pink-6 filter-blur-sm;
+			font-weight: 100; /* Tailwind value for font-100 */
+			color: #ec4899; /* Tailwind value for text-pink-6 */
+			filter: blur(0.125rem); /* Tailwind value for filter-blur-sm */
 		}
 
 		20% {
-			@apply font-500 text-white filter-blur-0;
+			font-weight: 500; /* Tailwind value for font-500 */
+			color: #ffffff; /* Tailwind value for text-white */
+			filter: blur(0); /* Tailwind value for filter-blur-0 */
 		}
 
 		50% {
-			@apply font-300 text-cyan-4 filter-blur-2;
+			font-weight: 300; /* Tailwind value for font-300 */
+			color: #22d3ee; /* Tailwind value for text-cyan-4 */
+			filter: blur(0.5rem); /* Tailwind value for filter-blur-2 */
 		}
 
 		60% {
-			@apply font-700 text-white filter-blur-0;
+			font-weight: 700; /* Tailwind value for font-700 */
+			color: #ffffff; /* Tailwind value for text-white */
+			filter: blur(0); /* Tailwind value for filter-blur-0 */
 		}
 
 		90% {
-			@apply font-500 text-pink-6 filter-blur-6;
+			font-weight: 500; /* Tailwind value for font-500 */
+			color: #ec4899; /* Tailwind value for text-pink-6 */
+			filter: blur(1.5rem); /* Tailwind value for filter-blur-6 */
 		}
 	}
 </style>
