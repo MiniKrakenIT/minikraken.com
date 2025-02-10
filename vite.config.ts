@@ -7,8 +7,7 @@ import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
 export default defineConfig({
 	plugins: [
 		UnoCSS({
-			classPrefix: 'tw-',
-			injectReset: '@unocss/reset/tailwind.css'
+			classPrefix: 'tw-'
 			// injectReset: '@unocss/reset/normalize.css', // see type definition for all included reset options or how to pass in your own
 			// ...other Svelte Scoped options
 		}),

@@ -17,8 +17,8 @@ export enum Size {
 	xl = 'xl'
 }
 
-export enum Style {
-	outlined = 'outlined',
+export enum Variant {
+	outline = 'outline',
 	soft = 'soft',
 	ghost = 'ghost',
 	link = 'link',
@@ -31,4 +31,9 @@ export enum Shape {
 	block = 'block',
 	square = 'square',
 	circle = 'circle'
+}
+
+//todo: something else is needed here
+export enum Behavior {
+	hover = 'hover'
 }

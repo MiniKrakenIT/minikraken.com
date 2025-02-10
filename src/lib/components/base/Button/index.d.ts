@@ -1,6 +1,5 @@
-import type { Shape } from '$components/props'
-import { Color } from '$components/props'
-import type { ResponsiveProp, ResponsivePropObject } from '$components/types'
+import { Color, Shape, Size, Variant } from '$components/props'
+import type { ResponsiveProp } from '$components/types'
 import type { Snippet } from 'svelte'
 import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements'
 
@@ -34,13 +33,13 @@ export type ButtonSizes = Size.xs | Size.sm | Size.md | Size.lg | Size.xl
  * style={ base: 'outline' }
  * style={ base: 'outline', md: 'soft' }
  */
-export type ButtonStyles =
-	| Style.outlined
-	| Style.soft
-	| Style.ghost
-	| Style.link
-	| Style.active
-	| Style.disabled
+export type ButtonVariants =
+	| Variant.outlined
+	| Variant.soft
+	| Variant.ghost
+	| Variant.link
+	| Variant.active
+	| Variant.disabled
 
 /**
  * @example
@@ -57,8 +56,8 @@ export type Props = (
 ) & {
 	color?: ResponsiveProp<ButtonColors>
 	size?: ResponsiveProp<ButtonSizes>
-	style?: ResponsiveProp<ButtonStyles>
+	variant?: ResponsiveProp<ButtonVariants>
 	shape?: ResponsiveProp<ButtonShapes>
 	href?: string | null
-	children?: Snippet
+	children: Snippet
 }
