@@ -1,10 +1,10 @@
 import type { ResponsiveProp, ResponsivePropObject } from '$components/types'
 
-const isResponsivePropObject = <T extends Enum<T>>(
+const isResponsivePropObject = <T extends string>(
 	attr: ResponsiveProp<T>
 ): attr is ResponsivePropObject<T> => typeof attr === 'object'
 
-export const tpm = <T extends Enum<T>>(prefix: string, attr: ResponsiveProp<T> | undefined) => {
+export const tpm = <T extends string>(prefix: string, attr: ResponsiveProp<T> | undefined) => {
 	if (attr === undefined) return
 
 	if (isResponsivePropObject(attr)) {
