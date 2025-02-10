@@ -4,7 +4,7 @@
 	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
-		"dev": "bunx --bun vite dev",
+		"dev": "bunx --bun vite dev --host",
 		"build": "bunx --bun vite build",
 		"postbuild": "bun run -bun tooling/build/post-build.ts",
 		"preview": "bunx --bun vite preview",
