@@ -41,17 +41,15 @@ const navigations = [
 
 <header class="fixed w-full z-100 mt-8 sm:mt-12 lg:mt-20">
 	<div class="relative box-border flex justify-between items-center px-8 sm:px-12 lg:px-20 box-border mx-auto">
-		<div class="relative flex items-center justify-center">
-			<a class="w-14" title="Home" href="/" aria-label="Home" >
-				<img
-					class="object-cover object-center"
-					src={logo}
-					alt="MiniKraken Logo"
-					loading="eager"
-				/>
-			</a>
+		<a class="w-14 flex items-center" title="Home" href="/" aria-label="Home" >
+			<img
+				class="object-cover object-center"
+				src={logo}
+				alt="MiniKraken Logo"
+				loading="eager"
+			/>
 			<div class="text-gray-950 font-bold text-3xl lg:text-4xl hidden sm:block">MiniKraken</div>
-		</div>
+		</a>
 		<div class="hidden md:block">
 			{@render navigation()}
 		</div>
