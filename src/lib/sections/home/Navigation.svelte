@@ -34,7 +34,7 @@ const navigations = [
 {#snippet navigation()}
 	<nav class="relative md:flex">
 		{#each navigations as {name, href}}
-			<Link class="nav-item" behavior="{Behavior.hover}" {href}>{name}</Link>
+			<Link class="flex items-center p-4 font-bold md:font-medium text-[10vw] md:text-4 md:text-base-300 bg-blend-multiply" behavior={Behavior.hover} {href}>{name}</Link>
 		{/each}
 	</nav>
 {/snippet}
@@ -45,7 +45,7 @@ const navigations = [
 			<a class="w-14" title="Home" href="/" aria-label="Home" >
 				<img
 					class="object-cover object-center"
-					src="{ logo }"
+					src={logo}
 					alt="MiniKraken Logo"
 					loading="eager"
 				/>
@@ -61,21 +61,17 @@ const navigations = [
 
 {#if openMobileMenu}
 	<div class="absolute z-200 inset-0 w-full h-full flex justify-center items-center">
-		<div class="absolute w-full h-full backdrop-blur-md background"></div>
-		<X class="color-base-content w-16 h-16 absolute z-205 top-9 right-8 sm:(top-13 right-12) p-2 select-none" stroke-width="1.5" onclick={toggleMobileMenu}/>
+		<div class="absolute w-full h-full backdrop-blur-8 menu-background"></div>
+		<X class="color-base-content w-16 h-16 absolute z-205 top-7 right-6 sm:(top-11 right-10) p-2 select-none" stroke-width="1.5" onclick={toggleMobileMenu}/>
 		<div class="flex relative w-80%">
 			{@render navigation()}
 		</div>
 	</div>
 {/if}
 
-<style lang="postcss">
-	.background {
-		background-image: radial-gradient(rgba(0,0,0,.8) 2px, black 2px);
+<style>
+	.menu-background {
+		background-image: radial-gradient(color-mix(in oklch, var(--color-base-100) 65%, transparent 35%) 2px, var(--color-base-100) 2px);
 		background-size: 10px 10px;
-	}
-
-	:global(.nav-item) {
-      @apply flex items-center p-4 font-bold md:font-medium text-[10vw] md:text-4 md:text-base-300 bg-blend-multiply
 	}
 </style>
