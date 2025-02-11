@@ -14,6 +14,9 @@ export default defineConfig({
 			'base-100': 'var(--color-base-100)',
 			'base-200': 'var(--color-base-200)',
 			'base-300': 'var(--color-base-300)',
+			'passive-100': 'var(--color-passive-100)',
+			'passive-200': 'var(--color-passive-200)',
+			'passive-300': 'var(--color-passive-300)',
 			'base-content': 'var(--color-base-content)',
 			primary: 'var(--color-primary)',
 			'primary-content': 'var(--color-primary-content)',
@@ -35,7 +38,8 @@ export default defineConfig({
 	},
 	presets: [
 		presetUno({
-			variablePrefix: 'tw-'
+			variablePrefix: 'tw-',
+			dark: 'media'
 		}),
 		presetTypography()
 	],

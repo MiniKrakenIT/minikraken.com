@@ -1,6 +1,7 @@
 <script lang="ts">
 import '$styles/base-required.css'
-import Navigation from '$lib/sections/home/Navigation.svelte'
+import Footer from '$lib/sections/footer/Footer.svelte'
+import Navigation from '$lib/sections/navigation/Navigation.svelte'
 
 let { children } = $props()
 </script>
@@ -18,6 +19,7 @@ let { children } = $props()
 
 <Navigation />
 {@render children()}
+<Footer />
 
 <style>
 	@import "$styles/base.css";
