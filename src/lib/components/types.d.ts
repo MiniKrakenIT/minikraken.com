@@ -1,7 +1,7 @@
 export type ResponsiveProp<T extends string> = T | ResponsivePropObject<T>
 
 export interface ResponsivePropObject<T extends string> {
-	base: T
+	base?: T
 	xs?: T
 	sm?: T
 	md?: T

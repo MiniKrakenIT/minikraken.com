@@ -15,7 +15,7 @@ import { Color, Size, Variant } from '$components/props'
 					<p class="mt-6 max-w-lg text-xl font-medium text-gray-950 sm:text-2xl">
 						Radiant helps you sell more by revealing sensitive information about your customers.
 					</p>
-					<div class="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
+					<div class="flex flex-col sm:flex-row gap-x-6 gap-y-4 mt-12  sm:justify-center md:justify-start">
 						<Button variant={Variant.soft} size={{base: Size.md, md: Size.lg}}>
 							Get started
 						</Button>

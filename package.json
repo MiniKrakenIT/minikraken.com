@@ -10,6 +10,7 @@
 		"preview": "bunx --bun vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"check:biome": "bunx biome check --write .",
 		"format": "bunx biome format --write .",
 		"lint": "bunx biome lint --write ."
 	},
@@ -35,6 +36,7 @@
 		"posthog-js": "^1.216.1",
 		"release-it": "^18.1.2",
 		"sharp": "^0.33.5",
+		"super-sitemap": "^1.0.3",
 		"svelte": "^5.19.9",
 		"svelte-check": "^4.1.4",
 		"svelte-language-server": "^0.17.10",
