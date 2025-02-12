@@ -15,7 +15,6 @@ let { children } = $props()
 	<meta name="description" content="Wij helpen jou als KMO efficienter te werken door het gebruik van software dat werkt."/>
 </svelte:head>
 
-
 <Navigation />
 {@render children()}
 <Footer />
