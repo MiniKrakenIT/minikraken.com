@@ -58,7 +58,7 @@ onMount(() => {
 {/snippet}
 
 <header class="fixed w-full z-100 mt-8 sm:mt-12 lg:mt-20">
-	<span class="absolute inset-3 -top-1/4 backdrop-blur-md rounded-8 h-20 mx-3 bg-light-700/50 shadow-xl opacity-0 transition-all transition-duration-400" class:opacity-100={showMenuBackground}></span>
+	<span class="absolute inset-3 -top-1/4 backdrop-blur-md rounded-8 h-20 md:mx-3 bg-light-700/50 shadow-xl opacity-0 transition-all transition-duration-500" class:opacity-100={showMenuBackground}></span>
 	<div class="relative box-border flex justify-between items-center mx-8 sm:mx-12 lg:mx-20">
 		<a class="w-14 flex items-center" title="Home" href="/" aria-label="Home" >
 			<img
@@ -88,7 +88,7 @@ onMount(() => {
 
 <style>
 	.mobile-menu-background {
-		background-image: radial-gradient(color-mix(in oklch, var(--color-base-100) 65%, transparent 35%) 2px, var(--color-base-100) 2px);
+		background-image: radial-gradient(color-mix(in oklch, var(--color-base-100) 80%, transparent 20%) 2px, var(--color-base-100) 2px);
 		background-size: 10px 10px;
 	}
 </style>
