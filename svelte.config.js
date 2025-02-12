@@ -10,6 +10,9 @@ const config = {
 		}
 	},
 	kit: {
+		csp: {
+			mode: 'auto'
+		},
 		alias: {
 			$lib: './src/lib',
 			$components: './src/lib/components',
