@@ -1,4 +1,5 @@
 <script lang="ts">
+import { browser } from '$app/environment'
 import Menu from '$assets/icons/Menu.svelte'
 import X from '$assets/icons/X.svelte'
 import logo from '$assets/logo/minikraken-small.svg'
@@ -9,6 +10,11 @@ let openMobileMenu = $state(false)
 
 const toggleMobileMenu = () => {
 	openMobileMenu = !openMobileMenu
+	if (browser && openMobileMenu) {
+		document.body.style.overflow = 'hidden'
+	} else {
+		document.body.style.overflow = 'auto'
+	}
 }
 
 const navigations = [
@@ -58,7 +64,7 @@ const navigations = [
 </header>
 
 {#if openMobileMenu}
-	<div class="absolute z-200 inset-0 w-full h-full flex justify-center items-center">
+	<div class="fixed z-200 inset-0 w-full h-full flex justify-center items-center">
 		<div class="absolute w-full h-full backdrop-blur-8 menu-background"></div>
 		<X class="color-base-content w-16 h-16 absolute z-205 top-7 right-6 sm:(top-11 right-10) p-2 select-none" stroke-width="1.5" onclick={toggleMobileMenu}/>
 		<div class="flex relative w-80%">
