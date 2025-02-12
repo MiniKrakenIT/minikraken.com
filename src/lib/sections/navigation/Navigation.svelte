@@ -58,7 +58,7 @@ onMount(() => {
 {/snippet}
 
 <header class="fixed w-full z-100 mt-8 sm:mt-12 lg:mt-20">
-	<span class="absolute inset-3 -top-1/4 backdrop-blur-md rounded-8 h-20 md:mx-3 bg-light-700/50 shadow-xl opacity-0 transition-all transition-duration-500" class:opacity-100={showMenuBackground}></span>
+	<span class="absolute inset-3 -top-1/4 backdrop-blur-md rounded-8 h-20 sm:mx-2 md:mx-3 bg-light-700/50 shadow-xl opacity-0 transition-all transition-duration-500" class:opacity-100={showMenuBackground}></span>
 	<div class="relative box-border flex justify-between items-center mx-8 sm:mx-12 lg:mx-20">
 		<a class="w-14 flex items-center" title="Home" href="/" aria-label="Home" >
 			<img
