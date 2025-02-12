@@ -52,7 +52,7 @@ onMount(() => {
 {#snippet navigation()}
 	<nav class="relative md:flex">
 		{#each navigations as {name, href}}
-			<Link class="flex items-center p-4 font-bold md:font-medium text-[10vw] md:text-4 text-slate-950 bg-blend-multiply" behavior={Behavior.hover} {href}>{name}</Link>
+			<Link class="flex items-center p-4 font-bold md:font-medium text-[10vw] md:text-4 md:text-slate-950 bg-blend-multiply" behavior={Behavior.hover} {href}>{name}</Link>
 		{/each}
 	</nav>
 {/snippet}
