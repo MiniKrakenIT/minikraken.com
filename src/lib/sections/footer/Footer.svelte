@@ -1,7 +1,7 @@
 <script>
 import logo from '$assets/logo/minikraken-small.svg'
 import Button from '$components/base/Button/Button.svelte'
-import { Color, Variant } from '$components/props.js'
+import { Variant } from '$components/props.js'
 </script>
 
 <footer>
