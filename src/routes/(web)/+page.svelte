@@ -5,7 +5,7 @@ import { Color, Size, Variant } from '$components/props'
 
 <div class="overflow-hidden">
 	<div class="relative">
-		<div class="absolute inset-3 rounded-8 ring-1 ring-black/5 ring-inset bg-[linear-gradient(115deg,var(--tw-gradient-stops))] from-[#fff1be] from-28% via-[#ee87cb] via-70% to-[#b060ff] sm:bg-[linear-gradient(145deg,var(--tw-gradient-stops))]"></div>
+		<div class="absolute inset-2 sm:inset-3 rounded-8 ring-1 ring-black/5 ring-inset bg-[linear-gradient(115deg,var(--tw-gradient-stops))] from-[#fff1be] from-28% via-[#ee87cb] via-70% to-[#b060ff] sm:bg-[linear-gradient(145deg,var(--tw-gradient-stops))]"></div>
 		<div class="relative px-6 lg:px-8">
 			<div class="mx-auto max-w-2xl lg:max-w-7xl">
 				<div class="pt-26 pb-14 sm:pt-30 sm:pb-22 md:pt-45 md:pb-48">
