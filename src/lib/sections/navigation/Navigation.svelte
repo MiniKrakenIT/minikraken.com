@@ -6,6 +6,7 @@ import logo from '$assets/logo/minikraken-small.svg'
 import Link from '$components/base/Link/Link.svelte'
 import { Behavior } from '$components/props'
 import { onMount } from 'svelte'
+import { scrollY } from 'svelte/reactivity/window'
 
 const navigations = [
 	{
@@ -39,26 +40,22 @@ const toggleMobileMenu = () => {
 }
 
 onMount(() => {
-	const onScroll = () => (showMenuBackground = window.scrollY >= 40)
-
-	window.addEventListener('scroll', onScroll, { passive: true })
-
-	return () => {
-		window.removeEventListener('scroll', onScroll)
-	}
+	$effect(() => {
+		showMenuBackground = (scrollY.current ?? 0) >= 40
+	})
 })
 </script>
 
 {#snippet navigation()}
 	<nav class="relative md:flex">
 		{#each navigations as {name, href}}
-			<Link class="flex items-center p-4 font-bold md:font-medium text-[10vw] md:text-4 md:text-slate-950 bg-blend-multiply" behavior={Behavior.hover} {href}>{name}</Link>
+			<Link class="flex items-center p-4 font-bold md:font-medium text-[10vw] md:text-4 md:text-slate-950" behavior={Behavior.hover} {href}>{name}</Link>
 		{/each}
 	</nav>
 {/snippet}
 
 <header class="fixed w-full z-100 mt-8 sm:mt-12 lg:mt-20">
-	<span class="absolute inset-3 -top-1/4 backdrop-blur-md rounded-8 h-20 sm:mx-2 md:mx-3 bg-light-700/50 shadow-xl opacity-0 transition-all transition-duration-500" class:opacity-100={showMenuBackground}></span>
+	<span class="absolute inset-3 -top-1/4 ring-1 ring-dark/7 backdrop-blur-md rounded-8 h-20 sm:mx-2 md:mx-3 bg-light-700/50 shadow-xl opacity-0 transition-all transition-duration-500" class:opacity-100={showMenuBackground}></span>
 	<div class="relative box-border flex justify-between items-center mx-8 sm:mx-12 lg:mx-20">
 		<a class="w-14 flex items-center" title="Home" href="/" aria-label="Home" >
 			<img
