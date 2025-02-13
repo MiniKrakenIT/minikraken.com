@@ -11,8 +11,6 @@ let { children } = $props()
 	<link rel="preload" as="font" href="/fonts/Axi-Bold.woff2" type="font/woff2" crossorigin="anonymous">
 	<link rel="preload" as="font" href="/fonts/Axi-Medium.woff2" type="font/woff2" crossorigin="anonymous">
 	<link rel="preload" as="font" href="/fonts/Axi-SemiBold.woff2" type="font/woff2" crossorigin="anonymous">
-	<title>Minikraken - set Sail into worry-free IT</title>
-	<meta name="description" content="Wij helpen jou als KMO efficienter te werken door het gebruik van software dat werkt."/>
 </svelte:head>
 
 <Navigation />

@@ -1,7 +1,13 @@
 <script lang="ts">
 import Button from '$components/base/Button/Button.svelte'
 import { Color, Size, Variant } from '$components/props'
+import CtaSection from '$lib/sections/cta/Cta-Section.svelte'
 </script>
+
+<svelte:head>
+	<title>Minikraken - set Sail into worry-free IT</title>
+	<meta name="description" content="Wij helpen jou als KMO efficienter te werken door het gebruik van software dat werkt."/>
+</svelte:head>
 
 <div class="overflow-hidden">
 	<div class="relative">
@@ -28,3 +34,5 @@ import { Color, Size, Variant } from '$components/props'
 		</div>
 	</div>
 </div>
+
+<CtaSection />
