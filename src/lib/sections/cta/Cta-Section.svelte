@@ -4,7 +4,7 @@ import { Variant } from '$components/props.js'
 </script>
 
 <div class="relative rounded-8 bg-[linear-gradient(115deg,var(--tw-gradient-stops))] from-[#fff1be] from-28% via-[#ee87cb] via-70% to-[#b060ff]">
-	<div class="absolute inset-2 sm:inset-3 rounded-8 bg-base-300"></div>
+	<div class="absolute inset-2 sm:inset-3 rounded-8 bg-base-200"></div>
 	<div class="px-6 lg:px-8">
 		<div class="mx-auto max-w-2xl lg:max-w-7xl">
 			<div class="relative pt-20 pb-16 text-center sm:py-24">

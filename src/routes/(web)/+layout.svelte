@@ -19,4 +19,8 @@ let { children } = $props()
 
 <style>
 	@import "$styles/base.css";
+
+	:global(html) {
+			@apply bg-base-300;
+	}
 </style>
