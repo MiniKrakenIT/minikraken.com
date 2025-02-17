@@ -2,6 +2,7 @@
 import Button from '$components/base/Button/Button.svelte'
 import { Color, Size, Variant } from '$components/props'
 import CtaSection from '$lib/sections/cta/Cta-Section.svelte'
+import BentoGrid from '$lib/sections/grid/BentoGrid.svelte'
 </script>
 
 <svelte:head>
@@ -9,7 +10,7 @@ import CtaSection from '$lib/sections/cta/Cta-Section.svelte'
 	<meta name="description" content="Wij helpen jou als KMO efficienter te werken door het gebruik van software dat werkt."/>
 </svelte:head>
 
-<div class="overflow-hidden">
+<div class="overflow-hidden bg-base-300">
 	<div class="relative">
 		<div class="absolute inset-2 sm:inset-3 rounded-8 ring-1 ring-black/5 ring-inset bg-[linear-gradient(115deg,var(--tw-gradient-stops))] from-[#fff1be] from-28% via-[#ee87cb] via-70% to-[#b060ff] sm:bg-[linear-gradient(145deg,var(--tw-gradient-stops))]"></div>
 		<div class="relative px-6 lg:px-8">
@@ -35,4 +36,6 @@ import CtaSection from '$lib/sections/cta/Cta-Section.svelte'
 	</div>
 </div>
 
-<CtaSection />
+<BentoGrid/>
+
+<CtaSection/>
