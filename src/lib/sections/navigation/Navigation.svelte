@@ -22,8 +22,8 @@ const navigations = [
 		href: '/blog'
 	},
 	{
-		name: 'Login',
-		href: '/login'
+		name: 'Over Ons',
+		href: '/over-ons'
 	}
 ]
 
