@@ -1,8 +1,14 @@
 <script lang="ts">
 import Button from '$components/base/Button/Button.svelte'
 import { Color, Size, Variant } from '$components/props'
-import CtaSection from '$lib/sections/cta/Cta-Section.svelte'
+import CtaSection from '$lib/sections/cta/CtaSection.svelte'
 import BentoGrid from '$lib/sections/grid/BentoGrid.svelte'
+
+const heroStrings = [
+	'Radiant helps you sell more by revealing sensitive information about your customers.',
+	'Radiant helps you sell more something or another',
+	'Radiant helps you sell more by revealing something or another'
+]
 </script>
 
 <svelte:head>
