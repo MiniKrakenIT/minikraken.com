@@ -144,8 +144,6 @@ import Hetzner from '$assets/partners/Hetzner.svelte'
 					<h3 class="mt-6 text-base/7 font-semibold tracking-tight">Michael Foster</h3>
 					<p class="text-sm/6 text-passive-100">Co-Founder / CTO</p>
 				</li>
-
-				<!-- More people... -->
 			</ul>
 		</div>
 	</main>
