@@ -1,9 +1,21 @@
 <script lang="ts">
 import '$styles/base-required.css'
-import Footer from '$lib/sections/footer/Footer.svelte'
-import Navigation from '$lib/sections/navigation/Navigation.svelte'
+import { onNavigate } from '$app/navigation'
+import Footer from '$lib/components/sections/footer/Footer.svelte'
+import Navigation from '$lib/components/sections/navigation/Navigation.svelte'
 
 let { children } = $props()
+
+onNavigate((navigation) => {
+	if (!document.startViewTransition) return
+
+	return new Promise((resolve) => {
+		document.startViewTransition(async () => {
+			resolve()
+			await navigation.complete
+		})
+	})
+})
 </script>
 
 <svelte:head>
@@ -13,14 +25,20 @@ let { children } = $props()
 	<link rel="preload" as="font" href="/fonts/Axi-SemiBold.woff2" type="font/woff2" crossorigin="anonymous">
 </svelte:head>
 
-<Navigation />
-{@render children()}
-<Footer />
+<div class="view-transition bg-base-300 max-w-100vw w-full box-border overflow-x-hidden">
+	<Navigation />
+	{@render children()}
+	<Footer />
+</div>
 
 <style>
 	@import "$styles/base.css";
 
 	:global(html) {
-			@apply bg-base-300;
+			@apply bg-base-100;
+	}
+
+	.view-transition {
+      view-transition-name: page-view;
 	}
 </style>
