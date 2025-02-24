@@ -16,9 +16,10 @@ const config = {
 		alias: {
 			$lib: './src/lib',
 			$components: './src/lib/components',
-			$stores: './src/lib/stores',
+			$stores: './src/lib/data/stores',
 			$styles: './src/lib/styles',
-			$assets: './src/lib/assets'
+			$assets: './src/lib/assets',
+			$data: './src/lib/data'
 		},
 		adapter: adapter({
 			config: 'wrangler.toml',
