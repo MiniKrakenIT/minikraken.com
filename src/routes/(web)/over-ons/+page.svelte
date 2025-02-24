@@ -1,10 +1,13 @@
 <script lang="ts">
-import Axiom from '$assets/partners/Axiom.svelte'
 import Backblaze from '$assets/partners/Backblaze.svelte'
 import Bitdefender from '$assets/partners/Bitdefender.svelte'
 import BunnyDotNet from '$assets/partners/BunnyDotNet.svelte'
 import ClickUp from '$assets/partners/ClickUp.svelte'
 import Hetzner from '$assets/partners/Hetzner.svelte'
+import { store } from '$stores/navigation'
+store.set({ fixedBackground: true })
+
+const partners = [Bitdefender, ClickUp, Backblaze, BunnyDotNet, Hetzner]
 </script>
 
 <div>
@@ -122,12 +125,10 @@ import Hetzner from '$assets/partners/Hetzner.svelte'
 		<div class="relative isolate -z-10 mt-32 sm:mt-48">
 			<div class="mx-auto max-w-7xl px-6 lg:px-8">
 				<h2 class="text-center text-lg/8 font-semibold">Trusted by the world’s most innovative teams</h2>
-				<div class="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center justify-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
-					<Bitdefender class="col-span-2 max-h-12 sm:col-start-auto lg:col-span-1"/>
-					<Backblaze class="col-span-2 max-h-12 sm:col-start-auto lg:col-span-1"/>
-					<ClickUp class="col-span-2 max-h-12 sm:col-start-auto lg:col-span-1"/>
-					<BunnyDotNet class="col-span-2  max-h-12 sm:col-start-2 lg:col-span-1"/>
-					<Hetzner class="col-span-2 col-start-2 max-h-12 sm:col-start-auto lg:col-span-1"/>
+				<div class="flex flex-wrap justify-center gap-x-12 gap-y-3 mt-3">
+					{#each partners as Partner}
+						<Partner class="w-40 md:w-60" />
+					{/each}
 				</div>
 			</div>
 		</div>
