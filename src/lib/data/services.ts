@@ -1,16 +1,24 @@
 export const services = [
+	'Advies op maat',
 	'Bedrijfswebsites',
 	'Interne Tools',
 	'Proces-Automatisering',
-	'Cybersecurity',
+	'Privacy & Cybersecurity',
 	'Cloud-migratie',
 	'Back-up oplossingen',
 	'Disaster Recovery',
 	'Data-beveiliging',
-	'Netwerk en wifi',
-	'Netwerkbeveiliging',
-	'Advies op maat',
+	'Netwerk-Infrastructuur',
 	'Ondersteuning',
 	'Onderhoud',
-	'Software Op Maat'
+	'Netwerk-Beveiliging',
+	'Software Op Maat',
+	'On-Prem Infrastructuur',
+	'IT Audit'
 ]
+
+// highlight sections
+// interne tools (
+// Infrastructuur (onderhoud, setup nieuwe infra, netwerk en beveiliging)
+//
+// Advies op Maat
