@@ -31,7 +31,7 @@ onNavigate((navigation) => {
 	<Footer />
 </div>
 
-<style>
+<style lang="postcss">
 	@import "$styles/base.css";
 
 	:global(html) {

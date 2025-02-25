@@ -1,5 +1,13 @@
 <script lang="ts">
-import { Alignment, type ListItems, Modifier, Placement } from '$components/Dropdown/Dropdown'
+import {
+	Alignment,
+	type ListAnchor,
+	type ListButton,
+	type ListItems,
+	Modifier,
+	Placement,
+	isListAnchor
+} from '$components/Dropdown/Dropdown'
 import { nanoid } from 'nanoid/non-secure'
 import type { Snippet } from 'svelte'
 
@@ -19,7 +27,6 @@ let {
 	alignment,
 	class: styleClasses,
 	children,
-	dropdown,
 	...rest
 }: Props = $props()
 
@@ -49,27 +56,27 @@ let list: ListItems = [
 ]
 </script>
 
-{#snippet listItemButton(item)}
+{#snippet listItemButton(item: ListButton)}
 	<button onclick={item.clickHandler}>
-		{item.name}
+		{item.text}
 	</button>
 {/snippet}
 
-{#snippet listItem(item)}
+{#snippet listItemAnchor(item: ListAnchor)}
 	<a href={item.href}>
-		{item.name}
+		{item.text}
 	</a>
 {/snippet}
 
-<div popovertarget={id} style="anchor-name:--anchor-1">
+<div data-popovertarget={id} style="anchor-name:--anchor-1">
 	{@render children()}
 </div>
 
-<ul class="dropdown menu w-52 rounded-box bg-base-100 shadow-sm" popover="" {id} style="position-anchor:--anchor-1">
+<ul class="dropdown menu w-52 rounded-box bg-base-100 shadow-sm" data-popover="{id}" style="position-anchor:--anchor-1">
 	{#each list as item}
 		<li>
-			{#if item.href}
-				{@render listItem(item)}
+			{#if isListAnchor(item)}
+				{@render listItemAnchor(item)}
 			{:else}
 				{@render listItemButton(item)}
 			{/if}
