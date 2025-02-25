@@ -23,15 +23,15 @@ onMount(() => {
 		<div class="relative px-6 lg:px-8">
 			<div class="mx-auto max-w-2xl lg:max-w-7xl">
 				<div class="pt-26 pb-14 sm:pt-30 sm:pb-22 md:pt-45 md:pb-48">
-					<h1 class="mt-4 md:mt-0 text-5xl font-medium tracking-tight text-balance text-gray-950 sm:text-7xl md:text-8xl">
+					<h1 class="mt-4 md:mt-0 text-5xl font-medium tracking-tight text-balance text-slate-800 sm:text-7xl md:text-8xl">
 						Wij helpen bij <br>
 						{#key service}
-							<span class="block py-3 font-extrabold bg-gradient-to-br from-amber-500 to-pink-500 bg-clip-text text-transparent" transition:slide={{ duration: 700 }}>
+							<span class="block py-3 text-9vw md:text-8vw lg:text-8xl font-extrabold bg-gradient-to-bl from-slate-500 to-slate-800 bg-clip-text text-transparent" transition:slide={{ duration: 700 }}>
 								{service}
 							</span>
 						{/key}
 					</h1>
-					<p class="mt-6 max-w-lg text-xl font-medium text-gray-950 sm:text-2xl">
+					<p class="mt-6 max-w-lg text-xl font-medium text-slate-800 sm:text-2xl">
 						Optimaliseer uw bedrijf en verbeter uw productiviteit met onze IT-Oplossingen.
 					</p>
 					<div class="flex flex-col sm:flex-row gap-x-6 gap-y-4 mt-12  sm:justify-center md:justify-start">
