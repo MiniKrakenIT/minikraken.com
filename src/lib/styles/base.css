@@ -12,7 +12,7 @@
 @import "daisyui/colors/responsive.css";
 @import "fonts.css";
 
-::view-transition-old(page-view) {
+/*::view-transition-old(page-view) {
 	overflow: hidden;
 	animation: roundCorners 0.15s ease-out forwards, shrinkOut 0.45s ease-out forwards;
 }
@@ -75,7 +75,7 @@
 	to {
 		transform: scale(1);
 	}
-}
+}*/
 
 @media (prefers-reduced-motion) {
 	::view-transition-group(*),
