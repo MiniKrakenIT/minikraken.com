@@ -88,7 +88,7 @@ const gridValues: ChildTemplate[] = [
 	</div>
 </div>
 
-<style>
+<style lang="postcss">
 	.title {
 			@apply mt-2 text-lg font-medium tracking-tight text-passive-100 bg-base-100 max-lg:text-center;
 	}
