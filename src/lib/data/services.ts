@@ -1,8 +1,16 @@
 export const services = [
-	'Web Design',
-	'Web Development',
+	'Bedrijfswebsites',
+	'Interne Tools',
+	'Proces-Automatisering',
+	'Cybersecurity',
+	'Cloud-migratie',
+	'Back-up oplossingen',
 	'Disaster Recovery',
-	'SEO',
-	'Marketing',
-	'Digital Marketing'
+	'Data-beveiliging',
+	'Netwerk en wifi',
+	'Netwerkbeveiliging',
+	'Advies op maat',
+	'Ondersteuning',
+	'Onderhoud',
+	'Software Op Maat'
 ]
