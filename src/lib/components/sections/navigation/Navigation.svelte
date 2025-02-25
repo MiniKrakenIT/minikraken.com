@@ -39,7 +39,7 @@ onMount(() => {
 	<nav class="relative md:flex">
 		{#each headerNavigations as {title, href}, i}
 			<div transition:blur|global={{duration: 500, delay: i * 50}}>
-				<Link class="flex items-center p-4 font-bold md:font-medium text-[10vw] md:text-4 md:text-slate-950" behavior={Behavior.hover} {href} onclick={toggleMobileMenu}>{title}</Link>
+				<Link class="flex items-center p-4 font-bold md:font-medium text-[10vw] md:text-4 md:text-slate-800" behavior={Behavior.hover} {href} onclick={toggleMobileMenu}>{title}</Link>
 			</div>
 		{/each}
 	</nav>
@@ -56,7 +56,7 @@ onMount(() => {
 					alt="MiniKraken Logo"
 					loading="eager"
 				/>
-				<div class="color-slate-950 font-bold text-3xl lg:text-4xl hidden sm:block">MiniKraken</div>
+				<div class="color-slate-800 font-bold text-3xl lg:text-4xl hidden sm:block">MiniKraken</div>
 			</a>
 		{/if}
 		{#if isMounted && !isMobile.current}
@@ -64,7 +64,7 @@ onMount(() => {
 		{/if}
 		{#if isMounted && isMobile.current}
 			<div in:blur={{duration: 500}}>
-				<Menu class="md:hidden p-2 color-slate-950 select-none w-13 h-13" stroke-width="1.8" onclick={toggleMobileMenu}></Menu>
+				<Menu class="md:hidden p-2 color-slate-800 select-none w-13 h-13" stroke-width="1.8" onclick={toggleMobileMenu}></Menu>
 			</div>
 		{/if}
 		</div>
