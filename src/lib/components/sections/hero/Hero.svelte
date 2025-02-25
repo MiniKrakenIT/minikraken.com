@@ -36,10 +36,10 @@ onMount(() => {
 					</p>
 					<div class="flex flex-col sm:flex-row gap-x-6 gap-y-4 mt-12  sm:justify-center md:justify-start">
 						<Button variant={Variant.soft} size={{base: Size.md, md: Size.lg}}>
-							Get started
+							Contacteer ons
 						</Button>
 						<Button variant={Variant.outline} color={Color.neutral} size={{base: Size.md, md: Size.lg}}>
-							See pricing
+							Success stories
 						</Button>
 					</div>
 				</div>
