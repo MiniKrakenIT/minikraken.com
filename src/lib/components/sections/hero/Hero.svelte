@@ -32,7 +32,7 @@ onMount(() => {
 						{/key}
 					</h1>
 					<p class="mt-6 max-w-lg text-xl font-medium text-slate-800 sm:text-2xl">
-						Optimaliseer uw bedrijf en verbeter uw productiviteit met onze IT-Oplossingen.
+						Boost je bedrijf met ons als jouw totaalpartner voor IT. En bouw verder, zonder IT zorgen.
 					</p>
 					<div class="flex flex-col sm:flex-row gap-x-6 gap-y-4 mt-12  sm:justify-center md:justify-start">
 						<Button variant={Variant.soft} size={{base: Size.md, md: Size.lg}}>
