@@ -25,7 +25,7 @@ onNavigate((navigation) => {
 	<link rel="preload" as="font" href="/fonts/Axi-SemiBold.woff2" type="font/woff2" crossorigin="anonymous">
 </svelte:head>
 
-<div class="view-transition bg-base-300 max-w-100vw w-full box-border overflow-x-hidden">
+<div class="max-w-500 mx-auto">
 	<Navigation />
 	{@render children()}
 	<Footer />
@@ -35,10 +35,6 @@ onNavigate((navigation) => {
 	@import "$styles/base.css";
 
 	:global(html) {
-			@apply bg-base-100;
-	}
-
-	.view-transition {
-      view-transition-name: page-view;
+			@apply bg-base-300;
 	}
 </style>
