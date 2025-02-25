@@ -39,7 +39,7 @@ $effect(() => {
 })
 </script>
 
-<span onclick={() => {open = !open}}>{@render trigger()}</span>
+<span onclick={() => {open = !open}} onkeydown={(e) => {if (e.key === 'Enter') open = !open}} role="button" tabindex="0">{@render trigger()}</span>
 <dialog bind:this={modal} class={classes}>
 	<button>{xmark}</button>
 	<div class="modal-box">

@@ -16,14 +16,19 @@ export enum Modifier {
 	OPEN = 'open'
 }
 
-export type ListItem =
-	| {
-			text: string
-			href: string
-	  }
-	| {
-			text: string
-			clickHandler: () => void
-	  }
+export interface ListAnchor {
+	text: string
+	href: string
+}
+
+export interface ListButton {
+	text: string
+	clickHandler: () => void
+}
+
+export type ListItem = ListAnchor | ListButton
 
 export type ListItems = ListItem[]
+
+export const isListAnchor = (item: ListItem): item is ListAnchor =>
+	(item as ListAnchor).href !== undefined
