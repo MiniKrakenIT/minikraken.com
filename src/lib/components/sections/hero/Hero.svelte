@@ -32,7 +32,7 @@ onMount(() => {
 						{/key}
 					</h1>
 					<p class="mt-6 max-w-lg text-xl font-medium text-gray-950 sm:text-2xl">
-						Radiant helps you sell more by revealing sensitive information about your customers.
+						Optimaliseer uw bedrijf en verbeter uw productiviteit met onze IT-Oplossingen.
 					</p>
 					<div class="flex flex-col sm:flex-row gap-x-6 gap-y-4 mt-12  sm:justify-center md:justify-start">
 						<Button variant={Variant.soft} size={{base: Size.md, md: Size.lg}}>
