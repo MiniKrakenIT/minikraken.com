@@ -60,5 +60,7 @@ export default defineConfig({
 		presetTypography()
 	],
 	transformers: [transformerDirectives(), transformerVariantGroup()],
-	extractors: [extractorSvelte()]
+	extractors: [extractorSvelte()],
+
+	rules: [[/^anim-delay-(\d+)$/, ([, d]) => ({ 'animation-delay': `${d}ms` })]]
 })
