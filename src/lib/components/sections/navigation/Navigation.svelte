@@ -9,7 +9,8 @@ import { store } from '$stores/navigation'
 import { onMount } from 'svelte'
 import { MediaQuery } from 'svelte/reactivity'
 import { scrollY } from 'svelte/reactivity/window'
-import { blur, fade } from 'svelte/transition'
+import { intro } from '$lib/utils/motion/intro'
+import { fade } from 'svelte/transition'
 
 let isMounted = $state(false)
 let showMenuBackground = $state(false)
@@ -38,7 +39,7 @@ onMount(() => {
 {#snippet navigation()}
 	<nav class="relative md:flex">
 		{#each headerNavigations as {title, href}, i}
-			<div transition:blur|global={{duration: 500, delay: i * 50}}>
+			<div use:intro={i * 2 + 4}>
 				<Link class="flex items-center p-4 font-bold md:font-medium text-[10vw] md:text-4 md:text-slate-800" behavior={Behavior.hover} {href} onclick={toggleMobileMenu}>{title}</Link>
 			</div>
 		{/each}
@@ -49,7 +50,7 @@ onMount(() => {
 	<span class="absolute inset-3 -top-1/4 ring-1 ring-dark/7 backdrop-blur-md rounded-8 h-20 sm:mx-2 md:mx-3 bg-light-700/50 shadow-xl opacity-0 transition-all transition-duration-500" class:opacity-100={showMenuBackground}></span>
 	<div class="relative box-border flex justify-between items-center mx-8 sm:mx-12 lg:mx-20">
 		{#if isMounted}
-			<a class="w-14 flex items-center" title="Home" href="/" aria-label="Home" in:blur={{duration: 500}}>
+			<a class="w-14 flex items-center" title="Home" href="/" aria-label="Home" use:intro={4}>
 				<img
 					class="object-cover object-center"
 					src={logo}
@@ -63,7 +64,7 @@ onMount(() => {
 			{@render navigation()}
 		{/if}
 		{#if isMounted && isMobile.current}
-			<div in:blur={{duration: 500}}>
+			<div use:intro>
 				<Menu class="md:hidden p-2 color-slate-800 select-none w-13 h-13" stroke-width="1.8" onclick={toggleMobileMenu}></Menu>
 			</div>
 		{/if}
