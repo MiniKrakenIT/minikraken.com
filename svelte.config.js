@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-cloudflare-workers'
+import adapter from '@sveltejs/adapter-node'
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -10,6 +10,9 @@ const config = {
 		}
 	},
 	kit: {
+		paths: {
+			assets: 'https://cdn.minikraken.com'
+		},
 		csp: {
 			mode: 'auto'
 		},
@@ -22,10 +25,7 @@ const config = {
 			$data: './src/lib/data'
 		},
 		adapter: adapter({
-			config: 'wrangler.toml',
-			platformProxy: {
-				configPath: 'wrangler.toml'
-			}
+			precompress: true
 		})
 	}
 }

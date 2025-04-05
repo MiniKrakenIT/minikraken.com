@@ -3,14 +3,22 @@ import CtaSection from '$lib/components/sections/cta/CtaSection.svelte'
 import BentoGrid from '$lib/components/sections/grid/BentoGrid.svelte'
 import Hero from '$lib/components/sections/hero/Hero.svelte'
 import { store } from '$stores/navigation'
+import { animate, stagger } from 'motion'
+import { onMount } from 'svelte'
 
 store.set({ fixedBackground: false })
 
-const heroStrings = [
-	'Radiant helps you sell more by revealing sensitive information about your customers.',
-	'Radiant helps you sell more something or another',
-	'Radiant helps you sell more by revealing something or another'
-]
+onMount(() => {
+	animate(
+		'.intro',
+		{
+			opacity: [0, 1],
+			y: ['1rem', 0],
+			filter: ['blur(10px)', 'blur(0px)']
+		},
+		{ ease: 'easeOut', duration: 0.7, delay: stagger(0.2) }
+	)
+})
 </script>
 
 <svelte:head>

@@ -54,13 +54,25 @@ export default defineConfig({
 	},
 	presets: [
 		presetUno({
-			variablePrefix: 'tw-',
-			dark: 'media'
+			variablePrefix: 'tw-'
 		}),
 		presetTypography()
 	],
 	transformers: [transformerDirectives(), transformerVariantGroup()],
 	extractors: [extractorSvelte()],
-
-	rules: [[/^anim-delay-(\d+)$/, ([, d]) => ({ 'animation-delay': `${d}ms` })]]
+	variants: [
+		(matcher) => {
+			if (matcher.startsWith('dark:')) {
+				return {
+					matcher: matcher.slice(5),
+					selector: (s) => `
+            [data-theme="dark"] ${s},
+            @media (prefers-color-scheme: dark) {
+              [data-theme="system"] ${s}
+            }
+          `
+				}
+			}
+		}
+	]
 })
