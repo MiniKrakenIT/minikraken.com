@@ -1,2 +1,7 @@
 @import "themes.css";
 @import "daisyui/base/reset.css";
+
+body {
+	min-height: 100vh;
+	display: flex;
+}

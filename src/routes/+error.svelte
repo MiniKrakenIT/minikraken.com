@@ -1,8 +1,6 @@
 <script lang="ts">
 import '$styles/themes.css'
 import { page } from '$app/state'
-
-export const prerender = true
 </script>
 
 <div class="h-dvh flex items-center justify-center">
@@ -14,7 +12,7 @@ export const prerender = true
 		</div>
 		<h1 class="text-6xl text-center">Er is iets fout gelopen</h1>
 		<div class="flex items-center mt-12">
-			<button>Breng me terug</button>
+			<a href="/">Breng me terug</a>
 		</div>
 	</div>
 </div>

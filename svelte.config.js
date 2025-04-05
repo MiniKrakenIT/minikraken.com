@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-cloudflare-workers'
+import adapter from '@sveltejs/adapter-static'
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -15,17 +15,15 @@ const config = {
 		},
 		alias: {
 			$lib: './src/lib',
-			$components: './src/lib/components',
-			$stores: './src/lib/data/stores',
 			$styles: './src/lib/styles',
-			$assets: './src/lib/assets',
-			$data: './src/lib/data'
+			$assets: './src/lib/assets'
 		},
 		adapter: adapter({
-			config: 'wrangler.toml',
-			platformProxy: {
-				configPath: 'wrangler.toml'
-			}
+			pages: 'build',
+			assets: 'build',
+			fallback: undefined,
+			precompress: true,
+			strict: true
 		})
 	}
 }
