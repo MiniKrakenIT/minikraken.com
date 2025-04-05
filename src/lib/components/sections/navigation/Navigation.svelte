@@ -9,8 +9,9 @@ import { store } from '$stores/navigation'
 import { onMount } from 'svelte'
 import { MediaQuery } from 'svelte/reactivity'
 import { scrollY } from 'svelte/reactivity/window'
-import { intro } from '$lib/utils/motion/intro'
 import { fade } from 'svelte/transition'
+import { intro as navIntro } from '$lib/utils/motion/navigation-intro'
+import { intro } from '$lib/utils/motion/blur-intro'
 
 let isMounted = $state(false)
 let showMenuBackground = $state(false)
@@ -37,34 +38,34 @@ onMount(() => {
 <svelte:body class:overflow-hidden={openMobileMenu} />
 
 {#snippet navigation()}
-	<nav class="relative md:flex">
-		{#each headerNavigations as {title, href}, i}
-			<div use:intro={i * 2 + 4}>
-				<Link class="flex items-center p-4 font-bold md:font-medium text-[10vw] md:text-4 md:text-slate-800" behavior={Behavior.hover} {href} onclick={toggleMobileMenu}>{title}</Link>
+	<nav use:navIntro={{selector: '.nav-item', delay: isMobile.current ? .2 : 1.4}} class="relative md:flex">
+		{#each headerNavigations as {title, href}}
+			<div>
+				<Link class="nav-item flex items-center p-4 font-bold md:font-medium text-[10vw] md:text-4 md:text-slate-8" behavior={Behavior.hover} {href} onclick={toggleMobileMenu}>{title}</Link>
 			</div>
 		{/each}
 	</nav>
 {/snippet}
 
 <header class="fixed max-w-500 w-full z-100 mt-8 sm:mt-12 lg:mt-20">
-	<span class="absolute inset-3 -top-1/4 ring-1 ring-dark/7 backdrop-blur-md rounded-8 h-20 sm:mx-2 md:mx-3 bg-light-700/50 shadow-xl opacity-0 transition-all transition-duration-500" class:opacity-100={showMenuBackground}></span>
+	<span class="absolute inset-3 -top-1/4 ring-1 ring-dark/7 backdrop-blur-md rounded-8 h-20 sm:mx-2 md:mx-3 shadow-xl opacity-0 transition-all transition-duration-500 bg-light-7/60" class:opacity-100={showMenuBackground}></span>
 	<div class="relative box-border flex justify-between items-center mx-8 sm:mx-12 lg:mx-20">
 		{#if isMounted}
-			<a class="w-14 flex items-center" title="Home" href="/" aria-label="Home" use:intro={4}>
+			<a use:intro={{delay: 1.4}} class="w-14 flex items-center" title="Home" href="/" aria-label="Home">
 				<img
 					class="object-cover object-center"
 					src={logo}
 					alt="MiniKraken Logo"
 					loading="eager"
 				/>
-				<div class="color-slate-800 font-bold text-3xl lg:text-4xl hidden sm:block">MiniKraken</div>
+				<div class="font-bold text-3xl lg:text-4xl hidden sm:block md:text-slate-8">MiniKraken</div>
 			</a>
 		{/if}
 		{#if isMounted && !isMobile.current}
 			{@render navigation()}
 		{/if}
 		{#if isMounted && isMobile.current}
-			<div use:intro>
+			<div use:intro={{delay: 1.4}}>
 				<Menu class="md:hidden p-2 color-slate-800 select-none w-13 h-13" stroke-width="1.8" onclick={toggleMobileMenu}></Menu>
 			</div>
 		{/if}

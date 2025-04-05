@@ -1,6 +1,4 @@
 <script lang="ts">
-import { inViewIntro } from '$lib/utils/motion/in-view-intro'
-
 type ChildTemplate = {
 	title: string
 	subtitle: string
@@ -40,10 +38,10 @@ const gridValues: ChildTemplate[] = [
 
 <div class="py-24 sm:py-32">
 	<div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-		<h2 use:inViewIntro={2} class="text-center text-base/7 font-semibold text-primary">Deploy faster</h2>
-		<p use:inViewIntro={2} class="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance sm:text-5xl">Everything you need to deploy your app</p>
+		<h2 class="text-center text-base/7 font-semibold text-primary">Deploy faster</h2>
+		<p class="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance sm:text-5xl">Everything you need to deploy your app</p>
 		<div class="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
-			<div use:inViewIntro={2} class="relative lg:row-span-2">
+			<div class="relative lg:row-span-2">
 				<div class="card lg:!rounded-l-[2rem]">
 					<div class="card-text pb-3 sm:pb-0">
 						<p class="title">Mobile friendly</p>
@@ -56,7 +54,7 @@ const gridValues: ChildTemplate[] = [
 					</div>
 				</div>
 			</div>
-			<div use:inViewIntro={2} class="relative max-lg:row-start-1">
+			<div class="relative max-lg:row-start-1">
 				<div class="card max-lg:!rounded-t-[2rem]">
 					<div class="card-text">
 						<p class="title">Performance</p>
@@ -67,7 +65,7 @@ const gridValues: ChildTemplate[] = [
 					</div>
 				</div>
 			</div>
-			<div use:inViewIntro={2} class="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2">
+			<div class="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2">
 				<div class="card">
 					<div class="card-text">
 						<p class="title">Security</p>
@@ -78,7 +76,7 @@ const gridValues: ChildTemplate[] = [
 					</div>
 				</div>
 			</div>
-			<div use:inViewIntro={2} class="relative lg:row-span-2">
+			<div class="relative lg:row-span-2">
 				<div class="card max-lg:!rounded-b-[2rem] lg:!rounded-r-[2rem]">
 					<div class="card-text pb-3 sm:pb-0">
 						<p class="title">Powerful APIs</p>

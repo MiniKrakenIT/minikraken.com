@@ -1,8 +1,6 @@
 <script lang="ts">
 import { store } from '$stores/navigation'
 
-export const prerender = true
-
 store.set({ fixedBackground: true })
 </script>
 
