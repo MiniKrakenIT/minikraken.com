@@ -1,15 +1,14 @@
 <script lang="ts">
 import { store } from '$stores/navigation'
-store.set({ fixedBackground: true })
 
-export const prerender = true
+store.set({ fixedBackground: true })
 </script>
 
 <div class="max-w-3xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
 	<div class="prose">
 		<h1>Cookie Policy</h1>
 		<p><strong>Last Updated: February 23, 2025</strong></p>
-		<p>This Cookie Policy explains how <span class="font-semibold">[Your Website Name]</span> ("we," "us," or "our") uses cookies and similar technologies on <a href="[yourwebsite.com]" class="underline">[yourwebsite.com]</a> (the "Site"). We’re committed to protecting your privacy under the General Data Protection Regulation (GDPR) if you’re in the EU/EEA.</p>
+		<p>This Cookie Policy explains how <span class="font-semibold">[Your Website Name]</span> ("we," "us," or "our") uses cookies and similar technologies on <a href="#" class="underline">[yourwebsite.com]</a> (the "Site"). We’re committed to protecting your privacy under the General Data Protection Regulation (GDPR) if you’re in the EU/EEA.</p>
 
 		<h2>What Are Cookies?</h2>
 		<p>Cookies are small text files stored on your device to help the Site work, improve your experience, or analyze usage.</p>

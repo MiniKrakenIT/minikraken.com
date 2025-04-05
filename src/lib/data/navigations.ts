@@ -7,16 +7,16 @@ export type Navigations = Navigation[]
 
 export const headerNavigations: Navigations = [
 	{
-		title: 'Pricing',
-		href: '/pricing'
+		title: 'Over Ons',
+		href: '/over-ons'
 	},
 	{
-		title: 'Company',
-		href: '/company'
+		title: 'Over Ons',
+		href: '/over-ons'
 	},
 	{
-		title: 'Blog',
-		href: '/blog'
+		title: 'Over Ons',
+		href: '/over-ons'
 	},
 	{
 		title: 'Over Ons',
@@ -27,14 +27,14 @@ export const headerNavigations: Navigations = [
 export const footerNavigations: Navigations = [
 	{
 		title: 'Legal',
-		href: '/legal'
+		href: '/legal/cookie-policy'
 	},
 	{
-		title: 'Partners',
-		href: '/partners'
+		title: 'Legal',
+		href: '/legal/cookie-policy'
 	},
 	{
-		title: 'Contact',
-		href: '/contact'
+		title: 'Legal',
+		href: '/legal/cookie-policy'
 	}
 ]
