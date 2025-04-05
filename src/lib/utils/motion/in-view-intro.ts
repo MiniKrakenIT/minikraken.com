@@ -1,8 +1,10 @@
 import type { Action } from 'svelte/action'
 import { animate, inView } from 'motion'
 
-export const inViewIntro: Action<Element, number | undefined> = (node, index = 1) => {
-	inView(node, (element) => {
+export const inViewIntro: Action<HTMLElement, number | undefined> = (element, index = 1) => {
+	element.style.opacity = '0'
+
+	inView(element, (element) => {
 		animate(
 			element,
 			{
