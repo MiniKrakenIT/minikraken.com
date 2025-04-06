@@ -26,7 +26,7 @@ onNavigate((navigation) => {
 </svelte:head>
 
 <div class="mx-auto relative w-full" data-theme="dark">
-	<nav class="flex items-center w-full absolute p-4 box-border z-2 max-w-500">
+	<nav class="flex items-center justify-center w-full absolute p-4 box-border z-2 max-w-500">
 		<img src="{logo}" alt="Minikraken" class="h-15">
 		<p class="text-3xl font-bold mt-2">MiniKraken</p>
 	</nav>
