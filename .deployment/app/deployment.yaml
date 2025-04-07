@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minikraken-dot-com
+  labels:
+    app: minikraken-dot-com
+  namespace: minikraken-dot-com
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: minikraken-dot-com
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: minikraken-dot-com
+    spec:
+      imagePullSecrets:
+        - name: vultr-cr-credentials
+      containers:
+        - name: minikraken-dot-com
+          image: ams.vultrcr.com/minikraken/minikraken-dot-com:v0.0.1
+          ports:
+            - containerPort: 3000
+          env:
+            - name: PROTOCOL_HEADER
+              value: X-Forwarded-Proto
+            - name: ADDRESS_HEADER
+              value: X-Forwarded-For
+            - name: XFF_DEPTH
+              value: '2'
+          securityContext:
+            runAsUser: 1000
+            runAsGroup: 1000
+            readOnlyRootFilesystem: true
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+          resources:
+            limits:
+              memory: 512Mi
+              cpu: 500m
+            requests:
+              memory: 128Mi
+              cpu: 50m
+      automountServiceAccountToken: false

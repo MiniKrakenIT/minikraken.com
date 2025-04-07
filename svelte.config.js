@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-node'
+import adapter from '@jonasbuerger/svelte-adapter-bun'
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -10,9 +10,9 @@ const config = {
 		}
 	},
 	kit: {
-		paths: {
+		/*paths: {
 			assets: 'https://cdn.minikraken.com'
-		},
+		},*/
 		csp: {
 			mode: 'auto'
 		},
@@ -25,7 +25,20 @@ const config = {
 			$data: './src/lib/data'
 		},
 		adapter: adapter({
-			precompress: true
+			//out: "build",
+			precompress: {
+				brotli: true,
+				gzip: true
+				//files: ["htm", "html", "js", "json", "css", "svg", "xml"],
+			}
+			/*tls: { //todo: make that kubernetes injects it into a certain folder so we can use native http2
+				key: "server.key",
+				cert: "server.crt",
+			},*/
+			//protocol_header: 'X-Forwarded-Proto', //PROTOCOL_HEADER
+			//host_header: "X-Forwarded-Host", //HOST_HEADER
+			//address_header: 'X-Forwarded-For', //ADDRESS_HEADER
+			//xff_depth: 2
 		})
 	}
 }

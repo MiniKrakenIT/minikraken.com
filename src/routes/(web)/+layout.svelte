@@ -20,6 +20,7 @@ onNavigate((navigation) => {
 </script>
 
 <svelte:head>
+	<style>@layer base, utilities;</style>
 	<link rel="preload" as="font" href="{assets}/fonts/Axi-Book.woff2" type="font/woff2" crossorigin="anonymous">
 	<link rel="preload" as="font" href="{assets}/fonts/Axi-Bold.woff2" type="font/woff2" crossorigin="anonymous">
 	<link rel="preload" as="font" href="{assets}/fonts/Axi-Medium.woff2" type="font/woff2" crossorigin="anonymous">
