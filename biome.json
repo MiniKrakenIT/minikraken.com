@@ -3,7 +3,7 @@
 	"vcs": { "enabled": false, "clientKind": "git", "useIgnoreFile": false },
 	"files": {
 		"ignoreUnknown": false,
-		"ignore": [".wrangler/", ".svelte-kit/", ".cloudflare/", ".idea/", "bun.lockb"]
+		"includes": ["**", "!**/.svelte-kit/", "!**/.idea/", "!**/bun.lockb"]
 	},
 	"formatter": {
 		"enabled": true,
@@ -16,7 +16,13 @@
 		"attributePosition": "auto",
 		"bracketSpacing": true
 	},
-	"organizeImports": { "enabled": true },
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": "on"
+			}
+		}
+	},
 	"linter": {
 		"enabled": true,
 		"rules": { "recommended": false, "style": { "useBlockStatements": "off" } }
@@ -36,7 +42,7 @@
 	},
 	"overrides": [
 		{
-			"include": ["*.svelte", "**/*.svelte"],
+			"includes": ["**/*.svelte", "**/*.svelte"],
 			"javascript": { "globals": [] },
 			"linter": {
 				"rules": {
@@ -44,6 +50,6 @@
 				}
 			}
 		},
-		{ "include": ["*.svelte"] }
+		{ "includes": ["**/*.svelte"] }
 	]
 }
