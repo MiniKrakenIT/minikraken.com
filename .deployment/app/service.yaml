@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: minikraken-dot-com
+  namespace: minikraken-dot-com
+  labels:
+    app: minikraken-dot-com
+    service: minikraken-dot-com
+spec:
+  ports:
+    - name: http
+      port: 3000
+      targetPort: 3000
+  selector:
+    app: minikraken-dot-com

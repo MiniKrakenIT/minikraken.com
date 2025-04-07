@@ -1,0 +1,38 @@
+
+# Node modules
+node_modules
+
+# Build output
+build
+.svelte-kit
+
+# Logs
+logs
+*.log
+
+# Local environment files
+.env
+.env.*.local
+
+# IDE and editor settings
+.idea/
+.DS_Store
+
+# System files
+*.lock
+Thumbs.db
+
+# no github actions
+.github/
+
+# no deployment files
+.deployment/
+
+# no need for toolingg
+biome.json
+.release-it.ts
+
+# no need for changelog
+CHANGELOG.md
+
+!bun.lock
