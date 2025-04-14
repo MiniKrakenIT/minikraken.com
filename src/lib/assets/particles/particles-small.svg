@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="100%" height="100%" viewBox="0 0 2000 2000" preserveAspectRatio="xMidYMid slice">
+    <!-- Original 50 circles -->
+    <circle cx="67" cy="317" r="1.5" fill="#FFF" />
+    <circle cx="231" cy="182" r="1.5" fill="#FFF" />
+    <circle cx="396" cy="498" r="1.5" fill="#FFF" />
+    <circle cx="564" cy="42" r="1.5" fill="#FFF" />
+    <circle cx="721" cy="791" r="1.5" fill="#FFF" />
+    <circle cx="895" cy="158" r="1.5" fill="#FFF" />
+    <circle cx="1042" cy="602" r="1.5" fill="#FFF" />
+    <circle cx="1215" cy="1367" r="1.5" fill="#FFF" />
+    <circle cx="1387" cy="927" r="1.5" fill="#FFF" />
+    <circle cx="1542" cy="196" r="1.5" fill="#FFF" />
+
+    <circle cx="142" cy="932" r="1.5" fill="#FFF" />
+    <circle cx="293" cy="1487" r="1.5" fill="#FFF" />
+    <circle cx="432" cy="1267" r="1.5" fill="#FFF" />
+    <circle cx="614" cy="887" r="1.5" fill="#FFF" />
+    <circle cx="779" cy="1571" r="1.5" fill="#FFF" />
+    <circle cx="938" cy="1098" r="1.5" fill="#FFF" />
+    <circle cx="1076" cy="1782" r="1.5" fill="#FFF" />
+    <circle cx="1264" cy="462" r="1.5" fill="#FFF" />
+    <circle cx="1432" cy="1843" r="1.5" fill="#FFF" />
+    <circle cx="1625" cy="512" r="1.5" fill="#FFF" />
+
+    <circle cx="82" cy="1678" r="1.5" fill="#FFF" />
+    <circle cx="1843" cy="723" r="1.5" fill="#FFF" />
+    <circle cx="412" cy="354" r="1.5" fill="#FFF" />
+    <circle cx="1587" cy="1712" r="1.5" fill="#FFF" />
+    <circle cx="1943" cy="673" r="1.5" fill="#FFF" />
+    <circle cx="302" cy="1746" r="1.5" fill="#FFF" />
+    <circle cx="1087" cy="98" r="1.5" fill="#FFF" />
+    <circle cx="1954" cy="1762" r="1.5" fill="#FFF" />
+    <circle cx="123" cy="1287" r="1.5" fill="#FFF" />
+    <circle cx="1862" cy="254" r="1.5" fill="#FFF" />
+
+    <circle cx="1776" cy="1863" r="1.5" fill="#FFF" />
+    <circle cx="307" cy="112" r="1.5" fill="#FFF" />
+    <circle cx="1472" cy="1842" r="1.5" fill="#FFF" />
+    <circle cx="598" cy="1917" r="1.5" fill="#FFF" />
+    <circle cx="167" cy="452" r="1.5" fill="#FFF" />
+    <circle cx="1927" cy="1326" r="1.5" fill="#FFF" />
+    <circle cx="682" cy="1547" r="1.5" fill="#FFF" />
+    <circle cx="1247" cy="621" r="1.5" fill="#FFF" />
+    <circle cx="413" cy="1673" r="1.5" fill="#FFF" />
+    <circle cx="1592" cy="394" r="1.5" fill="#FFF" />
+
+    <circle cx="1789" cy="1032" r="1.5" fill="#FFF" />
+    <circle cx="243" cy="1892" r="1.5" fill="#FFF" />
+    <circle cx="917" cy="323" r="1.5" fill="#FFF" />
+    <circle cx="1572" cy="797" r="1.5" fill="#FFF" />
+    <circle cx="128" cy="1645" r="1.5" fill="#FFF" />
+    <circle cx="913" cy="1503" r="1.5" fill="#FFF" />
+    <circle cx="1667" cy="236" r="1.5" fill="#FFF" />
+    <circle cx="538" cy="1112" r="1.5" fill="#FFF" />
+    <circle cx="1392" cy="962" r="1.5" fill="#FFF" />
+    <circle cx="57" cy="1407" r="1.5" fill="#FFF" />
+
+    <!-- Additional 50 circles, well-spaced -->
+    <circle cx="346" cy="754" r="1.5" fill="#FFF" />
+    <circle cx="842" cy="427" r="1.5" fill="#FFF" />
+    <circle cx="1156" cy="238" r="1.5" fill="#FFF" />
+    <circle cx="1731" cy="524" r="1.5" fill="#FFF" />
+    <circle cx="1829" cy="1254" r="1.5" fill="#FFF" />
+    <circle cx="487" cy="1432" r="1.5" fill="#FFF" />
+    <circle cx="864" cy="1754" r="1.5" fill="#FFF" />
+    <circle cx="1276" cy="1512" r="1.5" fill="#FFF" />
+    <circle cx="1634" cy="1137" r="1.5" fill="#FFF" />
+    <circle cx="325" cy="678" r="1.5" fill="#FFF" />
+
+    <circle cx="732" cy="254" r="1.5" fill="#FFF" />
+    <circle cx="1124" cy="836" r="1.5" fill="#FFF" />
+    <circle cx="1532" cy="1478" r="1.5" fill="#FFF" />
+    <circle cx="254" cy="1327" r="1.5" fill="#FFF" />
+    <circle cx="521" cy="753" r="1.5" fill="#FFF" />
+    <circle cx="978" cy="642" r="1.5" fill="#FFF" />
+    <circle cx="1354" cy="384" r="1.5" fill="#FFF" />
+    <circle cx="1823" cy="1547" r="1.5" fill="#FFF" />
+    <circle cx="364" cy="1867" r="1.5" fill="#FFF" />
+    <circle cx="782" cy="1243" r="1.5" fill="#FFF" />
+
+    <circle cx="1143" cy="1157" r="1.5" fill="#FFF" />
+    <circle cx="1657" cy="1394" r="1.5" fill="#FFF" />
+    <circle cx="187" cy="587" r="1.5" fill="#FFF" />
+    <circle cx="547" cy="236" r="1.5" fill="#FFF" />
+    <circle cx="854" cy="927" r="1.5" fill="#FFF" />
+    <circle cx="1267" cy="784" r="1.5" fill="#FFF" />
+    <circle cx="1748" cy="674" r="1.5" fill="#FFF" />
+    <circle cx="273" cy="1043" r="1.5" fill="#FFF" />
+    <circle cx="634" cy="1654" r="1.5" fill="#FFF" />
+    <circle cx="1032" cy="1346" r="1.5" fill="#FFF" />
+
+    <circle cx="465" cy="624" r="1.5" fill="#FFF" />
+    <circle cx="986" cy="518" r="1.5" fill="#FFF" />
+    <circle cx="1423" cy="176" r="1.5" fill="#FFF" />
+    <circle cx="1893" cy="421" r="1.5" fill="#FFF" />
+    <circle cx="1756" cy="1421" r="1.5" fill="#FFF" />
+    <circle cx="532" cy="1578" r="1.5" fill="#FFF" />
+    <circle cx="725" cy="1864" r="1.5" fill="#FFF" />
+    <circle cx="1182" cy="1623" r="1.5" fill="#FFF" />
+    <circle cx="1563" cy="1007" r="1.5" fill="#FFF" />
+    <circle cx="218" cy="785" r="1.5" fill="#FFF" />
+
+    <circle cx="649" cy="358" r="1.5" fill="#FFF" />
+    <circle cx="1189" cy="732" r="1.5" fill="#FFF" />
+    <circle cx="1673" cy="1586" r="1.5" fill="#FFF" />
+    <circle cx="376" cy="1184" r="1.5" fill="#FFF" />
+    <circle cx="476" cy="872" r="1.5" fill="#FFF" />
+    <circle cx="1057" cy="475" r="1.5" fill="#FFF" />
+    <circle cx="1312" cy="284" r="1.5" fill="#FFF" />
+    <circle cx="1724" cy="1723" r="1.5" fill="#FFF" />
+    <circle cx="183" cy="1943" r="1.5" fill="#FFF" />
+    <circle cx="874" cy="1387" r="1.5" fill="#FFF" />
+</svg>

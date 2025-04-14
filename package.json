@@ -4,7 +4,7 @@
 	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
-		"dev": "bun --bun vite dev",
+		"dev": "bun --bun vite dev --host",
 		"build": "bun --bun vite build",
 		"postbuild": "bun run -bun tooling/build/post-build.ts",
 		"preview": "bun --bun vite preview",
@@ -14,12 +14,16 @@
 		"format": "bunx --bun biome format --write .",
 		"lint": "bunx --bun biome check --write .",
 		"release": "bunx release-it",
-		"release:ci": "bunx release-it --ci"
+		"release:ci": "bunx release-it --ci",
+		"email:dev": "email dev --dir src/lib/mailing/templates",
+		"email:build": "email dev --packageManager bun --dir src/lib/mailing/templates",
+		"email:export": "email export --dir src/lib/mailing/templates "
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.0.0-beta.1",
 		"@jonasbuerger/svelte-adapter-bun": "^2.3.0",
 		"@release-it/conventional-changelog": "^10.0.0",
+		"@sveltejs/adapter-node": "^5.2.12",
 		"@sveltejs/enhanced-img": "^0.4.4",
 		"@sveltejs/kit": "^2.20.4",
 		"@sveltejs/vite-plugin-svelte": "^5.0.3",
@@ -33,6 +37,7 @@
 		"nanoid": "^5.1.5",
 		"posthog-js": "^1.234.9",
 		"release-it": "^18.1.2",
+		"resend": "^4.2.0",
 		"sharp": "^0.33.5",
 		"super-sitemap": "^1.0.3",
 		"svelte": "^5.25.7",

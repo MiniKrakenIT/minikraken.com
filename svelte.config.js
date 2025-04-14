@@ -1,4 +1,4 @@
-import adapter from '@jonasbuerger/svelte-adapter-bun'
+import devAdapter from '@sveltejs/adapter-node'
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -10,9 +10,6 @@ const config = {
 		}
 	},
 	kit: {
-		/*paths: {
-			assets: 'https://cdn.minikraken.com'
-		},*/
 		csp: {
 			mode: 'auto'
 		},
@@ -24,22 +21,23 @@ const config = {
 			$assets: './src/lib/assets',
 			$data: './src/lib/data'
 		},
-		adapter: adapter({
-			//out: "build",
-			precompress: {
-				brotli: true,
-				gzip: true
-				//files: ["htm", "html", "js", "json", "css", "svg", "xml"],
-			}
-			/*tls: { //todo: make that kubernetes injects it into a certain folder so we can use native http2
-				key: "server.key",
-				cert: "server.crt",
-			},*/
-			//protocol_header: 'X-Forwarded-Proto', //PROTOCOL_HEADER
-			//host_header: "X-Forwarded-Host", //HOST_HEADER
-			//address_header: 'X-Forwarded-For', //ADDRESS_HEADER
-			//xff_depth: 2
-		})
+		adapter:
+			import.meta.env?.NODE_ENV === 'production'
+				? (await import('@jonasbuerger/svelte-adapter-bun')).default({
+						precompress: {
+							brotli: true,
+							gzip: true
+						}
+						/*tls: { //todo: make that kubernetes injects it into a certain folder so we can use native http2
+							key: "server.key",
+							cert: "server.crt",
+						},*/
+						//protocol_header: 'X-Forwarded-Proto', //PROTOCOL_HEADER
+						//host_header: "X-Forwarded-Host", //HOST_HEADER
+						//address_header: 'X-Forwarded-For', //ADDRESS_HEADER
+						//xff_depth: 2
+					})
+				: devAdapter()
 	}
 }
 
