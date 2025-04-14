@@ -4,6 +4,7 @@
 .netlify
 .wrangler
 /.svelte-kit
+/.react-email
 /build
 
 # OS

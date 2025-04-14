@@ -1,46 +1,65 @@
 <script lang="ts">
+import Ocean from '$components/backgrounds/Ocean.svelte'
 import Button from '$components/base/Button/Button.svelte'
 import { Color, Size, Variant } from '$components/props'
 import { services } from '$data/services'
+import { Switch } from '$lib/motion/transitions/switch'
+import { inView } from 'motion'
 import { onMount } from 'svelte'
 import { slide } from 'svelte/transition'
 
 let index = $state(0)
+let element: HTMLElement
 
 onMount(() => {
-	let interval = setInterval(() => {
-		index = (index + 1) % services.length
-	}, 3500)
-	return () => clearInterval(interval)
+	let interval: NodeJS.Timeout
+
+	inView(element, (el) => {
+		interval = setInterval(() => {
+			index = (index + 1) % services.length
+		}, 3500)
+
+		return () => {
+			clearInterval(interval)
+		}
+	})
+
+	return () => {
+		if (interval) clearInterval(interval)
+	}
 })
 </script>
 
-<div class="overflow-hidden bg-base-300">
+<div bind:this={element} class="overflow-hidden bg-base-300">
 	<div class="relative">
-		<div class="intro absolute inset-2 sm:inset-3 rounded-8 ring-1 ring-black/5 ring-inset bg-[linear-gradient(115deg,var(--tw-gradient-stops))] from-[#fff1be] from-28% via-[#ee87cb] via-70% to-[#b060ff] sm:bg-[linear-gradient(145deg,var(--tw-gradient-stops))]"></div>
-		<div class="relative px-6 lg:px-8">
+		<div class="intro absolute overflow-hidden inset-2 sm:inset-3 rounded-8 ring-1 ring-black/5 ring-inset">
+			<Ocean></Ocean>
+		</div>
+		<div class="relative px-8">
 			<div class="mx-auto max-w-2xl lg:max-w-7xl">
-				<div class="pt-26 pb-14 sm:pt-30 sm:pb-22 md:pt-45 md:pb-48">
-					<h1 class="intro anim-delay-500 mt-4 md:mt-0 text-5xl font-medium tracking-tight text-balance text-slate-800 sm:text-7xl md:text-8xl">
+				<div class="pt-30 pb-14 sm:pt-35 sm:pb-14 md:pt-50 md:pb-20">
+					<h1 class="intro anim-delay-500 mt-4 md:mt-0 text-5vw md:text-4xl lg:text-5xl font-medium tracking-tight text-balance line-height-tight">
 						Wij helpen bij <br>
-						{#key index}
-							<div
-								class="py-3 text-9vw md:text-8vw lg:text-8xl font-extrabold bg-gradient-to-lt from-teal-400 to-gray-800 bg-clip-text text-transparent"
-								transition:slide
-							>
-								{services[index]}
-							</div>
-						{/key}
+						<span class="block pb-3 md:py-3 text-9vw md:text-6xl lg:text-7xl font-extrabold w-full">
+							{#key index}
+								<span
+									class="block break-words sm:no-break bg-gradient-to-tl from-accent to-secondary bg-clip-text text-transparent line-height-tight sm:line-height-normal"
+									transition:Switch
+								>
+									{services[index]}
+								</span>
+							{/key}
+						</span>
 					</h1>
-					<p class="intro mt-6 max-w-lg text-xl font-medium text-slate-800 sm:text-2xl">
+					<p class="intro mt-6 max-w-lg text-sm sm:text-lg md:text-xl font-medium">
 						Boost je bedrijf met ons als jouw totaalpartner voor IT. En bouw verder, zonder IT zorgen.
 					</p>
 					<div class="intro flex flex-col sm:flex-row gap-x-6 gap-y-4 mt-12  sm:justify-center md:justify-start">
-						<Button variant={Variant.soft} size={{base: Size.md, md: Size.lg}}>
-							Contacteer ons
+						<Button variant={Variant.outline} color={Color.accent} size={{base: Size.md, md: Size.lg}}>
+							plan een gesprek
 						</Button>
-						<Button variant={Variant.outline} color={Color.neutral} size={{base: Size.md, md: Size.lg}}>
-							Success stories
+						<Button variant={Variant.ghost} color={Color.accent} size={{base: Size.md, md: Size.lg}}>
+							Succes verhalen
 						</Button>
 					</div>
 				</div>
@@ -48,3 +67,9 @@ onMount(() => {
 		</div>
 	</div>
 </div>
+
+<style>
+	.intro {
+			opacity: 0;
+	}
+</style>

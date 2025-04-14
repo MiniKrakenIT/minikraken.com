@@ -1,12 +1,12 @@
-import type { Action } from 'svelte/action'
 import { animate, inView, stagger } from 'motion'
+import type { Action } from 'svelte/action'
 
 interface IntroParams {
 	selector: string
 	delay?: number
 }
 
-export const intro: Action<HTMLElement, IntroParams> = (element, { selector, delay = 1.2 }) => {
+export const intro: Action<HTMLElement, IntroParams> = (element, { selector, delay = 0.6 }) => {
 	animate(
 		selector,
 		{
