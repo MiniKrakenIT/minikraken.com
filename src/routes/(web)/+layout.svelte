@@ -1,11 +1,11 @@
 <script lang="ts">
 import '$styles/base-required.css'
 import { onNavigate } from '$app/navigation'
+import { assets } from '$app/paths'
 import Footer from '$lib/components/sections/footer/Footer.svelte'
 import Navigation from '$lib/components/sections/navigation/Navigation.svelte'
-import { assets } from '$app/paths'
 
-let { children } = $props()
+const { children } = $props()
 
 onNavigate((navigation) => {
 	if (!document.startViewTransition) return

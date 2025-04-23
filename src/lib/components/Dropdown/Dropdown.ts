@@ -1,19 +1,19 @@
 export enum Alignment {
-	START = 'start',
-	CENTER = 'center',
-	END = 'end'
+	start = 'start',
+	center = 'center',
+	end = 'end'
 }
 
 export enum Placement {
-	TOP = 'top',
-	LEFT = 'left',
-	RIGHT = 'right',
-	BOTTOM = 'bottom'
+	top = 'top',
+	left = 'left',
+	right = 'right',
+	bottom = 'bottom'
 }
 
 export enum Modifier {
-	HOVER = 'hover',
-	OPEN = 'open'
+	hover = 'hover',
+	open = 'open'
 }
 
 export interface ListAnchor {

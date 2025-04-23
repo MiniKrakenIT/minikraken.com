@@ -1,5 +1,5 @@
 <script lang="ts">
-import Button from '$components/base/Button/Button.svelte'
+import Button from '$components/base/Button.svelte'
 import { Variant } from '$components/props'
 </script>
 

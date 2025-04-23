@@ -1,3 +1,4 @@
+<script module lang="ts" >
 import { Behavior } from '$components/props'
 import { Color } from '$components/props'
 import type { ResponsiveProp } from '$components/types'
@@ -17,8 +18,24 @@ export type LinkColors =
 export type LinkBehaviors = Behavior.hover
 
 // Props that infer the tag type from the presence of `href`
-export type Props = Omit<HTMLAnchorAttributes, color | variant> & {
+export type Props = Omit<HTMLAnchorAttributes, 'color' | 'variant'> & {
 	color?: ResponsiveProp<LinkColors>
 	behavior?: ResponsiveProp<LinkBehaviors>
 	children: Snippet
 }
+</script>
+<script lang="ts">
+import { tpm } from '$components/utils/transformPseudoModifiers'
+
+const { href, color, behavior, children, class: classValue, ...rest }: Props = $props()
+
+const classes = $derived(['link', tpm('link', color), tpm('link', behavior), classValue])
+</script>
+
+<a {href} class={classes} {...rest}>
+	{@render children()}
+</a>
+
+<style global>
+	@import 'daisyui/components/link.css';
+</style>

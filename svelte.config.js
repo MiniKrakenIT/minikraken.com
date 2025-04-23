@@ -3,7 +3,7 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	preprocess: vitePreprocess(),
+	preprocess: vitePreprocess({ script: true }),
 	compilerOptions: {
 		warningFilter: (warning) => {
 			return warning.code !== 'css_unused_selector'
