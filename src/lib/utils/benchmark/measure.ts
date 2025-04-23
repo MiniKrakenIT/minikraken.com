@@ -9,6 +9,8 @@ export const measure = <T extends (...args: unknown[]) => ReturnType<T>>(
 
 	const result = func()
 
-	console.log(`${msg ? `${msg}: ` : ''}Execution time: ${performance.now() - start}ms`)
+	console.log(
+		`${msg ? `${msg}: ` : ''}Execution time: ${performance.now() - start}ms`
+	)
 	return result
 }
