@@ -1,7 +1,17 @@
 <script lang="ts">
+import Button from '$components/base/Button.svelte'
+import Input from '$components/base/Input.svelte'
+import { Color, Shape } from '$components/props'
 import { store } from '$stores/navigation'
+import { superForm } from 'sveltekit-superforms'
+import type { PageProps } from './$types'
 
 store.set({ fixedBackground: true })
+
+const { data }: PageProps = $props()
+const { form, errors, constraints, message, enhance } = superForm(data.form)
+
+$form.date = Date.now()
 </script>
 
 <div class="py-8 sm:py-16">
@@ -107,5 +117,31 @@ store.set({ fixedBackground: true })
 				</div>
 			</div>
 		</div>
+
+		{#if $message}<h3>{$message}</h3>{/if}
+
+		<form method="POST" action="?/contact" use:enhance class="flex flex-col w-full">
+			<p>Naam:</p>
+			<Input
+				type="text"
+				name="name"
+				bind:value={$form.name}
+				errors={$errors.name}
+				{...$constraints.name} />
+
+			<p>Email:</p>
+			<input
+				type="email"
+				name="email"
+				aria-invalid={$errors.email ? 'true' : undefined}
+				bind:value={$form.email}
+				{...$constraints.email} />
+			{#if $errors.email}<span class="text-red">{$errors.email}</span>{/if}
+
+			<input type="hidden" name="date" bind:value={$form.date}/>
+			<input name="yourMomsName" class="w-1px h-1px bg-transparent text-transparent"/>
+
+			<Button color={{base: Color.primary}} shape={Shape.block} type="submit">Verstuur</Button>
+		</form>
 	</div>
 </div>

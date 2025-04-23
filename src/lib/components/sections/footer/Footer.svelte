@@ -1,5 +1,5 @@
 <script lang="ts">
-import Link from '$components/base/Link/Link.svelte'
+import Link from '$components/base/Link.svelte'
 import { Behavior } from '$components/props'
 import { footerNavigations } from '$data/navigations'
 import { socials } from '$data/socials'

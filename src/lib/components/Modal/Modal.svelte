@@ -22,6 +22,7 @@ let {
 	children,
 	class: classOverwrite
 }: Props = $props()
+
 let modal: HTMLDialogElement
 const classes = $derived([
 	'modal',

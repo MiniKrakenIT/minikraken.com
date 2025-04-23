@@ -1,4 +1,4 @@
-export const measure = <T extends (...args: any[]) => any>(
+export const measure = <T extends (...args: unknown[]) => ReturnType<T>>(
 	msgOrFn: string | T,
 	fn?: T
 ): ReturnType<T> => {
@@ -9,6 +9,8 @@ export const measure = <T extends (...args: any[]) => any>(
 
 	const result = func()
 
-	console.log(`${msg ? `${msg}: ` : ''}Execution time: ${performance.now() - start}ms`)
+	console.log(
+		`${msg ? `${msg}: ` : ''}Execution time: ${performance.now() - start}ms`
+	)
 	return result
 }

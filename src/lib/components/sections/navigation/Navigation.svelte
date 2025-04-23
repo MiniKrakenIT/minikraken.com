@@ -2,7 +2,7 @@
 import Menu from '$assets/icons/Menu.svelte'
 import X from '$assets/icons/X.svelte'
 import logo from '$assets/logo/minikraken-small.svg'
-import Link from '$components/base/Link/Link.svelte'
+import Link from '$components/base/Link.svelte'
 import { Behavior } from '$components/props'
 import { headerNavigations } from '$data/navigations'
 import { intro } from '$lib/motion/blur-intro'
@@ -16,7 +16,7 @@ import { fade } from 'svelte/transition'
 let isMounted = $state(false)
 let showMenuBackground = $state(false)
 
-let isMobile = new MediaQuery('(max-width: 768px)')
+const isMobile = new MediaQuery('(max-width: 768px)')
 let openMobileMenu = $state(false)
 
 const toggleMobileMenu = () => {

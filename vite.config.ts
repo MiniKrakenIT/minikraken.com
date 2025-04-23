@@ -1,15 +1,28 @@
 import { enhancedImages } from '@sveltejs/enhanced-img'
 import { sveltekit } from '@sveltejs/kit/vite'
-import UnoCSS from '@unocss/svelte-scoped/vite'
+import UnoCss from '@unocss/svelte-scoped/vite'
 import { defineConfig } from 'vite'
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
 
 export default defineConfig({
 	ssr: {
-		noExternal: ['devalue', 'cookie', 'set-cookie-parser', 'clsx']
+		noExternal: [
+			'devalue',
+			'cookie',
+			'set-cookie-parser',
+			'clsx',
+			'nanoid',
+			'posthog-js',
+			'resend',
+			'motion',
+			'valibot'
+		]
+	},
+	optimizeDeps: {
+		include: ['@exodus/schemasafe']
 	},
 	plugins: [
-		UnoCSS({
+		UnoCss({
 			classPrefix: 'tw-'
 			// injectReset: '@unocss/reset/normalize.css', // see type definition for all included reset options or how to pass in your own
 			// ...other Svelte Scoped options
