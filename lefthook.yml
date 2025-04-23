@@ -15,7 +15,5 @@
 pre-commit:
   parallel: true
   commands:
-    biome:
-      run: bun check:biome
-    svelte-check:
+    check:
       run: bun check

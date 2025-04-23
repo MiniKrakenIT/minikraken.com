@@ -5,6 +5,7 @@ import BunnyDotNet from '$assets/partners/BunnyDotNet.svelte'
 import ClickUp from '$assets/partners/ClickUp.svelte'
 import Hetzner from '$assets/partners/Hetzner.svelte'
 import { store } from '$stores/navigation'
+
 store.set({ fixedBackground: true })
 
 const partners = [Bitdefender, ClickUp, Backblaze, BunnyDotNet, Hetzner]
