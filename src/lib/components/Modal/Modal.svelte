@@ -1,5 +1,4 @@
 <script lang="ts">
-import { Modifier, type Placement } from '$components/Modal/Modal'
 import xmark from 'iconoir/icons/regular/xmark.svg'
 import type { Snippet } from 'svelte'
 
@@ -22,6 +21,7 @@ let {
 	children,
 	class: classOverwrite
 }: Props = $props()
+
 let modal: HTMLDialogElement
 const classes = $derived([
 	'modal',
@@ -37,6 +37,19 @@ $effect(() => {
 		modal.close()
 	}
 })
+</script>
+<script module lang="ts">
+	export enum Modifier {
+		OPEN = 'open'
+	}
+
+	export enum Placement {
+		TOP = 'top',
+		MIDDLE = 'middle',
+		BOTTOM = 'bottom',
+		START = 'start',
+		END = 'end'
+	}
 </script>
 
 <span onclick={() => {open = !open}} onkeydown={(e) => {if (e.key === 'Enter') open = !open}} role="button" tabindex="0">{@render trigger()}</span>

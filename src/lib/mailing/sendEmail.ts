@@ -1,4 +1,4 @@
-import { Resend } from '$lib/logic/mailing/Resend'
+import { Resend } from '$lib/mailing/Resend'
 
 export type MailProperties = {
 	client: {

@@ -1,15 +1,24 @@
 import devAdapter from '@sveltejs/adapter-node'
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
+import { mdsvex } from 'mdsvex'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	preprocess: vitePreprocess(),
+	preprocess: [
+		vitePreprocess({ script: true }),
+		mdsvex({
+			extensions: ['.svx']
+		})
+	],
 	compilerOptions: {
 		warningFilter: (warning) => {
 			return warning.code !== 'css_unused_selector'
 		}
 	},
 	kit: {
+		experimental: {
+			remoteFunctions: true
+		},
 		csp: {
 			mode: 'auto'
 		},
@@ -38,7 +47,8 @@ const config = {
 						//xff_depth: 2
 					})
 				: devAdapter()
-	}
+	},
+	extensions: ['.svelte', '.svx']
 }
 
 export default config

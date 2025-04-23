@@ -1,4 +1,4 @@
-export const measure = <T extends (...args: any[]) => any>(
+export const measure = <T extends (...args: unknown[]) => ReturnType<T>>(
 	msgOrFn: string | T,
 	fn?: T
 ): ReturnType<T> => {
