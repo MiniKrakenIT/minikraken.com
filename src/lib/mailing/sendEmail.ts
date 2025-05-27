@@ -9,7 +9,9 @@ export type MailProperties = {
 	}
 }
 
-export const sendContactEmail = async ({ client: { email } }: MailProperties) => {
+export const sendContactEmail = async ({
+	client: { email }
+}: MailProperties) => {
 	const { data, error } = await Resend.emails.send({
 		from: 'Maxime van MiniKraken <contact@minikraken.com>',
 		to: [email],
