@@ -23,8 +23,8 @@
 		"actions": {
 			"source": {
 				"organizeImports": "on",
-				"useSortedProperties": "on",
-				"useSortedKeys": "on"
+				"useSortedProperties": "off",
+				"useSortedKeys": "off"
 			}
 		}
 	},

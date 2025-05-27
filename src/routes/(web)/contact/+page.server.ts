@@ -2,7 +2,6 @@ import { fail } from '@sveltejs/kit'
 import { message, superValidate } from 'sveltekit-superforms'
 import { valibot } from 'sveltekit-superforms/adapters'
 import {
-	custom,
 	email,
 	maxLength,
 	minLength,
@@ -14,35 +13,24 @@ import {
 import type { Actions, PageServerLoad } from './$types'
 
 const schema = object({
-	name: pipe(
-		string(),
-		minLength(2, 'Naam is te kort'),
-		maxLength(300, 'Naam is te lang')
-	),
+	date: pipe(number('We verwachten hier een nummer input.')),
 	email: pipe(
-		string(),
-		email(),
+		string('We verwachten hier een text input.'),
+		email('Formaat van het email adres is incorrect.'),
 		minLength(5, 'Email is te kort.'),
 		maxLength(300, 'Email is te lang.')
 	),
 	message: pipe(
-		string(),
+		string('We verwachten hier een text input.'),
 		minLength(1, 'Er moet een bericht aanwezig zijn om te sturen.'),
 		maxLength(1000, 'Bericht is te lang. Maximaal 1000 karakters.')
 	),
-	date: pipe(
-		number(),
-		custom((input) => {
-			if (typeof input === 'number') {
-				return input + 3000 >= Date.now()
-			}
-			return false
-		}, 'Er ging iets mis. (spam prevention)')
+	name: pipe(
+		string('We verwachten hier een text input.'),
+		minLength(2, 'Naam is te kort'),
+		maxLength(300, 'Naam is te lang')
 	),
-	yourMomsName: pipe(
-		string(),
-		maxLength(0, 'Er ging iets mis. (spam prevention)')
-	)
+	yourMomsName: pipe(string('We verwachten hier een text input.'))
 })
 
 export const load: PageServerLoad = async () => {
@@ -52,14 +40,20 @@ export const load: PageServerLoad = async () => {
 export const actions = {
 	contact: async ({ request }) => {
 		const form = await superValidate(request, valibot(schema))
-
 		if (form.valid) {
-			message(
-				form,
-				'Bedankt voor uw bericht wij contacteren u zo snel mogelijk!'
-			)
-		} else {
-			fail(400, { form })
+			if (
+				form.data.date + 3000 >= Date.now() ||
+				form.data.yourMomsName.length > 0
+			) {
+				return message(form, 'Er ging iets mis. (spam prevention)', {
+					status: 400
+				})
+			}
+
+			await new Promise((resolve) => setTimeout(resolve, 30000))
+			return { type: 'success', status: 200 }
 		}
+
+		return fail(400, { form })
 	}
 } satisfies Actions

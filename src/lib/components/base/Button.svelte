@@ -1,3 +1,26 @@
+<script lang="ts">
+import { tpm } from '$components/utils/transformPseudoModifiers'
+
+let {
+	color,
+	size,
+	variant,
+	shape,
+	children,
+	class: classValue,
+	href,
+	...rest
+}: Props = $props()
+
+const classes = $derived([
+	'btn',
+	tpm('btn', color),
+	tpm('btn', size),
+	tpm('btn', variant),
+	tpm('btn', shape),
+	classValue
+])
+</script>
 <script module lang="ts">
 import type { Color, Shape, Size, Variant } from '$components/props'
 import type { ResponsiveProp } from '$components/types'
@@ -69,20 +92,6 @@ export type Props = (
 	href?: string | null
 	children: Snippet
 }
-</script>
-<script lang="ts">
-import { tpm } from '$components/utils/transformPseudoModifiers'
-
-let { color, size, variant, shape, children, class: classValue, href, ...rest }: Props = $props()
-
-const classes = $derived([
-	'btn',
-	tpm('btn', color),
-	tpm('btn', size),
-	tpm('btn', variant),
-	tpm('btn', shape),
-	classValue
-])
 </script>
 
 <svelte:element this={href ? 'a' : 'button'} class={classes} {...rest}>

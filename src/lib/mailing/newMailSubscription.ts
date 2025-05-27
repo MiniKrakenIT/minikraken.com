@@ -9,14 +9,13 @@ export type MailProperties = {
 	}
 }
 
-export const sendContactEmail = async ({
+export const newMailSubscription = async ({
 	client: { email }
 }: MailProperties) => {
-	const { data, error } = await Resend.emails.send({
-		from: 'Maxime van MiniKraken <contact@minikraken.com>',
-		to: [email],
-		subject: 'Laten we van start gaan!',
-		html: '<strong>It works!</strong>'
+	const { data, error } = await Resend.contacts.create({
+		email: 'steve.wozniak@gmail.com',
+		unsubscribed: false,
+		audienceId: 'a844d1b1-40ae-474a-9042-3a56d50f1329'
 	})
 
 	if (error) {

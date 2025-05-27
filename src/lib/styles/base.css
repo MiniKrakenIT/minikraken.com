@@ -11,11 +11,3 @@
 @import "daisyui/colors/states.css";
 @import "daisyui/colors/responsive.css";
 @import "fonts.css";
-
-@media (prefers-reduced-motion) {
-	::view-transition-group(*),
-	::view-transition-old(*),
-	::view-transition-new(*) {
-		animation: none !important;
-	}
-}
