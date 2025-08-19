@@ -251,7 +251,3 @@ import Hero from '$components/sections/hero/Hero.svelte'
 		</div>
 	</div>
 </main>
-
-<style global>
-
-</style>

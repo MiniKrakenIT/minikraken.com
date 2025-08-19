@@ -1,4 +1,5 @@
 // See https://svelte.dev/docs/kit/types#app.d.ts
+/** biome-ignore-all lint/style/noNamespace: required by svelte kit */
 // for information about these interfaces
 declare global {
 	namespace App {

@@ -10,15 +10,9 @@ export interface SwitchParams {
 	}
 }
 
-export type AnimationFunction = (
-	node: Element,
-	params: SwitchParams
-) => TransitionConfig
+export type AnimationFunction = (node: Element, params: SwitchParams) => TransitionConfig
 
-export const Switch: AnimationFunction = (
-	node,
-	{ duration = 400, delay = 0 }
-) => {
+export const Switch: AnimationFunction = (node, { duration = 400, delay = 0 }) => {
 	const style = getComputedStyle(node)
 	const fullHeight = Number.parseFloat(style.height)
 

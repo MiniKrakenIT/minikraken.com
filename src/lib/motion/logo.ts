@@ -1,6 +1,6 @@
-import { browser } from '$app/environment'
 import { type AnimationOptions, animate } from 'motion'
 import type { Action } from 'svelte/action'
+import { browser } from '$app/environment'
 
 export const LogoAnimation: Action<HTMLElement, boolean> = (element) => {
 	const params: AnimationOptions = {

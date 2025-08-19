@@ -6,10 +6,7 @@ interface IntroParams {
 	delay?: number
 }
 
-export const intro: Action<HTMLElement, IntroParams> = (
-	_element,
-	{ selector, delay = 0.6 }
-) => {
+export const intro: Action<HTMLElement, IntroParams> = (_element, { selector, delay = 0.6 }) => {
 	animate(
 		selector,
 		{

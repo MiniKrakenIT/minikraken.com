@@ -8,7 +8,7 @@ store.set({ fixedBackground: true })
 	<div class="prose">
 		<h1>Cookie Policy</h1>
 		<p><strong>Last Updated: February 23, 2025</strong></p>
-		<p>This Cookie Policy explains how <span class="font-semibold">[Your Website Name]</span> ("we," "us," or "our") uses cookies and similar technologies on <a href="#" class="underline">[yourwebsite.com]</a> (the "Site"). We’re committed to protecting your privacy under the General Data Protection Regulation (GDPR) if you’re in the EU/EEA.</p>
+		<p>This Cookie Policy explains how <span class="font-semibold">minikraken.com</span> ("we," "us," or "our") uses cookies and similar technologies on <a href="#" class="underline">minikraken.com</a> (the "Site"). We’re committed to protecting your privacy under the General Data Protection Regulation (GDPR) if you’re in the EU/EEA.</p>
 
 		<h2>What Are Cookies?</h2>
 		<p>Cookies are small text files stored on your device to help the Site work, improve your experience, or analyze usage.</p>
@@ -43,12 +43,12 @@ store.set({ fixedBackground: true })
 			<li>Restrict or object to processing.</li>
 			<li>Data portability.</li>
 		</ul>
-		<p>To exercise these, email <a href="mailto:[your@email.com]" class="underline">[your@email.com]</a>.</p>
+		<p>To exercise these, email <a href="mailto:contact+cookie-policy@minikraken.com" class="underline">contact@minikraken.com</a>.</p>
 
 		<h2>Updates to This Policy</h2>
 		<p>We may update this policy—check the “Last Updated” date for changes.</p>
 
 		<h2>Contact Us</h2>
-		<p>Questions or rights requests? Reach us at <a href="mailto:[your@email.com]" class="underline">[your@email.com]</a> or [Your Address, City, State, ZIP, Country].</p>
+		<p>Questions or rights requests? Reach us at <a href="mailto:contact+cookie-policy@minikraken.com" class="underline">contact@minikraken.com</a> or Dendermondse steenweg 56, 9300 Aalst, Oost-Vlaanderen Belgium.</p>
 	</div>
 </div>

@@ -9,9 +9,7 @@ export type MailProperties = {
 	}
 }
 
-export const newMailSubscription = async ({
-	client: { email }
-}: MailProperties) => {
+export const newMailSubscription = async ({ client: { email } }: MailProperties) => {
 	const { data, error } = await Resend.contacts.create({
 		email: 'steve.wozniak@gmail.com',
 		unsubscribed: false,
