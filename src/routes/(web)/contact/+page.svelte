@@ -1,4 +1,7 @@
 <script lang="ts">
+import { onMount } from 'svelte'
+import { fade } from 'svelte/transition'
+import { superForm } from 'sveltekit-superforms'
 import { browser } from '$app/environment'
 import Button from '$components/base/Button.svelte'
 import Input from '$components/base/Input.svelte'
@@ -6,31 +9,27 @@ import TextArea from '$components/base/TextArea.svelte'
 import Loading from '$components/Loading.svelte'
 import { Color, Shape } from '$components/props'
 import { store } from '$stores/navigation'
-import { onMount } from 'svelte'
-import { fade } from 'svelte/transition'
-import { superForm } from 'sveltekit-superforms'
 import type { PageProps } from './$types'
 
 store.set({ fixedBackground: true })
 
 const { data }: PageProps = $props()
-const { form, errors, constraints, message, enhance, delayed } = superForm(
-	data.form,
-	{
-		autoFocusOnError: true,
-		onResult: ({ result }) => {
-			if (result.type === 'success') {
-				showForm = false
-			}
-		},
-		scrollToError: 'smooth',
-		stickyNavbar: 'header'
-	}
-)
+
+const { form, errors, constraints, message, enhance, delayed } = superForm(data.form, {
+	autoFocusOnError: true,
+	onResult: ({ result }) => {
+		if (result.type === 'success') {
+			showForm = false
+		}
+	},
+	scrollToError: 'smooth',
+	stickyNavbar: 'header'
+})
 
 let showForm = $state(true)
 
 onMount(() => {
+	// biome-ignore lint/correctness/noUndeclaredVariables: sveltekit behaviour
 	if (browser) $form.date = Date.now()
 })
 </script>

@@ -1,5 +1,5 @@
-import type { Action } from 'svelte/action'
 import { animate, stagger } from 'motion'
+import type { Action } from 'svelte/action'
 
 export interface IntroParams {
 	duration?: number

@@ -2,21 +2,9 @@
 <script lang="ts">
 import { tpm } from '$components/utils/transformPseudoModifiers'
 
-const {
-	href,
-	color,
-	behavior,
-	children,
-	class: classValue,
-	...rest
-}: Props = $props()
+const { href, color, behavior, children, class: classValue, ...rest }: Props = $props()
 
-const classes = $derived([
-	'link',
-	tpm('link', color),
-	tpm('link', behavior),
-	classValue
-])
+const classes = $derived(['link', tpm('link', color), tpm('link', behavior), classValue])
 </script>
 <script module lang="ts" >
 	import { Behavior } from '$components/props'

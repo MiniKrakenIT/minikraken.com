@@ -1,15 +1,7 @@
 import { fail } from '@sveltejs/kit'
 import { message, superValidate } from 'sveltekit-superforms'
 import { valibot } from 'sveltekit-superforms/adapters'
-import {
-	email,
-	maxLength,
-	minLength,
-	number,
-	object,
-	pipe,
-	string
-} from 'valibot'
+import { email, maxLength, minLength, number, object, pipe, string } from 'valibot'
 import type { Actions, PageServerLoad } from './$types'
 
 const schema = object({
@@ -41,10 +33,7 @@ export const actions = {
 	contact: async ({ request }) => {
 		const form = await superValidate(request, valibot(schema))
 		if (form.valid) {
-			if (
-				form.data.date + 3000 >= Date.now() ||
-				form.data.yourMomsName.length > 0
-			) {
+			if (form.data.date + 3000 >= Date.now() || form.data.yourMomsName.length > 0) {
 				return message(form, 'Er ging iets mis. (spam prevention)', {
 					status: 400
 				})

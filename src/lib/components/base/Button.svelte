@@ -1,16 +1,7 @@
 <script lang="ts">
 import { tpm } from '$components/utils/transformPseudoModifiers'
 
-let {
-	color,
-	size,
-	variant,
-	shape,
-	children,
-	class: classValue,
-	href,
-	...rest
-}: Props = $props()
+let { color, size, variant, shape, children, class: classValue, href, ...rest }: Props = $props()
 
 const classes = $derived([
 	'btn',

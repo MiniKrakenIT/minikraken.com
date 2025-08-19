@@ -1,4 +1,4 @@
-import type { ClientInit, HandleClientError } from '@sveltejs/kit'
+import type { HandleClientError } from '@sveltejs/kit'
 /*import posthog from 'posthog-js'
 
 posthog.init('phc_UR8XJeOwzfProVxSc3L9xf9gfYRjzQdBHP2GG1ccLsD', {
@@ -9,7 +9,8 @@ posthog.init('phc_UR8XJeOwzfProVxSc3L9xf9gfYRjzQdBHP2GG1ccLsD', {
 
 posthog.capture('page-loaded', { property: 'value' })*/
 
-export const init: ClientInit = () => {}
+//export const init: ClientInit = () => {}
+
 export const handleError: HandleClientError = async ({ message }) => {
 	const errorId = crypto.randomUUID()
 

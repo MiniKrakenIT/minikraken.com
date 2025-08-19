@@ -1,7 +1,8 @@
 import { enhancedImages } from '@sveltejs/enhanced-img'
 import { sveltekit } from '@sveltejs/kit/vite'
-import UnoCss from '@unocss/svelte-scoped/vite'
+import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'vite'
+import devtoolsJson from 'vite-plugin-devtools-json'
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
 
 export default defineConfig({
@@ -18,17 +19,6 @@ export default defineConfig({
 			'valibot'
 		]
 	},
-	optimizeDeps: {
-		include: ['@exodus/schemasafe']
-	},
-	plugins: [
-		UnoCss({
-			classPrefix: 'tw-'
-			// injectReset: '@unocss/reset/normalize.css', // see type definition for all included reset options or how to pass in your own
-			// ...other Svelte Scoped options
-		}),
-		ViteImageOptimizer(),
-		enhancedImages(),
-		sveltekit()
-	]
+	optimizeDeps: { include: ['@exodus/schemasafe'] },
+	plugins: [tailwindcss(), ViteImageOptimizer(), enhancedImages(), sveltekit(), devtoolsJson()]
 })

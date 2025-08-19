@@ -1,8 +1,7 @@
 <script lang="ts">
-import Scroll from '$assets/icons/Scroll.svelte'
+import { slide } from 'svelte/transition'
 import Ocean from '$components/backgrounds/Ocean.svelte'
 import { services } from '$data/services'
-import { slide } from 'svelte/transition'
 
 let index = $state(0)
 </script>
@@ -31,10 +30,4 @@ let index = $state(0)
 			</div>
 		</div>
 	</div>
-	<span class="absolute bottom-10 left-1/2">
-		<Scroll />
-	</span>
 </div>
-
-<style>
-</style>

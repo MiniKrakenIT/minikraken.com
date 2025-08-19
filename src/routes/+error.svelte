@@ -1,5 +1,5 @@
 <script lang="ts">
-//import '$styles/themes.css'
+import '$styles/base.css'
 import { page } from '$app/state'
 
 export const prerender = true
@@ -20,7 +20,6 @@ export const prerender = true
 </div>
 
 <style>
-	/*@import "$styles/base.css";*/
 
     .glitch {
         position: relative;

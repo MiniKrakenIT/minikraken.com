@@ -1,8 +1,7 @@
 <script lang="ts">
-import { assets } from '$app/paths'
+import '$styles/base.css'
 import type { Snippet } from 'svelte'
-import '$styles/reset.css'
-import '$styles/fonts.css'
+import { asset } from '$app/paths'
 import Github from '$assets/icons/socials/Github.svelte'
 import Instagram from '$assets/icons/socials/Instagram.svelte'
 import X from '$assets/icons/socials/X.svelte'
@@ -13,7 +12,7 @@ type Props = {
 	children?: Snippet
 }
 
-let { children }: Props = $props()
+const { children }: Props = $props()
 
 const socials = [
 	{
@@ -104,10 +103,10 @@ const toggleMenuEvent = () => {
 </script>
 
 <svelte:head>
-	<link rel="preload" as="font" href="{assets}/fonts/Axi-Book.woff2" type="font/woff2" crossorigin="anonymous">
-	<link rel="preload" as="font" href="{assets}/fonts/Axi-Bold.woff2" type="font/woff2" crossorigin="anonymous">
-	<link rel="preload" as="font" href="{assets}/fonts/Axi-Medium.woff2" type="font/woff2" crossorigin="anonymous">
-	<link rel="preload" as="font" href="{assets}/fonts/Axi-SemiBold.woff2" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" as="font" href="{asset('/fonts/Axi-Book.woff2')}" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" as="font" href="{asset('/fonts/Axi-Bold.woff2')}" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" as="font" href="{asset('/fonts/Axi-Medium.woff2')}" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" as="font" href="{asset('/fonts/Axi-SemiBold.woff2')}" type="font/woff2" crossorigin="anonymous">
 </svelte:head>
 
 <header use:NavigationAnimation={menuState} class="overflow-hidden h-2">
@@ -279,7 +278,9 @@ const toggleMenuEvent = () => {
 	</div>
 </div>
 
-<style global lang="postcss">
+<style global>
+    @reference "$styles/base.css";
+
     :root {
         @apply bg-neutral-950;
     }
