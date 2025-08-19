@@ -1,6 +1,6 @@
-import { browser } from '$app/environment'
 import { animate, stagger } from 'motion'
 import type { Action } from 'svelte/action'
+import { browser } from '$app/environment'
 
 interface IntroParams {
 	duration?: number
