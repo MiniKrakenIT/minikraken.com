@@ -1,7 +1,7 @@
 import type { HandleClientError } from '@sveltejs/kit'
 /*import posthog from 'posthog-js'
 
-posthog.init('<posthog_key>', {
+posthog.init('<posthog-key>', {
 	api_host: 'https://eu.i.posthog.com',
 	person_profiles: 'always', // or 'always' to create profiles for anonymous users as well,
 	disable_session_recording: true
