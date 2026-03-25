@@ -1,55 +1,59 @@
 <script lang="ts">
-import '$styles/base.css'
-import { page } from '$app/state'
+	import '$styles/base.css'
+	import { page } from '$app/state'
 
-export const prerender = true
+	//todo: look into why this can not be prerendered.
 </script>
 
-<div class="h-dvh flex items-center justify-center">
+<div class="flex h-dvh items-center justify-center">
 	<div class="relative container block">
-		<div class="md:absolute -z-10 top-0 md:-mt-[10rem] w-full select-none text-center overflow-hidden">
-			<div data-text={page.status} class="glitch text-primary/30 text-[10rem] md:text-[20rem] font-bold">
+		<div
+			class="top-0 -z-10 w-full overflow-hidden text-center select-none md:absolute md:-mt-[10rem]"
+		>
+			<div
+				data-text={page.status}
+				class="glitch text-primary/30 text-[10rem] font-bold md:text-[20rem]"
+			>
 				<span>{page.status}</span>
 			</div>
 		</div>
-		<h1 class="text-6xl text-center">Er is iets fout gelopen</h1>
-		<div class="flex items-center mt-12">
+		<h1 class="text-center text-6xl">Er is iets fout gelopen</h1>
+		<div class="mt-12 flex items-center">
 			<button>Breng me terug</button>
 		</div>
 	</div>
 </div>
 
 <style>
-
-    .glitch {
-        position: relative;
-    }
+	.glitch {
+		position: relative;
+	}
 
 	.glitch span {
 		animation: paths 5s step-end infinite;
 	}
 
-    .glitch::before {
-        animation:
-            paths 5s step-end infinite,
-            opacity 5s step-end infinite,
-            font 8s step-end infinite,
-            movement 10s step-end infinite;
-        top: 0.5rem;
-        left: 0.75rem;
-        color: rgb(219 39 119); /* Tailwind's pink-700 */
-    }
+	.glitch::before {
+		animation:
+			paths 5s step-end infinite,
+			opacity 5s step-end infinite,
+			font 8s step-end infinite,
+			movement 10s step-end infinite;
+		top: 0.5rem;
+		left: 0.75rem;
+		color: rgb(219 39 119); /* Tailwind's pink-700 */
+	}
 
-    .glitch::after {
-        animation:
-            paths 5s step-end infinite,
-            opacity 5s step-end infinite,
-            font 7s step-end infinite,
-            movement 8s step-end infinite;
-        top: 0.25rem;
-        left: -0.5rem;
-        color: rgb(8 145 178); /* Tailwind's cyan-700 */
-    }
+	.glitch::after {
+		animation:
+			paths 5s step-end infinite,
+			opacity 5s step-end infinite,
+			font 7s step-end infinite,
+			movement 8s step-end infinite;
+		top: 0.25rem;
+		left: -0.5rem;
+		color: rgb(8 145 178); /* Tailwind's cyan-700 */
+	}
 
 	.glitch::before,
 	.glitch::after {

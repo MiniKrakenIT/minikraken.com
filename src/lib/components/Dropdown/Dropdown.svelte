@@ -1,51 +1,3 @@
-<script lang="ts">
-import { nanoid } from 'nanoid/non-secure'
-import type { Snippet } from 'svelte'
-
-type Props = {
-	id?: string
-	modifier?: Modifier
-	placement?: Placement
-	alignment?: Alignment
-	class?: string
-	children: Snippet
-}
-
-let {
-	id = nanoid(5),
-	modifier,
-	placement,
-	alignment,
-	class: styleClasses,
-	children,
-	...rest
-}: Props = $props()
-
-let list: ListItems = [
-	{
-		text: 'Item 1',
-		href: '#'
-	},
-	{
-		text: 'Item 2',
-		href: '#'
-	},
-	{
-		text: 'Item 3',
-		clickHandler: () => {
-			console.log('Item 3 clicked')
-		}
-	},
-	{
-		text: 'Item 4',
-		href: '#'
-	},
-	{
-		text: 'Item 5',
-		href: '#'
-	}
-]
-</script>
 <script module lang="ts">
 	export enum Alignment {
 		start = 'start',
@@ -83,6 +35,55 @@ let list: ListItems = [
 		(item as ListAnchor).href !== undefined
 </script>
 
+<script lang="ts">
+	import { nanoid } from 'nanoid/non-secure'
+	import type { Snippet } from 'svelte'
+	import { resolve } from '$app/paths'
+
+	type Props = {
+		id?: string
+		/*modifier?: Modifier
+		placement?: Placement
+		alignment?: Alignment
+		class?: string*/
+		children: Snippet
+	}
+
+	let {
+		id = nanoid(5),
+		/*modifier,
+	placement,
+	alignment,
+	class: styleClasses,
+	...rest*/ children
+	}: Props = $props()
+
+	let list: ListItems = [
+		{
+			text: 'Item 1',
+			href: '#'
+		},
+		{
+			text: 'Item 2',
+			href: '#'
+		},
+		{
+			text: 'Item 3',
+			clickHandler: () => {
+				console.log('Item 3 clicked')
+			}
+		},
+		{
+			text: 'Item 4',
+			href: '#'
+		},
+		{
+			text: 'Item 5',
+			href: '#'
+		}
+	]
+</script>
+
 {#snippet listItemButton(item: ListButton)}
 	<button onclick={item.clickHandler}>
 		{item.text}
@@ -90,7 +91,7 @@ let list: ListItems = [
 {/snippet}
 
 {#snippet listItemAnchor(item: ListAnchor)}
-	<a href={item.href}>
+	<a href={resolve(item.href)}>
 		{item.text}
 	</a>
 {/snippet}
@@ -99,7 +100,11 @@ let list: ListItems = [
 	{@render children()}
 </div>
 
-<ul class="dropdown menu w-52 rounded-box bg-base-100 shadow-sm" data-popover="{id}" style="position-anchor:--anchor-1">
+<ul
+	class="dropdown menu rounded-box bg-base-100 w-52 shadow-sm"
+	data-popover={id}
+	style="position-anchor:--anchor-1"
+>
 	{#each list as item}
 		<li>
 			{#if isListAnchor(item)}
@@ -112,5 +117,5 @@ let list: ListItems = [
 </ul>
 
 <style global>
-	@import 'daisyui/components/dropdown.css';
+	/*@import 'daisyui/components/dropdown.css';*/
 </style>

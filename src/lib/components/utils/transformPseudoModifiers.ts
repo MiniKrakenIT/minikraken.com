@@ -1,28 +1,32 @@
-import type { ResponsiveProp, ResponsivePropObject } from '$components/types'
+import type { ResponsiveProperty, ResponsivePropertyObject } from '$components/types'
 
-const isResponsivePropObject = <T extends string>(
-	attr: ResponsiveProp<T>
-): attr is ResponsivePropObject<T> => typeof attr === 'object'
+const isResponsivePropertyObject = <T extends string>(
+	attribute: ResponsiveProperty<T>
+): attribute is ResponsivePropertyObject<T> => typeof attribute === 'object'
 
-export const tpm = <T extends string>(prefix: string, attr: ResponsiveProp<T> | undefined) => {
-	if (attr === undefined) return
+export const tpm = <T extends string>(
+	prefix: string,
+	attribute: ResponsiveProperty<T> | undefined
+) => {
+	if (attribute === undefined) return
 
-	if (isResponsivePropObject(attr)) {
-		let str = ''
+	if (isResponsivePropertyObject(attribute)) {
+		let string_ = ''
 
 		// for performance reasons, we're not using a for loop
-		if (attr.base !== undefined) str += prefix + '-' + attr.base + ' '
-		if (attr.xs !== undefined) str += 'xs:' + prefix + '-' + attr.xs + ' '
-		if (attr.sm !== undefined) str += 'sm:' + prefix + '-' + attr.sm + ' '
-		if (attr.md !== undefined) str += 'md:' + prefix + '-' + attr.md + ' '
-		if (attr.lg !== undefined) str += 'lg:' + prefix + '-' + attr.lg + ' '
-		if (attr.xl !== undefined) str += 'xl:' + prefix + '-' + attr.xl + ' '
-		if (attr.hover !== undefined) str += 'hover:' + prefix + '-' + attr.hover + ' '
-		if (attr.active !== undefined) str += 'active:' + prefix + '-' + attr.active + ' '
-		if (attr.disabled !== undefined) str += 'disabled:' + prefix + '-' + attr.disabled + ' '
+		if (attribute.base !== undefined) string_ += prefix + '-' + attribute.base + ' '
+		if (attribute.xs !== undefined) string_ += 'xs:' + prefix + '-' + attribute.xs + ' '
+		if (attribute.sm !== undefined) string_ += 'sm:' + prefix + '-' + attribute.sm + ' '
+		if (attribute.md !== undefined) string_ += 'md:' + prefix + '-' + attribute.md + ' '
+		if (attribute.lg !== undefined) string_ += 'lg:' + prefix + '-' + attribute.lg + ' '
+		if (attribute.xl !== undefined) string_ += 'xl:' + prefix + '-' + attribute.xl + ' '
+		if (attribute.hover !== undefined) string_ += 'hover:' + prefix + '-' + attribute.hover + ' '
+		if (attribute.active !== undefined) string_ += 'active:' + prefix + '-' + attribute.active + ' '
+		if (attribute.disabled !== undefined)
+			string_ += 'disabled:' + prefix + '-' + attribute.disabled + ' '
 
-		return str.trimEnd()
+		return string_.trimEnd()
 	}
 
-	return prefix + '-' + attr
+	return prefix + '-' + attribute
 }

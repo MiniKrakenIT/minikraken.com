@@ -1,8 +1,9 @@
-@import "tailwindcss";
-@import "./fonts.css";
+@import 'tailwindcss';
+@import './fonts.css';
 
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+@plugin "daisyui";
 
 html {
 	min-height: 100%;
@@ -15,6 +16,10 @@ body {
 	flex-direction: column;
 	overflow-x: hidden;
 }
+
+/*
+	todo: make a variable theme that adheres to our brandguide with an option to have a dark theme too. Look for this at daisyui.
+ */
 
 @media (prefers-reduced-motion) {
 	::view-transition-group(*),

@@ -1,14 +1,14 @@
-export const measure = <T extends (...args: unknown[]) => ReturnType<T>>(
-	msgOrFn: string | T,
-	fn?: T
+export const measure = <T extends (...arguments_: unknown[]) => ReturnType<T>>(
+	messageOrFunction: string | T,
+	function_?: T
 ): ReturnType<T> => {
-	const msg = typeof msgOrFn === 'string' ? msgOrFn : ''
-	const func = typeof msgOrFn === 'function' ? msgOrFn : fn!
+	const message = typeof messageOrFunction === 'string' ? messageOrFunction : ''
+	const function__ = typeof messageOrFunction === 'function' ? messageOrFunction : function_!
 
 	const start = performance.now()
 
-	const result = func()
+	const result = function__()
 
-	console.log(`${msg ? `${msg}: ` : ''}Execution time: ${performance.now() - start}ms`)
+	console.log(`${message ? `${message}: ` : ''}Execution time: ${performance.now() - start}ms`)
 	return result
 }

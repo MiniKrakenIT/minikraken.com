@@ -1,6 +1,6 @@
-export type ResponsiveProp<T extends string> = T | ResponsivePropObject<T>
+export type ResponsiveProperty<T extends string> = T | ResponsivePropertyObject<T>
 
-export interface ResponsivePropObject<T extends string> {
+export interface ResponsivePropertyObject<T extends string> {
 	base?: T
 	xs?: T
 	sm?: T

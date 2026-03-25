@@ -33,7 +33,7 @@ spec:
     - minikraken.com
   rules:
     - backendRefs:
-        - group: ""
+        - group: ''
           kind: Service
           name: minikraken-dot-com
           port: 3000

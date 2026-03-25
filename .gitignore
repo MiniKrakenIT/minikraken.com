@@ -1,10 +1,18 @@
+# bun
+bunfig.toml
+
+# cloudflare
+.cloudflare
+
+# node
+node_modules
+
 # Output
 .output
 .vercel
 .netlify
 .wrangler
 /.svelte-kit
-/.react-email
 /build
 
 # OS
@@ -21,14 +29,8 @@ Thumbs.db
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
-# bun
-bunfig.toml
+# Paraglide
+src/lib/paraglide
+project.inlang/cache/
 
-# cloudflare
-.cloudflare
-
-# idea
-.idea
-
-# node
-node_modules
+examples/

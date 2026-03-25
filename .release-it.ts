@@ -28,7 +28,7 @@ export default {
 			out: [
 				{
 					file: '.deployment/app/deployment.yaml',
-					search: 'v\\d+\\.\\d+\\.\\d+',
+					search: String.raw`v\d+\.\d+\.\d+`,
 					replace: 'v{{versionWithoutPrerelease}}'
 				}
 			]

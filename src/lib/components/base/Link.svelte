@@ -1,15 +1,7 @@
-
-<script lang="ts">
-import { tpm } from '$components/utils/transformPseudoModifiers'
-
-const { href, color, behavior, children, class: classValue, ...rest }: Props = $props()
-
-const classes = $derived(['link', tpm('link', color), tpm('link', behavior), classValue])
-</script>
-<script module lang="ts" >
-	import { Behavior } from '$components/props'
-	import { Color } from '$components/props'
-	import type { ResponsiveProp } from '$components/types'
+<script module lang="ts">
+	import { Behavior } from '$components/properties'
+	import { Color } from '$components/properties'
+	import type { ResponsiveProperty } from '$components/types'
 	import type { Snippet } from 'svelte'
 	import type { HTMLAnchorAttributes } from 'svelte/elements'
 
@@ -27,13 +19,22 @@ const classes = $derived(['link', tpm('link', color), tpm('link', behavior), cla
 
 	// Props that infer the tag type from the presence of `href`
 	export type Props = Omit<HTMLAnchorAttributes, 'color' | 'variant'> & {
-		color?: ResponsiveProp<LinkColors>
-		behavior?: ResponsiveProp<LinkBehaviors>
+		color?: ResponsiveProperty<LinkColors>
+		behavior?: ResponsiveProperty<LinkBehaviors>
 		children: Snippet
 	}
 </script>
 
-<a {href} class={classes} {...rest}>
+<script lang="ts">
+	import { tpm } from '$components/utils/transformPseudoModifiers'
+	import { resolve } from '$app/paths'
+
+	const { href, color, behavior, children, class: classValue, ...rest }: Props = $props()
+
+	const classes = $derived(['link', tpm('link', color), tpm('link', behavior), classValue])
+</script>
+
+<a href={resolve(href)} class={classes} {...rest}>
 	{@render children()}
 </a>
 

@@ -1,4 +1,4 @@
-import { Resend } from '$lib/mailing/Resend'
+import { Resend } from '$lib/mailing/resend'
 
 export type MailProperties = {
 	client: {
@@ -11,7 +11,7 @@ export type MailProperties = {
 
 export const newMailSubscription = async ({ client: { email } }: MailProperties) => {
 	const { data, error } = await Resend.contacts.create({
-		email: 'steve.wozniak@gmail.com',
+		email: email,
 		unsubscribed: false,
 		audienceId: 'a844d1b1-40ae-474a-9042-3a56d50f1329'
 	})
