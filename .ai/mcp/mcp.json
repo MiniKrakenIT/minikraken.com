@@ -1,0 +1,17 @@
+{
+	"mcpServers": {
+		"svelte": {
+			"command": "bunx",
+			"args": ["-y", "@sveltejs/mcp"],
+			"type": "stdio"
+		},
+		"motion": {
+			"command": "npx -y https://api.motion.dev/registry.tgz?package=motion-studio-mcp&version=latest",
+			"args": []
+		},
+		"context7": {
+			"type": "http",
+			"url": "https://mcp.context7.com/mcp"
+		}
+	}
+}
