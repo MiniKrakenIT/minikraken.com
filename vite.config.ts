@@ -6,6 +6,7 @@ import devtoolsJson from 'vite-plugin-devtools-json'
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
 import { paraglideVitePlugin } from '@inlang/paraglide-js'
 import { playwright } from '@vitest/browser-playwright'
+/*import VitePluginBrowserSync from 'vite-plugin-browser-sync'*/
 
 export default defineConfig({
 	ssr: {
@@ -23,6 +24,7 @@ export default defineConfig({
 	},
 	optimizeDeps: { include: ['@exodus/schemasafe'] },
 	plugins: [
+		/*VitePluginBrowserSync(),*/
 		tailwindcss(),
 		ViteImageOptimizer(),
 		enhancedImages(),
