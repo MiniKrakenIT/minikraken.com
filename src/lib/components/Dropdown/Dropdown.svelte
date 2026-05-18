@@ -101,7 +101,7 @@
 </div>
 
 <ul
-	class="dropdown menu rounded-box bg-base-100 w-52 shadow-sm"
+	class="menu dropdown w-52 rounded-box bg-base-100 shadow-sm"
 	data-popover={id}
 	style="position-anchor:--anchor-1"
 >

@@ -15,7 +15,7 @@ export const services = [
 	'Software Op Maat',
 	'On-Prem Infrastructuur',
 	'IT Audit'
-]
+] as const
 
 // highlight sections
 // interne tools (

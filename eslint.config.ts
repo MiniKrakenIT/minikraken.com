@@ -39,7 +39,9 @@ export default defineConfig(
 					}
 				}
 			],
-			'svelte/require-each-key': 'off'
+			'unicorn/no-abusive-eslint-disable': 'warn',
+			'svelte/no-navigation-without-resolve': 'warn',
+			'svelte/require-each-key': 'warn'
 		}
 	},
 	{
@@ -59,6 +61,9 @@ export default defineConfig(
 				parser: ts.parser,
 				svelteConfig
 			}
+		},
+		rules: {
+			'prefer-const': 'warn'
 		}
 	}
 )

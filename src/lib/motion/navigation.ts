@@ -3,48 +3,43 @@ import { type AnimationOptions, animate, type AnimationPlaybackControls } from '
 import type { Attachment } from 'svelte/attachments'
 import { setAnimationPlaying } from '$lib/motion/ocean.svelte'
 
-export const NavigationAnimation = (isOpen: boolean): Attachment => {
+export const NavigationAnimation = ({
+	navMenu,
+	isOpen,
+	mainContent
+}: {
+	navMenu: Element | null | undefined
+	mainContent: Element | null | undefined
+	isOpen: boolean
+}): Attachment => {
 	return (element) => {
-		if (!browser) return
+		if (!browser || !navMenu) return
+
+		const navHeight = navMenu.scrollHeight
+		const target = isOpen ? navHeight : 0
 
 		const animationOptions: AnimationOptions = {
-			duration: 1,
+			duration: 0.7,
 			ease: [0.3, 0, 0, 1]
 		}
 
 		let animation: AnimationPlaybackControls | undefined
-		let currentHeight = `${element.scrollHeight}px`
+		let navAnimation: AnimationPlaybackControls | undefined
 
-		const runAnimation = () => {
-			animation?.stop()
+		animation?.pause()
+		navAnimation?.pause()
 
-			setAnimationPlaying(true)
+		setAnimationPlaying(true)
 
-			animation = animate(
-				element,
-				{
-					height: isOpen ? ['.5rem', currentHeight] : [currentHeight, '.5rem']
-				},
-				animationOptions
-			)
+		animation = animate(element, { y: target }, animationOptions)
+		navAnimation = animate(mainContent, { y: 0 - target }, animationOptions)
 
-			animation.finished
-				.then(() => {
-					setAnimationPlaying(false)
-				})
-				.catch((error) => console.error(error))
-		}
-
-		const observer = new ResizeObserver(() => {
-			currentHeight = `${element.scrollHeight}px`
-		})
-
-		observer.observe(element)
-		runAnimation()
+		animation.finished.then(() => setAnimationPlaying(false)).catch((error) => console.error(error))
 
 		return () => {
-			observer.disconnect()
+			navAnimation?.stop()
 			animation?.stop()
+			navAnimation = undefined
 			animation = undefined
 		}
 	}

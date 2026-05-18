@@ -7,3 +7,9 @@ bun.lockb
 
 # Miscellaneous
 /static/
+
+.agents/
+.claude/
+
+/src/lib/i18n/paraglide/
+/src/lib/i18n/paraglide.inlang/

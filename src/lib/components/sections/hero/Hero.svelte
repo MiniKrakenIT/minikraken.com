@@ -22,7 +22,7 @@
 					>
 						{#key index}
 							<span
-								class="color-#416ba7 sm:no-break block bg-clip-text break-words text-transparent"
+								class="color-#416ba7 sm:no-break block bg-clip-text wrap-break-word text-transparent"
 								transition:slide
 							>
 								{services[index]}

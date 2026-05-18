@@ -4,8 +4,6 @@ let isAnimationPlaying = $state(false)
 
 export const setAnimationPlaying = (value: boolean) => (isAnimationPlaying = value)
 
-export const getAnimationPlaying = () => isAnimationPlaying
-
 export const bubbles: Attachment = (element) => {
 	$effect(() => {
 		if (element instanceof HTMLElement) {

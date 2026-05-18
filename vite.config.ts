@@ -6,6 +6,7 @@ import devtoolsJson from 'vite-plugin-devtools-json'
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
 import { paraglideVitePlugin } from '@inlang/paraglide-js'
 import { playwright } from '@vitest/browser-playwright'
+import { blogMetadata } from './tooling/vite-plugins/blogMetadata'
 /*import VitePluginBrowserSync from 'vite-plugin-browser-sync'*/
 
 export default defineConfig({
@@ -34,9 +35,9 @@ export default defineConfig({
 			project: './src/lib/i18n/paraglide.inlang',
 			outdir: './src/lib/i18n/paraglide',
 			cookieName: 'MINIKRAKEN_LOCALE',
-			localStorageKey: 'MINIKRAKEN_LOCALE',
-			strategy: ['url', 'cookie', 'baseLocale']
-		})
+			strategy: ['cookie', 'preferredLanguage', 'url', 'baseLocale']
+		}),
+		blogMetadata()
 	],
 	test: {
 		expect: { requireAssertions: true },

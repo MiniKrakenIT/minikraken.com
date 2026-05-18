@@ -19,5 +19,5 @@
 		stroke="currentColor"
 		stroke-linecap="round"
 		stroke-linejoin="round"
-	/></svg
->
+	/>
+</svg>

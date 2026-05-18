@@ -264,7 +264,7 @@
 	]
 </script>
 
-<div class="sea-background">
+<div class="sea-background bg-blend-multiply">
 	<ul class="light-rays">
 		{#each rayOptions as ray}
 			<li
@@ -274,7 +274,7 @@
 		{/each}
 	</ul>
 
-	<div class="relative h-full">
+	<div class="relative h-full overflow-hidden">
 		<div class="bubbles">
 			<img {@attach bubbles} src={particlesSmall} alt="Background bubble particles" />
 			<img {@attach bubbles} src={particlesSmall} alt="Background bubble particles" />

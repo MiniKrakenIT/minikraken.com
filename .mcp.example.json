@@ -1,0 +1,22 @@
+{
+	"mcpServers": {
+		"svelte": {
+			"type": "http",
+			"url": "https://mcp.svelte.dev/mcp"
+		},
+		"motion": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"https://api.motion.dev/registry.tgz?package=motion-studio-mcp&version=latest"
+			],
+			"env": {
+				"TOKEN": "<token>"
+			}
+		},
+		"context7": {
+			"type": "http",
+			"url": "https://mcp.context7.com/mcp"
+		}
+	}
+}

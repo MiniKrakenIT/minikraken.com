@@ -1,13 +1,14 @@
 <script lang="ts">
 	import { LogoAnimation } from '$lib/motion/logo'
-	import { resolve } from '$app/paths'
+	import type { ResolvedPathname } from '$app/types'
 
 	type Props = {
+		href: ResolvedPathname
 		color?: string
 		small?: boolean
 	}
 
-	let { color = '#101010', small = false }: Props = $props()
+	const { href, color = '#101010', small = false }: Props = $props()
 
 	let hoverState = $state(false)
 
@@ -22,7 +23,7 @@
 
 <a
 	aria-label="Home"
-	href={resolve('/')}
+	{href}
 	class="flex items-center"
 	onmouseenter={hoverEvent}
 	onmouseleave={hoverEndEvent}

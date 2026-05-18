@@ -1,23 +1,92 @@
 import devAdapter from '@sveltejs/adapter-node'
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
 import { mdsvex } from 'mdsvex'
+import remarkFrontmatter from 'remark-frontmatter'
+import remarkLintFrontmatterSchema from 'remark-lint-frontmatter-schema'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	preprocess: [
-		vitePreprocess({ script: true }),
+		vitePreprocess(),
 		mdsvex({
-			extensions: ['.svx']
+			extensions: ['.svx', '.md'],
+			remarkPlugins: [
+				remarkFrontmatter,
+				[
+					remarkLintFrontmatterSchema,
+					{
+						schema: {
+							type: 'object',
+							properties: {
+								title: {
+									type: 'object',
+									properties: {
+										en: { type: 'string' },
+										nl: { type: 'string' }
+									},
+									required: ['en', 'nl']
+								},
+								shortTitle: {
+									type: 'object',
+									properties: {
+										en: { type: 'string' },
+										nl: { type: 'string' }
+									},
+									required: ['en', 'nl']
+								},
+								excerpt: {
+									type: 'object',
+									properties: {
+										en: { type: 'string' },
+										nl: { type: 'string' }
+									},
+									required: ['en', 'nl']
+								},
+								date: { type: 'string' },
+								updated: { type: 'string' },
+								author: { type: 'string' },
+								coverImage: { type: 'string' },
+								categories: {
+									type: 'array',
+									items: { type: 'string' }
+								},
+								tags: {
+									type: 'array',
+									items: { type: 'string' }
+								},
+								draft: { type: 'boolean' }
+							},
+							// List the exact fields you want to enforce on every single blog post
+							required: [
+								'title',
+								'shortTitle',
+								'excerpt',
+								'date',
+								'updated',
+								'author',
+								'coverImage',
+								'categories',
+								'tags',
+								'draft'
+							]
+						}
+					}
+				]
+			]
 		})
 	],
 	compilerOptions: {
-		warningFilter: (warning) => {
-			return warning.code !== 'css_unused_selector'
+		experimental: {
+			async: true
 		}
 	},
 	kit: {
 		experimental: {
-			remoteFunctions: true
+			remoteFunctions: true,
+			tracing: { server: true },
+			instrumentation: { server: true },
+			handleRenderingErrors: false,
+			forkPreloads: true
 		},
 		csp: {
 			mode: 'auto'
@@ -28,9 +97,13 @@ const config = {
 			$stores: './src/lib/data/stores',
 			$styles: './src/lib/styles',
 			$assets: './src/lib/assets',
-			$data: './src/lib/data'
+			$data: './src/lib/data',
+			$paraglide: './src/lib/i18n/paraglide',
+			$tooling: './tooling'
 		},
-		adapter: devAdapter()
+		adapter: devAdapter({
+			precompress: true
+		})
 		/**import.meta.env?.NODE_ENV === 'production'
 				? (await import('@jonasbuerger/svelte-adapter-bun')).default({
 						precompress: {
@@ -48,7 +121,7 @@ const config = {
 					})
 				: devAdapter()**/
 	},
-	extensions: ['.svelte', '.svx']
+	extensions: ['.svelte', '.svx', '.md']
 }
 
 export default config

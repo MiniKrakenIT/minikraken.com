@@ -1,0 +1,6 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"legal_cookie_policy_name": "Cookie Policy",
+	"legal_privacy_policy_name": "Privacy Policy",
+	"legal_terms_of_service_name": "Terms of Service"
+}

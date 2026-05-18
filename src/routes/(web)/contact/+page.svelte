@@ -8,10 +8,7 @@
 	import TextArea from '$components/base/TextArea.svelte'
 	import Loading from '$components/Loading.svelte'
 	import { Color, Shape } from '$components/properties'
-	import { store } from '$stores/navigation'
 	import type { PageProps } from './$types'
-
-	store.set({ fixedBackground: true })
 
 	const { data }: PageProps = $props()
 
@@ -29,12 +26,11 @@
 	let showForm = $state(true)
 
 	onMount(() => {
-		// biome-ignore lint/correctness/noUndeclaredVariables: sveltekit behaviour
 		if (browser) $form.date = Date.now()
 	})
 </script>
 
-<div class="relative mt-40 overflow-auto">
+<div class="relative overflow-auto bg-gray-600 py-20 sm:py-32">
 	<div class="mx-auto mt-5 mb-15 max-w-2xl text-center">
 		<h2 class="text-4xl font-semibold tracking-tight text-balance sm:text-5xl">Contacteer ons!</h2>
 		<p class="text-passive-300 mt-2 text-lg/8">

@@ -1,26 +1,42 @@
 <script lang="ts">
 	import '$styles/base.css'
 	import { page } from '$app/state'
+	import { resolve } from '$app/paths'
+	import Ocean from '$components/backgrounds/Ocean.svelte'
+	import { LocaleHelper } from '$lib/utils/i18n'
+	import { getLocale } from '$paraglide/runtime'
 
-	//todo: look into why this can not be prerendered.
+	const { localize } = new LocaleHelper(getLocale())
+
+	//todo: add mascot to this page
+	//todo: add translated images for all prevalent error statuses
+	//todo: add feedback loop in form of mail, chat... easy way to make sure a user can report something, also add a call to action that it is easy to report stuff
 </script>
 
-<div class="flex h-dvh items-center justify-center">
+<div class="flex h-dvh items-center justify-center text-gray-900">
+	<div class="absolute inset-0 -z-10 overflow-hidden">
+		<Ocean></Ocean>
+	</div>
 	<div class="relative container block">
-		<div
-			class="top-0 -z-10 w-full overflow-hidden text-center select-none md:absolute md:-mt-[10rem]"
-		>
-			<div
-				data-text={page.status}
-				class="glitch text-primary/30 text-[10rem] font-bold md:text-[20rem]"
-			>
+		<div class="w-full text-center">
+			<div data-text={page.status} class="glitch text-[10rem] font-bold md:text-[20rem]">
 				<span>{page.status}</span>
 			</div>
 		</div>
-		<h1 class="text-center text-6xl">Er is iets fout gelopen</h1>
+		<h1 class="-mt-20 text-center text-6xl font-bold">
+			{#if page.error.message}
+				{page.error.message}
+			{/if}
+			Er is iets fout gelopen
+		</h1>
 		<div class="mt-12 flex items-center">
-			<button>Breng me terug</button>
+			<a href={resolve(localize('/'))}>Breng me terug</a>
 		</div>
+	</div>
+	<div>
+		{#if page.error}
+			reference: {page.error.errorId}
+		{/if}
 	</div>
 </div>
 

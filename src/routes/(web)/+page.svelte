@@ -38,7 +38,7 @@
 									decoding="async"
 									data-nimg="1"
 									style="color:transparent"
-									src="/_next/static/media/logo-light.ada2d552.svg"
+									src="https://images.unsplash.com/photo-1573655349936-de6bed86f839?q=80&w=3337&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 								/>
 							</div>
 						</li>
@@ -52,7 +52,7 @@
 									decoding="async"
 									data-nimg="1"
 									style="color:transparent"
-									src="/_next/static/media/logo-light.5c8de99c.svg"
+									src="https://images.unsplash.com/photo-1573655349936-de6bed86f839?q=80&w=3337&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 								/>
 							</div>
 						</li>
@@ -66,7 +66,7 @@
 									decoding="async"
 									data-nimg="1"
 									style="color:transparent"
-									src="/_next/static/media/logo-light.f6ce2960.svg"
+									src="https://images.unsplash.com/photo-1573655349936-de6bed86f839?q=80&w=3337&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 								/>
 							</div>
 						</li>
@@ -80,7 +80,7 @@
 									decoding="async"
 									data-nimg="1"
 									style="color:transparent"
-									src="/_next/static/media/logo-light.249606f6.svg"
+									src="https://images.unsplash.com/photo-1573655349936-de6bed86f839?q=80&w=3337&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 								/>
 							</div>
 						</li>
@@ -94,7 +94,7 @@
 									decoding="async"
 									data-nimg="1"
 									style="color:transparent"
-									src="/_next/static/media/logo-light.da1195d8.svg"
+									src="https://images.unsplash.com/photo-1573655349936-de6bed86f839?q=80&w=3337&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 								/>
 							</div>
 						</li>
@@ -108,7 +108,7 @@
 									decoding="async"
 									data-nimg="1"
 									style="color:transparent"
-									src="/_next/static/media/logo-light.1704e6d8.svg"
+									src="https://images.unsplash.com/photo-1573655349936-de6bed86f839?q=80&w=3337&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 								/>
 							</div>
 						</li>
@@ -122,7 +122,7 @@
 									decoding="async"
 									data-nimg="1"
 									style="color:transparent"
-									src="/_next/static/media/logo-light.456aa9d9.svg"
+									src="https://images.unsplash.com/photo-1573655349936-de6bed86f839?q=80&w=3337&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 								/>
 							</div>
 						</li>
@@ -136,7 +136,7 @@
 									decoding="async"
 									data-nimg="1"
 									style="color:transparent"
-									src="/_next/static/media/logo-light.e19f9c9b.svg"
+									src="https://images.unsplash.com/photo-1573655349936-de6bed86f839?q=80&w=3337&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 								/>
 							</div>
 						</li>
@@ -182,7 +182,7 @@
 									data-nimg="1"
 									class="h-16 w-16"
 									style="color:transparent"
-									src="/_next/static/media/logomark-dark.4d2947be.svg"
+									src="https://images.unsplash.com/photo-1573655349936-de6bed86f839?q=80&w=3337&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 								/>
 							</a>
 						</h3>
@@ -216,7 +216,7 @@
 									data-nimg="1"
 									class="h-16 w-16"
 									style="color:transparent"
-									src="/_next/static/media/logomark-dark.73187f97.svg"
+									src="https://images.unsplash.com/photo-1573655349936-de6bed86f839?q=80&w=3337&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 								/>
 							</a>
 						</h3>
@@ -250,7 +250,7 @@
 									data-nimg="1"
 									class="h-16 w-16"
 									style="color:transparent"
-									src="/_next/static/media/logomark-dark.00d7d7b3.svg"
+									src="https://images.unsplash.com/photo-1573655349936-de6bed86f839?q=80&w=3337&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 								/>
 							</a>
 						</h3>
@@ -343,7 +343,7 @@
 								decoding="async"
 								data-nimg="1"
 								style="color:transparent"
-								src="/_next/static/media/logo-dark.353d4760.svg"
+								src="https://images.unsplash.com/photo-1573655349936-de6bed86f839?q=80&w=3337&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 							/>
 						</figcaption>
 					</figure>

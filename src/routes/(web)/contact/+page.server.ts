@@ -4,6 +4,8 @@ import { valibot } from 'sveltekit-superforms/adapters'
 import { email, maxLength, minLength, number, object, pipe, string } from 'valibot'
 import type { Actions, PageServerLoad } from './$types'
 
+export const prerender = false
+
 const schema = object({
 	date: pipe(number('We verwachten hier een nummer input.')),
 	email: pipe(

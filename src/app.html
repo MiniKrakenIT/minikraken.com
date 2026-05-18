@@ -1,12 +1,23 @@
 <!doctype html>
-<html lang="%lang%">
+<html lang="%lang%" dir="ltr">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>MiniKraken - The IT Agency to scale your business</title>
+		<!-- todo: remove google fonts for optimized self hosted variants -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,slnt,wght,ROND@6..144,-10..0,1..1000,50&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Sometype+Mono:ital,wght@0,400..700;1,400..700&display=swap"
+			rel="stylesheet"
+		/>
 		%sveltekit.head%
 	</head>
-	<body data-sveltekit-preload-data="hover" class="touch-manipulation">
+	<body
+		data-sveltekit-preload-data="hover"
+		class="mx-auto flex min-h-full max-w-775 touch-manipulation flex-col"
+	>
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>
