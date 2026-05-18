@@ -3,3 +3,11 @@
 /workspace.xml
 # Editor-based HTTP Client requests
 /httpRequests/
+
+
+bun.xml
+compiler.xml
+jsLibraryMappings.xml
+junie.xml
+
+ScaScanState.xml
